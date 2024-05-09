@@ -18,8 +18,6 @@ interface GithubUserInfo {
 export default function GithubBasicInfo() {
   const axios = require("axios");
   const inputRef = useRef<HTMLInputElement>(null);
-  const [avatar, setAvatar] = useState<string>("");
-  //Make an object for this...
   const [info, setInfo] = useState<GithubUserInfo>();
 
   function getBasicInformation() {
@@ -27,9 +25,6 @@ export default function GithubBasicInfo() {
       axios
         .get("https://api.github.com/users/" + inputRef.current.value)
         .then((response: any) => {
-          // setInfo(response.data);
-          console.error("Success:", response.data);
-          setAvatar(response.data.avatar_url);
           setInfo({
             public_repos: response.data.public_repos,
             followers: response.data.followers,
@@ -57,12 +52,23 @@ export default function GithubBasicInfo() {
   }
 
   return (
-    <>
+    <section>
+      <h1 className="font-bold text-lg mb-2 underline">GitHub</h1>
       <input placeholder="username" ref={inputRef} />
       <button className="bg-slate-200" onClick={getBasicInformation}>
-        Get User Pic
+        Get User Info
       </button>
-      <img className="rounded-full w-24 h-24" src={avatar} alt="avatar" />
+      {info ? (
+        <img
+          className="rounded-full w-24 h-24"
+          src={info?.avatar_url}
+          alt="avatar"
+        />
+      ) : (
+        <div className="rounded-full w-24 h-24 bg-neutral-200 flex justify-center items-center">
+          Avatar
+        </div>
+      )}
       <p>Name: {info?.name}</p>
       <p>Bio: {info?.bio}</p>
       <p>Followers: {info?.followers}</p>
@@ -70,6 +76,6 @@ export default function GithubBasicInfo() {
       <p>Public repos: {info?.public_repos}</p>
       <p>Location: {info?.location}</p>
       <p>Created date: {formatDate(info?.created_at)}</p>
-    </>
+    </section>
   );
 }
