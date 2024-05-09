@@ -1,61 +1,33 @@
 "use client";
 
+import { getBasicGithubInformation } from "@/lib/services/githubService";
+import { GithubUserInfo } from "@/lib/types/githubInfo";
+import { formatDate } from "@/lib/utils/formatUtil";
 import { useRef, useState } from "react";
 
-interface GithubUserInfo {
-  public_repos: number;
-  followers: number;
-  following: number;
-  avatar_url: string;
-  id: number;
-  login: string;
-  name: string;
-  bio: string;
-  location: string;
-  created_at: string;
-}
-
 export default function GithubBasicInfo() {
-  const axios = require("axios");
   const inputRef = useRef<HTMLInputElement>(null);
   const [info, setInfo] = useState<GithubUserInfo>();
 
-  function getBasicInformation() {
+  function handleBasicInformation() {
     if (inputRef.current) {
-      axios
-        .get("https://api.github.com/users/" + inputRef.current.value)
-        .then((response: any) => {
-          setInfo({
-            public_repos: response.data.public_repos,
-            followers: response.data.followers,
-            following: response.data.following,
-            avatar_url: response.data.avatar_url,
-            id: response.data.id,
-            login: response.data.login,
-            name: response.data.name,
-            bio: response.data.bio,
-            location: response.data.location,
-            created_at: response.data.created_at,
-          });
+      getBasicGithubInformation(inputRef.current.value)
+        .then((userData) => {
+          if (userData) {
+            setInfo(userData);
+          }
         })
-        .catch((error: any) => {
-          console.error("Error:", error);
+        .catch((error) => {
+          console.error("Error fetching user information:", error);
         });
     }
-  }
-
-  function formatDate(date: string | undefined) {
-    if (date) {
-      return new Date(date).toISOString().split("T")[0];
-    }
-    return "";
   }
 
   return (
     <section>
       <h1 className="font-bold text-lg mb-2 underline">GitHub</h1>
       <input placeholder="username" ref={inputRef} />
-      <button className="bg-slate-200" onClick={getBasicInformation}>
+      <button className="bg-slate-200" onClick={handleBasicInformation}>
         Get User Info
       </button>
       {info ? (
