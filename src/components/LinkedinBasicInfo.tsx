@@ -1,41 +1,23 @@
 "use client";
 
+import { getBasicLinkedinInformation } from "@/lib/services/linkedinService";
+import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { useRef, useState } from "react";
 
-interface LinkedinUserInfo {
-  country: number;
-  language: number;
-  name: string;
-  email: string;
-  picture: string;
-  email_verified: boolean;
-}
-
 export default function LinkedinBasicInfo() {
-  const axios = require("axios");
   const inputRef = useRef<HTMLInputElement>(null);
   const [info, setInfo] = useState<LinkedinUserInfo>();
 
-  function getBasicInformation() {
+  function handleBasicInformation() {
     if (inputRef.current) {
-      const headers = {
-        Authorization: `Bearer ${inputRef.current}`,
-        "Content-Type": "application/json",
-      };
-      axios
-        .get("https://api.linkedin.com/v2/userinfo", { headers })
-        .then((response: any) => {
-          setInfo({
-            country: response.data.locale.country,
-            language: response.data.locale.language,
-            name: response.data.name,
-            email: response.data.email,
-            picture: response.data.picture,
-            email_verified: response.data.email_verified,
-          });
+      getBasicLinkedinInformation(inputRef.current.value)
+        .then((userData) => {
+          if (userData) {
+            setInfo(userData);
+          }
         })
-        .catch((error: any) => {
-          console.error("Error:", error);
+        .catch((error) => {
+          console.error("Error fetching user information:", error);
         });
     }
   }
@@ -44,7 +26,7 @@ export default function LinkedinBasicInfo() {
     <section>
       <h1 className="font-bold text-lg mb-2 underline">LinkedIn</h1>
       <input placeholder="token" ref={inputRef} />
-      <button className="bg-slate-200" onClick={getBasicInformation}>
+      <button className="bg-slate-200" onClick={handleBasicInformation}>
         Get User Info
       </button>
       {info ? (

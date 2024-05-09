@@ -1,26 +1,33 @@
 "use client";
 
-import { GithubUserInfo } from "@/lib/types/gitHubInfo";
-import { getBasicInformation } from "@/lib/utils/gitHubUtil";
+import { getBasicGithubInformation } from "@/lib/services/githubService";
+import { GithubUserInfo } from "@/lib/types/githubInfo";
+import { formatDate } from "@/lib/utils/formatUtil";
 import { useRef, useState } from "react";
 
 export default function GithubBasicInfo() {
-  const axios = require("axios");
   const inputRef = useRef<HTMLInputElement>(null);
   const [info, setInfo] = useState<GithubUserInfo>();
 
-  function formatDate(date: string | undefined) {
-    if (date) {
-      return new Date(date).toISOString().split("T")[0];
+  function handleBasicInformation() {
+    if (inputRef.current) {
+      getBasicGithubInformation(inputRef.current.value)
+        .then((userData) => {
+          if (userData) {
+            setInfo(userData);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching user information:", error);
+        });
     }
-    return "";
   }
 
   return (
     <section>
       <h1 className="font-bold text-lg mb-2 underline">GitHub</h1>
       <input placeholder="username" ref={inputRef} />
-      <button className="bg-slate-200" onClick={getBasicInformation}>
+      <button className="bg-slate-200" onClick={handleBasicInformation}>
         Get User Info
       </button>
       {info ? (
