@@ -1,48 +1,13 @@
 "use client";
 
+import { GithubUserInfo } from "@/lib/types/gitHubInfo";
+import { getBasicInformation } from "@/lib/utils/gitHubUtil";
 import { useRef, useState } from "react";
-
-interface GithubUserInfo {
-  public_repos: number;
-  followers: number;
-  following: number;
-  avatar_url: string;
-  id: number;
-  login: string;
-  name: string;
-  bio: string;
-  location: string;
-  created_at: string;
-}
 
 export default function GithubBasicInfo() {
   const axios = require("axios");
   const inputRef = useRef<HTMLInputElement>(null);
   const [info, setInfo] = useState<GithubUserInfo>();
-
-  function getBasicInformation() {
-    if (inputRef.current) {
-      axios
-        .get("https://api.github.com/users/" + inputRef.current.value)
-        .then((response: any) => {
-          setInfo({
-            public_repos: response.data.public_repos,
-            followers: response.data.followers,
-            following: response.data.following,
-            avatar_url: response.data.avatar_url,
-            id: response.data.id,
-            login: response.data.login,
-            name: response.data.name,
-            bio: response.data.bio,
-            location: response.data.location,
-            created_at: response.data.created_at,
-          });
-        })
-        .catch((error: any) => {
-          console.error("Error:", error);
-        });
-    }
-  }
 
   function formatDate(date: string | undefined) {
     if (date) {
