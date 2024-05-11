@@ -4,9 +4,11 @@ import React from "react";
 import Github from "@/assets/icons/github.svg";
 import Gitlab from "@/assets/icons/gitlab.svg";
 import Linkedin from "@/assets/icons/linkedin.svg";
+import Web from "@/assets/icons/web.svg";
+import Chevron from "@/assets/icons/chevron.svg";
 
 interface IconProps {
-  name: "github" | "gitlab" | "linkdin";
+  name: "github" | "gitlab" | "linkdin" | "web" | "chevron";
   className?: string;
   size?: number;
   color?: string;
@@ -28,6 +30,8 @@ const Icon: React.FC<IconProps> = ({
     github: <Github {...svgProps} />,
     gitlab: <Gitlab {...svgProps} />,
     linkdin: <Linkedin {...svgProps} />,
+    web: <Web {...svgProps} />,
+    chevron: <Chevron {...svgProps} />,
   };
   //width={size} height={size} fill={color}
   return Icons[name];
