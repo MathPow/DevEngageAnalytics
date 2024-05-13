@@ -3,8 +3,7 @@
 import { GithubUserInfo } from "@/lib/types/githubInfo";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { githubUserInfoMock } from "@/tests/mocks/GithubUserInfoMock";
-import Header from "../components/allInOneDevCard/Header";
-import Bio from "../components/allInOneDevCard/Bio";
+import { Header, Bio, Footer } from "../components/allInOneDevCard/index";
 
 interface AllInOneDevCardProps {
   githubData: GithubUserInfo;
@@ -20,7 +19,7 @@ export default function AllInOneDevCard({
   return (
     <section className="flex gap-x-8 text-white">
       <div className="h-[500px] w-[375px] bg-_bgDarkGray rounded-3xl drop-shadow-xl">
-        <div className="relative">
+        <div className="relative h-full">
           <Header
             avatarUrl={githubUserInfoMock.avatar_url}
             bannerUrl={
@@ -34,6 +33,10 @@ export default function AllInOneDevCard({
             name={githubUserInfoMock.name}
             alias={githubUserInfoMock.login}
             description={githubUserInfoMock.bio}
+          />
+          <Footer
+            githubUrl="https://github.com/MathPow"
+            linkedinUrl="https://www.linkedin.com/in/mathys-deshaies/"
           />
         </div>
       </div>
