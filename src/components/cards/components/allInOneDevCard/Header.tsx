@@ -1,9 +1,5 @@
 "use client";
 
-import { GithubUserInfo } from "@/lib/types/githubInfo";
-import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
-import { githubUserInfoMock } from "@/tests/mocks/GithubUserInfoMock";
-
 interface HeaderProps {
   avatarUrl?: string;
   bannerUrl?: string;
@@ -30,7 +26,7 @@ export default function Header({
       ) : (
         <div className="w-full h-28 bg-gradient-to-tr from-amber-200 via-amber-200 to-red-400"></div>
       )}
-      <div className="absolute -translate-y-1/2 left-8 flex items-center w-[calc(100%-64px)]">
+      <div className="absolute -translate-y-1/2 flex items-center w-full px-8">
         {avatarUrl ? (
           <img
             className="w-20 h-20 rounded-full"
