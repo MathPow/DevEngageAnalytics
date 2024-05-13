@@ -20,7 +20,8 @@ const config = {
     extend: {
       colors: {
         _bgDarkGray: "#3D3D3D",
-        _grayText: "#B8B8B8",
+        _lightGrayText: "#B8B8B8",
+        _darkGrayText: "#5B5B5B",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
