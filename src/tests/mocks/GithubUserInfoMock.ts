@@ -10,5 +10,5 @@ export const githubUserInfoMock: GithubUserInfo = {
   name: "Mathys Deshaies",
   bio: "I'm Mathys, a developer passionate about all aspects of computer science and management.",
   location: "Québec",
-  created_at: "created_at",
+  created_at: "2020-12-12T16:09:39Z",
 };
