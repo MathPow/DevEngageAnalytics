@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         _bgDarkGray: "#3D3D3D",
+        _bgLightGray: "#535353",
         _lightGrayText: "#B8B8B8",
         _darkGrayText: "#5B5B5B",
 
