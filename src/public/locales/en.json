@@ -1,3 +1,43 @@
 {
-  "greeting": "Hello"
+  "card": {
+    "socials": {
+      "followers": "followers",
+      "following": "following",
+      "connections": "connections"
+    },
+    "info": {
+      "joined_date": "Joined the market on",
+      "days_last_year": "days last year",
+      "present": "Present",
+      "issued": "Issued in"
+    },
+    "section": {
+      "experience": "Experience",
+      "certifications": "Certifications"
+    },
+    "month_abbreviations": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec"
+    },
+    "stats": {
+      "pull_requests": "Pull Requests",
+      "commits": "Commits",
+      "comments": "Comments",
+      "opened_issues": "Opened Issues",
+      "total_contributions": "Total Contributions",
+      "project_involvement": "Project Involvement",
+      "total_stars_earned": "Total Stars Earned",
+      "total_repositiories": "Total Repositiories"
+    }
+  }
 }
