@@ -1,11 +1,14 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 interface HeaderProps {
   avatarUrl?: string;
   bannerUrl?: string;
   followers?: number;
   following?: number;
   connections?: number;
+  className?: string;
 }
 
 export default function Header({
@@ -14,7 +17,10 @@ export default function Header({
   followers,
   following,
   connections,
+  className = "",
 }: HeaderProps) {
+  const { t } = useTranslation();
+
   return (
     <>
       {bannerUrl ? (
@@ -26,7 +32,9 @@ export default function Header({
       ) : (
         <div className="w-full h-28 bg-gradient-to-tr from-amber-200 via-amber-200 to-red-400"></div>
       )}
-      <div className="absolute -translate-y-1/2 flex items-center w-full px-8">
+      <div
+        className={`absolute -translate-y-1/2 flex items-center w-full px-8 ${className}`}
+      >
         {avatarUrl ? (
           <img
             className="w-20 h-20 rounded-full"
@@ -40,19 +48,19 @@ export default function Header({
           {followers && (
             <div className="text-center">
               <p className="font-semibold text-sm">{followers}</p>
-              <p className="text-xs">followers</p>
+              <p className="text-xs">{t("card.socials.followers")}</p>
             </div>
           )}
           {following && (
             <div className="text-center">
               <p className="font-semibold text-sm">{following}</p>
-              <p className="text-xs">following</p>
+              <p className="text-xs">{t("card.socials.following")}</p>
             </div>
           )}
           {connections && (
             <div className="text-center">
               <p className="font-semibold text-sm">{connections}</p>
-              <p className="text-xs">connections</p>
+              <p className="text-xs">{t("card.socials.connections")}</p>
             </div>
           )}
         </div>
