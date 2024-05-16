@@ -2,6 +2,8 @@
 
 import GithubBasicInfo from "@/components/GithubBasicInfo";
 import LinkedinBasicInfo from "@/components/LinkedinBasicInfo";
+import DevCard from "@/components/cards/dev/DevCard";
+import { DevCardEnum } from "@/lib/types/devCardEnum";
 import Settings from "@/components/Settings";
 
 export default function Home() {
@@ -11,6 +13,12 @@ export default function Home() {
         <Settings />
         <GithubBasicInfo />
         <LinkedinBasicInfo />
+        <DevCard
+          cardType={DevCardEnum.AllInOneCard}
+          githubUsername={"MathPow"}
+          gitlabUsername={"MathPow"}
+          linkednUsername={"MathPow"}
+        />
       </div>
     </main>
   );

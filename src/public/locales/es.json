@@ -1,3 +1,43 @@
 {
-  "greeting": "Hola"
+  "card": {
+    "socials": {
+      "followers": "seguidores",
+      "following": "siguiendo",
+      "connections": "conexiones"
+    },
+    "info": {
+      "joined_date": "Se unió al mercado el",
+      "days_last_year": "días del año pasado",
+      "present": "Presente",
+      "issued": "Entregada en"
+    },
+    "section": {
+      "experience": "Experiencia",
+      "certifications": "Certificaciones"
+    },
+    "month_abbreviations": {
+      "jan": "Ene",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Abr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Ago",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dic"
+    },
+    "stats": {
+      "pull_requests": "Pull Requests",
+      "commits": "Commits",
+      "comments": "Comments",
+      "opened_issues": "Opened Issues",
+      "total_contributions": "Total Contributions",
+      "project_involvement": "Project Involvement",
+      "total_stars_earned": "Total Stars Earned",
+      "total_repositiories": "Total Repositiories"
+    }
+  }
 }
