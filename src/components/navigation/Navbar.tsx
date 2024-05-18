@@ -1,14 +1,13 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
 import Logo from "@/public/assets/logo.svg";
 import Icon from "../Icon";
 import Link from "next/link";
 import LanguageSwitcher from "../settings/LanguageSwitcher";
 
 export default function Navbar() {
-  const { i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky p-4">
@@ -21,25 +20,25 @@ export default function Navbar() {
             <li className="flex items-center px-3">
               <Link href="/" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-club"} />
-                Home
+                {t("navigation.pages.home")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/playground" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-diamond"} />
-                Playground
+                {t("navigation.pages.playground")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/getstarted" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-spade"} />
-                Get Started
+                {t("navigation.pages.get_started")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/collaborations" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-heart"} />
-                Collaboration
+                {t("navigation.pages.collaboration")}
               </Link>
             </li>
           </ul>

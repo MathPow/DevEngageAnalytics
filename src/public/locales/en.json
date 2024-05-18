@@ -39,5 +39,13 @@
       "total_stars_earned": "Total Stars Earned",
       "total_repositiories": "Total Repositiories"
     }
+  },
+  "navigation": {
+    "pages": {
+      "home": "Home",
+      "playground": "Playground",
+      "get_started": "Get Started",
+      "collaboration": "Collaboration"
+    }
   }
 }

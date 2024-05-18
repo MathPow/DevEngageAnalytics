@@ -39,5 +39,13 @@
       "total_stars_earned": "Total Stars Earned",
       "total_repositiories": "Total Repositiories"
     }
+  },
+  "navigation": {
+    "pages": {
+      "home": "Inicio",
+      "playground": "Zona de juegos",
+      "get_started": "Comenzar",
+      "collaboration": "Colaboración"
+    }
   }
 }
