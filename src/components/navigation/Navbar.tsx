@@ -20,25 +20,25 @@ export default function Navbar() {
             <li className="flex items-center px-3">
               <Link href="/" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-club"} />
-                {t("navigation.pages.home")}
+                {t("ui.pages.home")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/playground" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-diamond"} />
-                {t("navigation.pages.playground")}
+                {t("ui.pages.playground")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/getstarted" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-spade"} />
-                {t("navigation.pages.get_started")}
+                {t("ui.pages.get_started")}
               </Link>
             </li>
             <li className="flex items-center px-3">
               <Link href="/collaborations" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-heart"} />
-                {t("navigation.pages.collaboration")}
+                {t("ui.pages.collaboration")}
               </Link>
             </li>
           </ul>
