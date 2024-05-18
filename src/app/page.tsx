@@ -5,6 +5,8 @@ import LinkedinBasicInfo from "@/components/LinkedinBasicInfo";
 import DevCard from "@/components/cards/dev/DevCard";
 import { DevCardEnum } from "@/lib/types/devCardEnum";
 import Settings from "@/components/Settings";
+import GitlabBasicInfo from "@/components/GitlabBasicInfo";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         <Settings />
         <GithubBasicInfo />
         <LinkedinBasicInfo />
+        <GitlabBasicInfo />
+        <Separator />
         <DevCard
           cardType={DevCardEnum.AllInOneCard}
           githubUsername={"MathPow"}
