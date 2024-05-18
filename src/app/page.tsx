@@ -1,28 +1,13 @@
 "use client";
 
-import GithubBasicInfo from "@/components/GithubBasicInfo";
-import LinkedinBasicInfo from "@/components/LinkedinBasicInfo";
-import DevCard from "@/components/cards/dev/DevCard";
-import { DevCardEnum } from "@/lib/types/devCardEnum";
-import Settings from "@/components/Settings";
-import GitlabBasicInfo from "@/components/GitlabBasicInfo";
-import { Separator } from "@/components/ui/separator";
+import Logo from "@/public/assets/logo.svg";
 
 export default function Home() {
   return (
-    <main>
-      <div className="space-y-10 py-4 px-8">
-        <Settings />
-        <GithubBasicInfo />
-        <LinkedinBasicInfo />
-        <GitlabBasicInfo />
-        <Separator />
-        <DevCard
-          cardType={DevCardEnum.AllInOneCard}
-          githubUsername={"MathPow"}
-          gitlabUsername={"MathPow"}
-          linkednUsername={"MathPow"}
-        />
+    <main className="flex justify-center mt-32">
+      <div className="flex flex-col">
+        <Logo className="size-96" />
+        <p className="font-bold text-center animate-pulse">Project in progress...</p>
       </div>
     </main>
   );
