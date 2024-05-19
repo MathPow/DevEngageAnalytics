@@ -17,7 +17,7 @@ export default function NotFound() {
             <span className="sr-only">Error</span>
             <span className="text-red-500 flex justify-center">
               <span>4</span>
-              <Image className="size-32" src={CasinoChip} alt={"casino-chip"} />
+              <Image className="size-32" src={CasinoChip} alt={"0"} />
               <span>4</span>
             </span>
           </h2>
