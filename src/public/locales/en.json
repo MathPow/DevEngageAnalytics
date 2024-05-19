@@ -40,12 +40,17 @@
       "total_repositiories": "Total Repositiories"
     }
   },
-  "navigation": {
+  "ui": {
     "pages": {
       "home": "Home",
       "playground": "Playground",
       "get_started": "Get Started",
       "collaboration": "Collaboration"
+    },
+    "not_found": {
+      "could_not_find_page": "Sorry, we couldn't find this page.",
+      "do_not_worry": "But dont worry, you can find plenty of other things on our homepage.",
+      "back_button": "Back to homepage"
     }
   }
 }
