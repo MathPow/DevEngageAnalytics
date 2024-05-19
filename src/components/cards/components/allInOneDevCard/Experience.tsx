@@ -2,23 +2,16 @@
 
 import Icon from "@/components/Icon";
 import { useTranslation } from "react-i18next";
-import { Experience, Certificate } from "@/lib/types/experienceType";
-import {
-  formatDateClassic,
-  formatDateRange,
-} from "@/lib/composables/formatDate";
+import { Experience as ExperienceType, Certificate } from "@/lib/types/experienceType";
+import { formatDateClassic, formatDateRange } from "@/lib/composables/formatDate";
 
 interface ExperienceProps {
-  experience?: Experience[];
+  experience?: ExperienceType[];
   certification?: Certificate[];
   className?: string;
 }
 
-export default function Experience({
-  experience,
-  certification,
-  className = "",
-}: ExperienceProps) {
+export default function Experience({ experience, certification, className = "" }: ExperienceProps) {
   const { t } = useTranslation();
   return (
     <div className={className}>
@@ -38,9 +31,7 @@ export default function Experience({
           ))}
         </>
       )}
-      <p className="italic underline text-sm mt-2">
-        {t("card.section.certifications")}
-      </p>
+      <p className="italic underline text-sm mt-2">{t("card.section.certifications")}</p>
       {certification !== undefined && (
         <>
           {certification.slice(0, 2).map((el, index) => (
