@@ -12,6 +12,13 @@ import BrandGitlab from "@/public/assets/icons/brand-gitlab.svg";
 import Briefcase from "@/public/assets/icons/briefcase.svg";
 import Certificate from "@/public/assets/icons/certificate.svg";
 import User from "@/public/assets/icons/user.svg";
+import PlayingCardClub from "@/public/assets/icons/playing-card-club.svg";
+import PlayingCardDiamond from "@/public/assets/icons/playing-card-diamond.svg";
+import PlayingCardSpade from "@/public/assets/icons/playing-card-spade.svg";
+import PlayingCardHeart from "@/public/assets/icons/playing-card-heart.svg";
+import FranceFlag from "@/public/assets/icons/france-flag.svg";
+import UnitedKingdomFlag from "@/public/assets/icons/united-kingdom-flag.svg";
+import SpainFlag from "@/public/assets/icons/spain-flag.svg";
 
 interface IconProps {
   name:
@@ -25,20 +32,21 @@ interface IconProps {
     | "brand-gitlab"
     | "briefcase"
     | "certificate"
-    | "user";
+    | "playing-card-club"
+    | "playing-card-diamond"
+    | "playing-card-spade"
+    | "playing-card-heart"
+    | "user"
+    | "france-flag"
+    | "united-kingdom-flag"
+    | "spain-flag";
   className?: string;
   size?: number;
   color?: string;
   onClick?: () => void;
 }
 
-const Icon: React.FC<IconProps> = ({
-  name,
-  className = "",
-  size = 32,
-  color = "currentColor",
-  onClick,
-}) => {
+const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "currentColor", onClick }) => {
   const svgProps = {
     className: className,
     width: size,
@@ -58,6 +66,13 @@ const Icon: React.FC<IconProps> = ({
     briefcase: <Briefcase {...svgProps} />,
     certificate: <Certificate {...svgProps} />,
     user: <User {...svgProps} />,
+    "playing-card-club": <PlayingCardClub {...svgProps} />,
+    "playing-card-diamond": <PlayingCardDiamond {...svgProps} />,
+    "playing-card-spade": <PlayingCardSpade {...svgProps} />,
+    "playing-card-heart": <PlayingCardHeart {...svgProps} />,
+    "france-flag": <FranceFlag {...svgProps} />,
+    "united-kingdom-flag": <UnitedKingdomFlag {...svgProps} />,
+    "spain-flag": <SpainFlag {...svgProps} />,
   };
   return Icons[name];
 };

@@ -7,6 +7,7 @@ import { initReactI18next } from "react-i18next";
 import frTranslation from "@/public/locales/fr.json";
 import enTranslation from "@/public/locales/en.json";
 import esTranslation from "@/public/locales/es.json";
+import Navbar from "@/components/navigation/Navbar";
 
 interface ConfigurationProps {
   children: React.ReactNode;
@@ -25,7 +26,12 @@ i18n.use(initReactI18next).init({
 });
 
 const Configuration = ({ children }: ConfigurationProps) => {
-  return <div id="root">{children}</div>;
+  return (
+    <div id="root">
+      <Navbar />
+      {children}
+    </div>
+  );
 };
 
 export default Configuration;
