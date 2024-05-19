@@ -19,7 +19,7 @@ export default function Home() {
           cardType={DevCardEnum.AllInOneCard}
           githubUsername={"MathPow"}
           gitlabUsername={"MathPow"}
-          linkednUsername={"MathPow"}
+          linkedinUsername={"MathPow"}
         />
       </div>
     </main>
