@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://mathpow.github.io/DevEngageAnalytics",
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
