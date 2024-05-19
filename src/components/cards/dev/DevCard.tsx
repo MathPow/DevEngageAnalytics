@@ -3,26 +3,21 @@
 import { getBasicGithubInformation } from "@/lib/services/githubService";
 import { DevCardEnum } from "@/lib/types/devCardEnum";
 import { GithubUserInfo } from "@/lib/types/githubInfo";
-import { formatDate } from "@/lib/utils/formatUtil";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AllInOneDevCard from "./AllInOneDevCard";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
+import { GitlabUserInfo } from "@/lib/types/gitlabInfo";
 
 interface DevCardProps {
   cardType: DevCardEnum;
   githubUsername: string;
   gitlabUsername: string;
-  linkednUsername: string;
+  linkedinUsername: string;
 }
 
-export default function DevCard({
-  cardType,
-  githubUsername,
-  gitlabUsername,
-  linkedinUsername,
-}: DevCardProps) {
+export default function DevCard({ cardType, githubUsername, gitlabUsername, linkedinUsername }: DevCardProps) {
   const [githubData, setGithubData] = useState<GithubUserInfo>();
-  const [gitlabData, setGitlabData] = useState<string>();
+  const [gitlabData, setGitlabData] = useState<GitlabUserInfo>();
   const [linkedinData, setLinkedinData] = useState<LinkedinUserInfo>();
 
   function handleBasicGithubInformation() {
@@ -57,7 +52,7 @@ export default function DevCard({
           {cardType === DevCardEnum.AllInOneCard && (
             <AllInOneDevCard
               githubData={githubData as GithubUserInfo}
-              gitlabData={gitlabData as string}
+              gitlabData={gitlabData as GitlabUserInfo}
               linkedinData={linkedinData as LinkedinUserInfo}
             />
           )}

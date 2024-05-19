@@ -3,33 +3,20 @@
 import { GithubUserInfo } from "@/lib/types/githubInfo";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { githubUserInfoMock } from "@/tests/mocks/GithubUserInfoMock";
-import {
-  Header,
-  Bio,
-  Footer,
-  Experience,
-  GitStats,
-  GitGraph,
-} from "../components/allInOneDevCard/index";
+import { Header, Bio, Footer, Experience, GitStats, GitGraph } from "../components/allInOneDevCard/index";
 import { useState } from "react";
-import {
-  Certificate,
-  Experience as ExperienceType,
-} from "@/lib/types/experienceType";
+import { Certificate, Experience as ExperienceType } from "@/lib/types/experienceType";
 import { Project } from "@/lib/types/projectType";
 import { GraphCube } from "@/lib/types/graphCubeType";
+import { GitlabUserInfo } from "@/lib/types/gitlabInfo";
 
 interface AllInOneDevCardProps {
   githubData: GithubUserInfo;
-  gitlabData: string;
+  gitlabData: GitlabUserInfo;
   linkedinData: LinkedinUserInfo;
 }
 
-export default function AllInOneDevCard({
-  githubData,
-  gitlabData,
-  linkedinData,
-}: AllInOneDevCardProps) {
+export default function AllInOneDevCard({ githubData, gitlabData, linkedinData }: AllInOneDevCardProps) {
   const certificationMock: Certificate[] = [
     {
       title: "Scrum Master (PSM1)",
@@ -153,11 +140,7 @@ export default function AllInOneDevCard({
                 alias={githubUserInfoMock.login}
                 description={githubUserInfoMock.bio}
               />
-              <Experience
-                className="px-8 mt-2"
-                experience={experienceMock}
-                certification={certificationMock}
-              />
+              <Experience className="px-8 mt-2" experience={experienceMock} certification={certificationMock} />
               <Footer
                 className="absolute w-full px-8 bottom-3"
                 githubUrl="https://github.com/MathPow"
@@ -169,11 +152,7 @@ export default function AllInOneDevCard({
           ) : (
             <>
               <div className="flex">
-                <GitGraph
-                  isVertical
-                  className="pl-8 pt-4 w-40"
-                  graphCubes={graphCubesMock}
-                />
+                <GitGraph isVertical className="pl-8 pt-4 w-40" graphCubes={graphCubesMock} />
                 <GitStats
                   className="flex-1 pr-8 pt-4"
                   pullRequests={15}
