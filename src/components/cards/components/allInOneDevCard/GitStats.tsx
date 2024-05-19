@@ -70,21 +70,15 @@ export default function GitStats({
         {getSortedProjectInvolvement()
           .slice(0, 4)
           .map((el, index) => (
-            <div className="flex justify-between text-_lightGrayText text-sm">
+            <div key={index} className="flex justify-between text-_lightGrayText text-sm">
               <div className="flex gap-x-0.5 items-center">
                 {el.isRepoFromUser && <Icon name={"user"} size={14} />}
-                <p
-                  className={`truncate ${el.isRepoFromUser ? "w-36" : "w-40"}`}
-                >
-                  {el.title}
-                </p>
+                <p className={`truncate ${el.isRepoFromUser ? "w-36" : "w-40"}`}>{el.title}</p>
               </div>
               <p>{el.contributions}</p>
             </div>
           ))}
-        {projectInvolvement.length > 4 && (
-          <p className="text-_lightGrayText text-sm -mt-1">...</p>
-        )}
+        {projectInvolvement.length > 4 && <p className="text-_lightGrayText text-sm -mt-1">...</p>}
       </div>
       <Separator className="bg-_darkGrayText my-2" />
       <div className="flex flex-col -space-y-0.5">
@@ -100,11 +94,11 @@ export default function GitStats({
       <Separator className="bg-_darkGrayText my-2" />
       <div className="flex flex-col -space-y-0.5">
         <div className="flex justify-between">
-          <p>GitHub's</p>
+          <p>GitHub&apos;s</p>
           <p>{githubContributionPercentage}%</p>
         </div>
         <div className="flex justify-between">
-          <p>GitLab's</p>
+          <p>GitLab&apos;s</p>
           <p>{gitlabContributionPercentage}%</p>
         </div>
       </div>

@@ -1,5 +1,4 @@
-import i18next from "i18next";
-import { useTranslation } from "react-i18next";
+import i18next, { t } from "i18next";
 
 export function formatDateClassic(date: Date) {
   const options: Intl.DateTimeFormatOptions = {
@@ -18,7 +17,6 @@ export function formatDateClassic(date: Date) {
 }
 
 export function formatDateRange(startDate: Date, endDate?: Date) {
-  const { t } = useTranslation();
   const months = [
     t("card.month_abbreviations.jan"),
     t("card.month_abbreviations.feb"),
