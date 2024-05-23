@@ -50,7 +50,7 @@ export default function LanguageSwitcher({ isTextFormat = false }: LanguageSwitc
         <div className="flex gap-x-2">
           <Button
             onClick={switchLanguage}
-            className="text-md flex items-center gap-x-1 h-8"
+            className="text-md flex items-center gap-x-1 h-8 px-2"
             size={"sm"}
             variant={"ghost"}
           >

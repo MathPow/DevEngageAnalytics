@@ -4,9 +4,9 @@ import i18n from "i18next";
 import "../i18n";
 import React from "react";
 import { initReactI18next } from "react-i18next";
-import frTranslation from "@/public/locales/fr.json";
-import enTranslation from "@/public/locales/en.json";
-import esTranslation from "@/public/locales/es.json";
+import frTranslation from "@/../public/locales/fr.json";
+import enTranslation from "@/../public/locales/en.json";
+import esTranslation from "@/../public/locales/es.json";
 import Navbar from "@/components/navigation/Navbar";
 
 interface ConfigurationProps {
