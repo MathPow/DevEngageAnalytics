@@ -6,10 +6,12 @@ import DevCard from "@/components/cards/dev/DevCard";
 import { DevCardEnum } from "@/lib/types/devCardEnum";
 import GitlabBasicInfo from "@/components/GitlabBasicInfo";
 import { Separator } from "@/components/ui/separator";
+import BackgroundGradient from "@/components/deco/BackgroundGradient";
 
 export default function Home() {
   return (
     <main>
+      <BackgroundGradient />
       <div className="space-y-10 py-4 px-8">
         <GithubBasicInfo />
         <LinkedinBasicInfo />

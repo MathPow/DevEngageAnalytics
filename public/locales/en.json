@@ -42,9 +42,9 @@
   },
   "ui": {
     "pages": {
-      "home": "Home",
+      "docs": "Docs",
+      "components": "Components",
       "playground": "Playground",
-      "get_started": "Get Started",
       "collaboration": "Collaboration"
     },
     "not_found": {

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import CasinoChip from "@/public/assets/img/casino-chip.png";
+import CasinoChip from "@/../public/assets/img/casino-chip.png";
 
 export default function NotFound() {
   const { t } = useTranslation();

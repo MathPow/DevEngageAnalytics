@@ -42,9 +42,9 @@
   },
   "ui": {
     "pages": {
-      "home": "Accueil",
+      "docs": "Documentations",
+      "components": "Composants",
       "playground": "Terrain de jeu",
-      "get_started": "Commencer",
       "collaboration": "Collaboration"
     },
     "not_found": {
