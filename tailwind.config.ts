@@ -73,6 +73,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 10s linear infinite",
       },
+      backgroundImage: {
+        joker: "url('/assets/img/joker.png')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
