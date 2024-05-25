@@ -18,6 +18,13 @@ const config = {
         _bgLightGray: "#535353",
         _lightGrayText: "#B8B8B8",
         _darkGrayText: "#5B5B5B",
+        _goldColor: "#d4af37",
+
+        _lightBg: "#ffffff",
+        _lightBgGradient: "#ffc2ba",
+
+        _darkBg: "#101013",
+        _darkBgGradient: "#2B0606",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
