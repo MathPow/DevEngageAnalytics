@@ -3,13 +3,16 @@
 import { Button } from "../ui/button";
 import Icon from "../Icon";
 import { useTheme } from "next-themes";
-
-interface LanguageSwitcherProps {
-  isTextFormat?: boolean;
-}
+import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   function toggleMode() {
     if (theme === "dark") {
@@ -19,6 +22,8 @@ export default function ThemeSwitcher() {
     }
   }
 
+  if (!mounted) return null;
+
   return (
     <Button
       className="text-md flex items-center gap-x-1 h-8 px-2 size-10"
@@ -26,7 +31,10 @@ export default function ThemeSwitcher() {
       variant={"ghost"}
       onClick={toggleMode}
     >
-      {theme === "dark" ? <Icon name={"dark-mode"} color="#000000" /> : <Icon name={"light-mode"} color="#000000" />}
+      <Icon
+        name={`${theme === "dark" ? "dark-mode" : "light-mode"}`}
+        color={`#${theme === "dark" ? "ffffff" : "000000"}`}
+      />
     </Button>
   );
 }

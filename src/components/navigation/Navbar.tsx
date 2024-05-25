@@ -2,6 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import Logo from "@/../public/logo.svg";
+import LogoDark from "@/../public/LogoDark.svg";
 import Icon from "../Icon";
 import Link from "next/link";
 import LanguageSwitcher from "../settings/LanguageSwitcher";
@@ -21,6 +22,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,6 +55,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const ref = useRef<HTMLDivElement>(null);
   const menuContainerRef = useRef<HTMLDivElement>(null);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -72,6 +75,8 @@ export default function Navbar() {
       }
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -81,10 +86,9 @@ export default function Navbar() {
 
   return (
     <>
-      {/* {!isNavVisible && <div className="h-[96px]"></div>} */}
       <div
         ref={menuContainerRef}
-        className={`fixed w-96 bottom-20 top-20 right-0 z-10 rounded-l-xl outline outline-1 outline-slate-200 bg-white/50 backdrop-blur-md shadow-lg ${
+        className={`z-20 fixed w-96 bottom-20 top-20 right-0 rounded-l-xl outline outline-1 outline-slate-200 dark:outline-slate-800 bg-_lightBg/50 dark:bg-_darkBg/50 backdrop-blur-md shadow-lg ${
           !isMenuOpen && "hidden"
         }`}
       ></div>
@@ -93,12 +97,16 @@ export default function Navbar() {
           className={`flex justify-between items-center h-12 ${
             isNavVisible
               ? "container mx-auto"
-              : "rounded-full drop-shadow-sm outline outline-1 outline-slate-100 mx-[6vw] 2xl:mx-auto max-w-[1400px] bg-white/50 backdrop-blur-md p-2 px-4 pr-5"
+              : "rounded-full drop-shadow-sm outline outline-1 outline-slate-100 dark:outline-slate-900 mx-[6vw] 2xl:mx-auto max-w-[1400px] bg-white/50 dark:bg-_darkBg/50 backdrop-blur-md p-2 px-4 pr-5"
           }`}
         >
           <div className="flex">
-            <a rel="noopener noreferrer" href="/" aria-label="Back to homepage" className="flex items-center p-2">
-              <Logo className={`size-16 ${!isNavVisible && "!size-10"}`} />
+            <a href="/" aria-label="Back to homepage" className="flex items-center p-2">
+              {theme === "dark" ? (
+                <LogoDark className={`size-16 ${!isNavVisible && "!size-10"}`} />
+              ) : (
+                <Logo className={`size-16 ${!isNavVisible && "!size-10"}`} />
+              )}
             </a>
             <NavigationMenu>
               <NavigationMenuList>
@@ -216,34 +224,3 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWit
     );
   },
 );
-ListItem.displayName = "ListItem";
-
-{
-  /* <ul className="items-stretch hidden space-x-3 lg:flex">
-              <li className="flex items-center px-3">
-                <Link href="/docs" className="flex items-center gap-x-1">
-                  <Icon className="size-4" name={"playing-card-club"} />
-                  {t("ui.pages.docs")}
-                </Link>
-              </li>
-              <li className="flex items-center px-3">
-                <Link href="/docs/components" className="flex items-center gap-x-1">
-                  <Icon className="size-4" name={"playing-card-diamond"} />
-                  {t("ui.pages.components")}
-                  <Icon className="size-4 rotate-90" name={"chevron"} />
-                </Link>
-              </li>
-              <li className="flex items-center px-3">
-                <Link href="/playground" className="flex items-center gap-x-1">
-                  <Icon className="size-4" name={"playing-card-spade"} />
-                  {t("ui.pages.playground")}
-                </Link>
-              </li>
-              <li className="flex items-center px-3">
-                <Link href="/docs/collaboration" className="flex items-center gap-x-1">
-                  <Icon className="size-4" name={"playing-card-heart"} />
-                  {t("ui.pages.collaboration")}
-                </Link>
-              </li>
-            </ul> */
-}

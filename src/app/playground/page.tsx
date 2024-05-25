@@ -11,7 +11,7 @@ import BackgroundGradient from "@/components/deco/BackgroundGradient";
 export default function Home() {
   return (
     <main>
-      <BackgroundGradient />
+      <BackgroundGradient text="playground" />
       <div className="space-y-10 py-4 px-8">
         <GithubBasicInfo />
         <LinkedinBasicInfo />

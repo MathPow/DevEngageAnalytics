@@ -26,13 +26,15 @@ export default function GitlabBasicInfo() {
     <section>
       <h1 className="font-bold text-lg mb-2 underline">GitLab</h1>
       <input placeholder="username" ref={inputRef} />
-      <button className="bg-slate-200" onClick={handleBasicInformation}>
+      <button className="bg-slate-200 dark:bg-slate-800" onClick={handleBasicInformation}>
         Get User Info
       </button>
       {info ? (
         <img className="rounded-full w-24 h-24" src={info?.avatar_url} alt="avatar" />
       ) : (
-        <div className="rounded-full w-24 h-24 bg-neutral-200 flex justify-center items-center">Avatar</div>
+        <div className="rounded-full w-24 h-24 bg-neutral-200 dark:bg-neutral-800 flex justify-center items-center">
+          Avatar
+        </div>
       )}
       <p>Id: {info?.id}</p>
       <p>Username: {info?.username}</p>
