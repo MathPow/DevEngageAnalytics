@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslation } from "react-i18next";
 import Logo from "@/../public/logo.svg";
 import LogoDark from "@/../public/LogoDark.svg";
