@@ -9,10 +9,10 @@
 Awesome easy to use cards to track and analyze social media statistics from popular platforms!
 <br/>
 <br/>
-<a href="https://mathpow.github.io/DevEngageAnalytics/"><strong>Explore the docs »</strong></a>
+<a href="https://mathpow.github.io/DevEngageAnalytics/docs"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
-<a href="https://github.com/ShaanCoding/ReadME-Generator/">View Demo</a> ·
+<a href="https://mathpow.github.io/DevEngageAnalytics/">View Demo</a> ·
 <a href="https://github.com/MathPow/DevEngageAnalytics/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=">Report Bug</a> ·
 <a href="https://github.com/MathPow/DevEngageAnalytics/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=">Request Feature</a>
 </p>
