@@ -1,5 +1,3 @@
-"use client";
-
 import Icon from "@/components/Icon";
 import { Separator } from "@/components/ui/separator";
 import { formatDateClassic } from "@/lib/composables/formatDate";
@@ -42,11 +40,7 @@ export default function Footer({
   }
 
   function findFurthestDate() {
-    const dates: Date[] = [
-      githubJoinedDate,
-      gitlabJoinedDate,
-      linkedinJoinedDate,
-    ]
+    const dates: Date[] = [githubJoinedDate, gitlabJoinedDate, linkedinJoinedDate]
       .filter((date) => date !== undefined)
       .map((dateStr) => dateStr as Date);
 

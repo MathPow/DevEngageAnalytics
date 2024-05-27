@@ -1,5 +1,3 @@
-"use client";
-
 import Icon from "@/components/Icon";
 import { useTranslation } from "react-i18next";
 import { Experience as ExperienceType, Certificate } from "@/lib/types/experienceType";

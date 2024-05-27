@@ -1,5 +1,3 @@
-"use client";
-
 import BackgroundGradient from "@/components/deco/BackgroundGradient";
 
 interface ContentProps {

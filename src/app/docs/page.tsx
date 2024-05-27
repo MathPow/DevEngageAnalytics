@@ -1,8 +1,5 @@
-"use client";
-
 import BackgroundGradient from "@/components/deco/BackgroundGradient";
 import DocNav from "@/components/navigation/DocNav";
-import LinkList from "@/components/navigation/LinkList";
 
 export default function Home() {
   return (

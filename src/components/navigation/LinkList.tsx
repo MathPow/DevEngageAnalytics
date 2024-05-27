@@ -1,5 +1,3 @@
-"use client";
-
 import { formatSlug } from "@/lib/composables/formatSlug";
 import Link from "next/link";
 

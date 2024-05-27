@@ -1,5 +1,3 @@
-"use client";
-
 import Logo from "@/../public/logo.svg";
 
 export default function Home() {
