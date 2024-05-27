@@ -45,9 +45,10 @@
       "docs": "Documentación",
       "components": "Componentes",
       "playground": "Área de pruebas",
-      "collaboration": "Colaboración"
+      "contribution": "Contribución"
     },
     "not_found": {
+      "error": "Error",
       "could_not_find_page": "Lo siento, no pudimos encontrar esta página.",
       "do_not_worry": "Pero no te preocupes, puedes encontrar muchas otras cosas en nuestra página de inicio.",
       "back_button": "Volver a la página de inicio"

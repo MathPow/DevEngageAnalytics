@@ -45,9 +45,10 @@
       "docs": "Docs",
       "components": "Components",
       "playground": "Playground",
-      "collaboration": "Collaboration"
+      "contribution": "Contribution"
     },
     "not_found": {
+      "error": "Error",
       "could_not_find_page": "Sorry, we couldn't find this page.",
       "do_not_worry": "But dont worry, you can find plenty of other things on our homepage.",
       "back_button": "Back to homepage"

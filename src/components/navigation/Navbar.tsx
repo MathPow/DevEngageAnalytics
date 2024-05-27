@@ -23,32 +23,34 @@ import {
 import React from "react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
+import { formatSlug } from "@/lib/composables/formatSlug";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "All In One Dev",
-    href: "/docs/components",
+    title: linkListComponentsEnum.allInOneDev,
+    href: `/docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
     description: "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Git Lover",
-    href: "/docs/components",
+    title: linkListComponentsEnum.gitLover,
+    href: `/docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
     description: "For sighted users to preview content available behind a link.",
   },
   {
-    title: "All In One Designer",
-    href: "/docs/components",
+    title: linkListComponentsEnum.allInOneDesigner,
+    href: `/docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
-    title: "Certificates Flex",
-    href: "/docs/primitives/scroll-area",
+    title: linkListComponentsEnum.certificatesFlex,
+    href: `/docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
     description: "Visually or semantically separates content.",
   },
   {
-    title: "All In One Dev",
-    href: "/docs/components",
+    title: linkListComponentsEnum.beautifulAsymmetric,
+    href: `/docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
     description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
 ];
@@ -133,20 +135,29 @@ export default function Navbar() {
                           </a>
                         </div>
                       </li>
-                      <ListItem href="/docs" title="Introduction">
+                      <ListItem
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.introduction)}`}
+                        title={linkListGettingStartedEnum.introduction}
+                      >
                         Re-usable components built using Radix UI and Tailwind CSS.
                       </ListItem>
-                      <ListItem href="/docs/installation" title="Installation">
+                      <ListItem
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.installation)}`}
+                        title={linkListGettingStartedEnum.installation}
+                      >
                         How to install dependencies and structure your app.
                       </ListItem>
-                      <ListItem href="/docs/primitives/typography" title="Figma">
+                      <ListItem
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.figma)}`}
+                        title={linkListGettingStartedEnum.figma}
+                      >
                         Styles for headings, paragraphs, lists...etc
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="docs/components">
+                  <Link href="/docs/components">
                     <NavigationMenuTrigger className="flex items-center gap-x-1">
                       <Icon className="size-4" name={"playing-card-diamond"} />
                       {t("ui.pages.components")}
@@ -171,10 +182,10 @@ export default function Navbar() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/docs/collaboration" legacyBehavior passHref>
+                  <Link href="/docs/contribution" legacyBehavior passHref>
                     <NavigationMenuLink className={`${navigationMenuTriggerStyle()} flex items-center gap-x-1`}>
                       <Icon className="size-4" name={"playing-card-heart"} />
-                      {t("ui.pages.collaboration")}
+                      {t("ui.pages.contribution")}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
