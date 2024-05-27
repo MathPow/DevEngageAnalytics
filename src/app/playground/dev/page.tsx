@@ -1,5 +1,3 @@
-"use client";
-
 import GithubBasicInfo from "@/components/GithubBasicInfo";
 import LinkedinBasicInfo from "@/components/LinkedinBasicInfo";
 import DevCard from "@/components/cards/dev/DevCard";

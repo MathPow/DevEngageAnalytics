@@ -5,7 +5,7 @@ export enum linkListGettingStartedEnum {
   languages = "Languages",
   figma = "Figma",
 }
-export const linkListGettingStarted: linkListGettingStartedEnum[] = Object.values(linkListGettingStartedEnum);
+export const linkListGettingStarted: string[] = Object.values(linkListGettingStartedEnum);
 
 export enum linkListComponentsEnum {
   allInOneDev = "All in One Dev",
@@ -14,11 +14,11 @@ export enum linkListComponentsEnum {
   certificatesFlex = "Certificates Flex",
   beautifulAsymmetric = "Beautiful Asymmetric",
 }
-export const linkListComponents: linkListComponentsEnum[] = Object.values(linkListComponentsEnum);
+export const linkListComponents: string[] = Object.values(linkListComponentsEnum);
 
 export enum linkListContributionEnum {
-  HowToContribute = "How to Contribute",
+  howToContribute = "How to Contribute",
   whoWeAreLookingFor = "Who We Are Looking For",
   contributors = "Contributors",
 }
-export const linkListContribution: linkListContributionEnum[] = Object.values(linkListContributionEnum);
+export const linkListContribution: string[] = Object.values(linkListContributionEnum);

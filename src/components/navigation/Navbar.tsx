@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslation } from "react-i18next";
 import Logo from "@/../public/logo.svg";
 import LogoDark from "@/../public/LogoDark.svg";
@@ -199,12 +197,21 @@ export default function Navbar() {
             </div>
             <Separator className="h-8 -ml-2" orientation="vertical" />
             <div className="flex gap-x-2">
-              <a href="https://www.figma.com/file/2VrK9qzBpIUjeDmHHkKkor/DevEngageAnalytics?type=design&node-id=1%3A2&mode=design&t=t3kUdUWmje7Kc0pu-1">
-                <Icon name={"figma"} />
-              </a>
-              <a href="https://github.com/MathPow/DevEngageAnalytics">
-                <Icon name={"github"} />
-              </a>
+              <Icon
+                className="hover:cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.figma.com/file/2VrK9qzBpIUjeDmHHkKkor/DevEngageAnalytics?type=design&node-id=1%3A2&mode=design&t=t3kUdUWmje7Kc0pu-1",
+                    "_blank",
+                  )
+                }
+                name={"figma"}
+              />
+              <Icon
+                className="hover:cursor-pointer"
+                onClick={() => window.open("https://github.com/MathPow/DevEngageAnalytics", "_blank")}
+                name={"github"}
+              />
             </div>
           </div>
           <Menu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />

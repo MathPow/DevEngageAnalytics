@@ -1,9 +1,6 @@
-"use client";
-
 import Icon from "@/components/Icon";
 import { Separator } from "@/components/ui/separator";
 import { Project } from "@/lib/types/projectType";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface GitStatsProps {

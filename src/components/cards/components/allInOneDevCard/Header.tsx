@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
@@ -24,23 +22,13 @@ export default function Header({
   return (
     <>
       {bannerUrl ? (
-        <img
-          className="opacity-40 rounded-3xl w-full h-28"
-          src={bannerUrl}
-          alt="banner"
-        />
+        <img className="opacity-40 rounded-3xl w-full h-28" src={bannerUrl} alt="banner" />
       ) : (
         <div className="w-full h-28 bg-gradient-to-tr from-amber-200 via-amber-200 to-red-400"></div>
       )}
-      <div
-        className={`absolute -translate-y-1/2 flex items-center w-full px-8 ${className}`}
-      >
+      <div className={`absolute -translate-y-1/2 flex items-center w-full px-8 ${className}`}>
         {avatarUrl ? (
-          <img
-            className="w-20 h-20 rounded-full"
-            src={avatarUrl}
-            alt="avatar"
-          />
+          <img className="w-20 h-20 rounded-full" src={avatarUrl} alt="avatar" />
         ) : (
           <div className="w-20 h-20 rounded-full bg-slate-600"></div>
         )}

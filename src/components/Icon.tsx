@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Github from "@/../public/assets/icons/github.svg";
 import Gitlab from "@/../public/assets/icons/gitlab.svg";

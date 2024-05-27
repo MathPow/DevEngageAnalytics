@@ -1,7 +1,4 @@
-"use client";
-
 import { GraphCube } from "@/lib/types/graphCubeType";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 interface GitGraphProps {
