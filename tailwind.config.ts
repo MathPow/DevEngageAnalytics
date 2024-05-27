@@ -24,7 +24,7 @@ const config = {
         _lightBgGradient: "#ffc2ba",
 
         _darkBg: "#101013",
-        _darkBgGradient: "#2B0606",
+        _darkBgGradient: "#360606",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
