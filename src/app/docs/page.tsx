@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <BackgroundGradient text="docs" />
-      <div className="flex flex-row mx-[12vw] 2xl:mx-auto max-w-[1300px] mt-28">
+      <div className="flex flex-row gap-x-6 mx-[12vw] 2xl:mx-auto max-w-[1300px] mt-28">
         <div className="w-56">
           <DocNav />
         </div>

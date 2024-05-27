@@ -23,6 +23,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
 import { formatSlug } from "@/lib/composables/formatSlug";
+import MobileMenu from "./MobileMenu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -86,12 +87,9 @@ export default function Navbar() {
 
   return (
     <>
-      <div
-        ref={menuContainerRef}
-        className={`z-20 fixed w-96 bottom-20 top-20 right-0 rounded-l-xl outline outline-1 outline-slate-200 dark:outline-slate-800 bg-_lightBg/50 dark:bg-_darkBg/50 backdrop-blur-md shadow-lg ${
-          !isMenuOpen && "hidden"
-        }`}
-      ></div>
+      <div ref={menuContainerRef}>
+        <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      </div>
       <header className={`${isNavVisible ? "p-4 py-6" : " sticky top-4"}`} ref={ref}>
         <div
           className={`flex justify-between items-center h-12 ${
@@ -108,7 +106,7 @@ export default function Navbar() {
                 <Logo className={`size-16 ${!isNavVisible && "!size-10"}`} />
               )}
             </a>
-            <NavigationMenu>
+            <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/docs">
