@@ -29,6 +29,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
       <ul className="flex flex-col gap-y-6 mt-24 text-lg">
         <li className="px-3 mx-[10vw] sm:mx-0">
           <AccordionPage
+            isMenuOpen={isMenuOpen}
             headerContent={
               <Link href="/docs" className="flex items-center gap-x-2">
                 <Icon className="size-4" name={"playing-card-club"} />
@@ -47,6 +48,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
         </li>
         <li className="px-3 mx-[10vw] sm:mx-0">
           <AccordionPage
+            isMenuOpen={isMenuOpen}
             headerContent={
               <Link href="/docs/components" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-diamond"} />
@@ -71,6 +73,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
         </li>
         <li className="px-3 mx-[10vw] sm:mx-0">
           <AccordionPage
+            isMenuOpen={isMenuOpen}
             headerContent={
               <Link href="/docs/contribution" className="flex items-center gap-x-1">
                 <Icon className="size-4" name={"playing-card-heart"} />

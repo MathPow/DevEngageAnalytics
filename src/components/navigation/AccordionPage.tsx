@@ -4,9 +4,10 @@ import Icon from "../Icon";
 interface AccordionProps {
   headerContent: React.ReactNode;
   children: React.ReactNode;
+  isMenuOpen: boolean;
 }
 
-export default function AccordionPage({ headerContent, children }: AccordionProps) {
+export default function AccordionPage({ headerContent, children, isMenuOpen }: AccordionProps) {
   const childrenRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenByOnClick, setIsOpenByOnClick] = useState(false);
@@ -29,6 +30,11 @@ export default function AccordionPage({ headerContent, children }: AccordionProp
       setContentHeight(0);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);
+    setIsOpenByOnClick(false);
+  }, [isMenuOpen]);
 
   return (
     <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={handleMouseLeave}>
