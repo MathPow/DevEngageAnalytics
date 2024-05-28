@@ -26,6 +26,7 @@ i18n.use(initReactI18next).init({
 export default function ClientWrapper({ children }: ClientWrapperProps) {
   return (
     <>
+      <div className="fixed left-0 top-0 -z-20 h-full w-full bg-_lightBg dark:bg-_darkBg"></div>
       <Navbar />
       {children}
     </>
