@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Logo from "@/../public/logo.svg";
-import LogoDark from "@/../public/LogoDark.svg";
 import Icon from "../Icon";
 import Link from "next/link";
 import LanguageSwitcher from "../settings/LanguageSwitcher";
@@ -24,6 +22,7 @@ import { useTheme } from "next-themes";
 import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
 import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
+import NavLogo from "./NavLogo";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -100,11 +99,7 @@ export default function Navbar() {
         >
           <div className="flex">
             <a href="/" aria-label="Back to homepage" className="flex items-center p-2">
-              {theme === "dark" ? (
-                <LogoDark className={`size-16 ${!isNavVisible && "!size-10"}`} />
-              ) : (
-                <Logo className={`size-16 ${!isNavVisible && "!size-10"}`} />
-              )}
+              <NavLogo isNavVisible={isNavVisible} />
             </a>
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
