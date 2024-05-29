@@ -214,8 +214,8 @@ export default function Navbar() {
   );
 }
 
-function ListItem
-  ({ className, title, children, ...props }, ref) {
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+  ({ className, title, children, ...props }, ref) => {
     return (
       <li>
         <NavigationMenuLink asChild>
@@ -235,4 +235,4 @@ function ListItem
     );
   },
 );
-
+ListItem.displayName = "ListItem";
