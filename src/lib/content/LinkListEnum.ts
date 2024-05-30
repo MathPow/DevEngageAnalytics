@@ -22,3 +22,10 @@ export enum linkListContributionEnum {
   contributors = "Contributors",
 }
 export const linkListContribution: string[] = Object.values(linkListContributionEnum);
+
+export enum linkListPagesEnum {
+  docs = "",
+  components = "components",
+  contribution = "contribution",
+}
+export const linkListPages: string[] = Object.values(linkListPagesEnum);
