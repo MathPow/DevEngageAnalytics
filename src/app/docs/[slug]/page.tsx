@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import BackgroundGradient from "@/components/deco/BackgroundGradient";
+import DocPage from "@/components/docs/DocPage";
 
 interface ContentProps {
   params: {
@@ -32,7 +34,8 @@ export default function Page({ params }: ContentProps) {
 
   return (
     <main>
-      <p>{slug}</p>
+      <BackgroundGradient text="docs" />
+      <DocPage slug={slug} url={"/"} />
     </main>
   );
 }

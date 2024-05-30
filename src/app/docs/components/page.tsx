@@ -1,9 +1,7 @@
-import BackgroundGradient from "@/components/deco/BackgroundGradient";
+import { formatSlug } from "@/lib/composables/formatSlug";
+import { linkListComponents } from "@/lib/content/LinkListEnum";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <main>
-      <BackgroundGradient text="components" />
-    </main>
-  );
+  redirect(`/docs/components/${formatSlug(linkListComponents[0])}`);
 }
