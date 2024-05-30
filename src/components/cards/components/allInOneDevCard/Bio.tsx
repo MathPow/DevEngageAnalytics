@@ -1,5 +1,3 @@
-"use client";
-
 interface BioProps {
   name?: string;
   alias?: string;
@@ -7,12 +5,7 @@ interface BioProps {
   className?: string;
 }
 
-export default function Bio({
-  name,
-  alias,
-  description,
-  className = "",
-}: BioProps) {
+export default function Bio({ name, alias, description, className = "" }: BioProps) {
   return (
     <div className={className}>
       {name && <p className="font-semibold text-lg">{name}</p>}

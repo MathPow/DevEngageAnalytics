@@ -1,5 +1,3 @@
-"use client";
-
 import { GithubUserInfo } from "@/lib/types/githubInfo";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { githubUserInfoMock } from "@/tests/mocks/GithubUserInfoMock";

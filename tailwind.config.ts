@@ -18,6 +18,13 @@ const config = {
         _bgLightGray: "#535353",
         _lightGrayText: "#B8B8B8",
         _darkGrayText: "#5B5B5B",
+        _goldColor: "#d4af37",
+
+        _lightBg: "#ffffff",
+        _lightBgGradient: "#ffc2ba",
+
+        _darkBg: "#101013",
+        _darkBgGradient: "#360606",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -72,6 +79,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 10s linear infinite",
+      },
+      backgroundImage: {
+        joker: "url('/assets/img/joker.png')",
       },
     },
   },

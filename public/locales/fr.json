@@ -42,12 +42,13 @@
   },
   "ui": {
     "pages": {
-      "home": "Accueil",
+      "docs": "Documentations",
+      "components": "Composants",
       "playground": "Terrain de jeu",
-      "get_started": "Commencer",
-      "collaboration": "Collaboration"
+      "contribution": "Contribution"
     },
     "not_found": {
+      "error": "Erreur",
       "could_not_find_page": "Désolé, nous n'avons pas pu trouver cette page.",
       "do_not_worry": "Mais ne vous inquiétez pas, vous pouvez trouver beaucoup d'autres choses sur notre page d'accueil.",
       "back_button": "Retour à la page d'accueil"

@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef, useState } from "react";
-
 interface AllInOneDevCard {
   gitHubUsername: string;
   gitLabUsername: string;
