@@ -19,6 +19,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
+    "github-markdown-css": "^5.5.1",
     "i18next": "^23.11.4",
     "i18next-browser-languagedetector": "^8.0.0",
     "lottie-web": "^5.12.2",
@@ -29,6 +30,9 @@
     "react-dom": "^18",
     "react-i18next": "^14.1.1",
     "react-lottie": "^1.2.4",
+    "react-markdown": "^9.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
