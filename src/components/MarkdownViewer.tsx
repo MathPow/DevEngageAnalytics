@@ -12,7 +12,7 @@ interface MarkdownViewerProps {
 }
 
 const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
-  const [content, setContent] = useState<Optional<string>>();
+  const [content, setContent] = useState<Optional<string>>("");
 
   useEffect(() => {
     fetch(filePath)
@@ -22,13 +22,18 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
 
   return (
     <div className="markdown-body">
-      {content ? (
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+        {content}
+      </ReactMarkdown>
+      {/* {content ? (
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          {content}
+        </ReactMarkdown>
       ) : (
         <span className="flex justify-center">
           <Loading />
         </span>
-      )}
+      )} */}
     </div>
   );
 };
