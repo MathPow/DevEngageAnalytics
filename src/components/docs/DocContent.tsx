@@ -45,7 +45,7 @@ export default function DocContent({ slug, url }: DocContentProps) {
 
   return (
     <>
-      {/* <MarkdownViewer filePath={`/docs${url}${slug}/content.md`} /> */}
+      <MarkdownViewer filePath={`/docs${url}${slug}/content.md`} />
       <div className="mt-8 flex justify-between">
         <Button variant={"outline"} size={"sm"} onClick={previousPage}>
           {t("ui.actions.previous")}
