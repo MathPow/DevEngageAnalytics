@@ -3,6 +3,7 @@
 import MarkdownViewer from "@/components/MarkdownViewer";
 import { Button } from "@/components/ui/button";
 import { formatSlug } from "@/lib/composables/formatSlug";
+import { BASE_PATH } from "@/lib/composables/production";
 import {
   linkListComponents,
   linkListContribution,
@@ -44,7 +45,7 @@ export default function DocContent({ slug, url }: DocContentProps) {
 
   return (
     <>
-      <MarkdownViewer filePath={`/docs${url}${slug}/content.md`} />
+      <MarkdownViewer filePath={`${BASE_PATH}docs${url}${slug}/content.md`} />
       <div className="mt-8 flex justify-between">
         <Button variant={"outline"} size={"sm"} onClick={previousPage}>
           {t("ui.actions.previous")}
