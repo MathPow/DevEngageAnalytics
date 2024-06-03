@@ -20,14 +20,10 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
       .then((text) => setContent(text));
   }, [filePath]);
 
-  // <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-  //   {content}
-  // </ReactMarkdown>;
-
   return (
     <div className="markdown-body">
       {content ? (
-        <div>{content}</div>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       ) : (
         <span className="flex justify-center">
           <Loading />
