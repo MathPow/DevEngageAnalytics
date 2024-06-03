@@ -12,7 +12,6 @@ import {
 import { findNextElement, findPreviousElement } from "@/lib/utils/findIndex";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import "@/styles/markdown.css";
 
 interface DocContentProps {
   slug: string;
