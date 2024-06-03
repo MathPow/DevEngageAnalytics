@@ -18,44 +18,43 @@ import {
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
 import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
 import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
+import { BASE_PATH } from "@/lib/composables/production";
 
 const components: { title: string; href: string; description: string }[] = [
   {
     title: linkListComponentsEnum.allInOneDev,
-    href: `/docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
     description: "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: linkListComponentsEnum.gitLover,
-    href: `/docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
     description: "For sighted users to preview content available behind a link.",
   },
   {
     title: linkListComponentsEnum.allInOneDesigner,
-    href: `/docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: linkListComponentsEnum.certificatesFlex,
-    href: `/docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
     description: "Visually or semantically separates content.",
   },
   {
     title: linkListComponentsEnum.beautifulAsymmetric,
-    href: `/docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
     description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
 ];
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const { theme } = useTheme();
   const ref = useRef<HTMLDivElement>(null);
   const menuContainerRef = useRef<HTMLDivElement>(null);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -89,16 +88,16 @@ export default function Navbar() {
       <div ref={menuContainerRef}>
         <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
-      <header className={`${isNavVisible ? "p-4 py-6" : " sticky top-4"}`} ref={ref}>
+      <header className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"}`} ref={ref}>
         <div
-          className={`flex justify-between items-center h-12 ${
+          className={`flex h-12 items-center justify-between ${
             isNavVisible
               ? "container mx-auto"
-              : "rounded-full drop-shadow-sm outline outline-1 outline-slate-100 dark:outline-slate-900 mx-[6vw] 2xl:mx-auto max-w-[1400px] bg-white/50 dark:bg-_darkBg/50 backdrop-blur-md p-2 px-4 pr-5"
+              : "mx-[6vw] max-w-[1400px] rounded-full bg-white/50 p-2 px-4 pr-5 outline outline-1 outline-slate-100 drop-shadow-sm backdrop-blur-md dark:bg-_darkBg/50 dark:outline-slate-900 2xl:mx-auto"
           }`}
         >
           <div className="flex">
-            <a href="/" aria-label="Back to homepage" className="flex items-center p-2">
+            <a href={`${BASE_PATH}`} aria-label="Back to homepage" className="flex items-center p-2">
               <NavLogo isNavVisible={isNavVisible} />
             </a>
             <NavigationMenu className="hidden lg:flex">
@@ -113,10 +112,10 @@ export default function Navbar() {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
-                        <div className="bg-joker h-full rounded-lg bg-no-repeat bg-cover bg-center">
+                        <div className="h-full rounded-lg bg-joker bg-cover bg-center bg-no-repeat">
                           <a
-                            className="transition-all ease-in delay-200 duration-300 flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/70 to-muted hover:backdrop-blur-[2px] p-6 no-underline outline-none focus:shadow-md"
-                            href="/"
+                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/70 to-muted p-6 no-underline outline-none transition-all delay-200 duration-300 ease-in hover:backdrop-blur-[2px] focus:shadow-md"
+                            href={`${BASE_PATH}`}
                           >
                             <Icon name={"github"} />
                             <div className="mb-2 mt-4 text-lg font-medium">DevEngageAnalytics</div>
@@ -155,7 +154,7 @@ export default function Navbar() {
                     </NavigationMenuTrigger>
                   </Link>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
                         <ListItem key={component.title} title={component.title} href={component.href}>
                           {component.description}
@@ -183,12 +182,12 @@ export default function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="items-center flex-shrink-0 hidden lg:flex lg:gap-x-4">
+          <div className="hidden flex-shrink-0 items-center lg:flex lg:gap-x-4">
             <div className="flex items-center">
               <LanguageSwitcher />
               <ThemeSwitcher />
             </div>
-            <Separator className="h-8 -ml-2" orientation="vertical" />
+            <Separator className="-ml-2 h-8" orientation="vertical" />
             <div className="flex gap-x-2">
               <Icon
                 className="hover:cursor-pointer"
