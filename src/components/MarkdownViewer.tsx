@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { Optional } from "@/lib/types/optional";
 import Loading from "./Loading";
+import "@/styles/markdown.css";
 
 interface MarkdownViewerProps {
   filePath: string;
@@ -19,13 +20,14 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
       .then((text) => setContent(text));
   }, [filePath]);
 
+  // <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+  //   {content}
+  // </ReactMarkdown>;
+
   return (
     <div className="markdown-body">
       {content ? (
-        // <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-        //   {content}
-        // </ReactMarkdown>
-        <div></div>
+        <div>{content}</div>
       ) : (
         <span className="flex justify-center">
           <Loading />
