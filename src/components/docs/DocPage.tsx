@@ -9,14 +9,14 @@ interface DocPageProps {
 
 export default function DocPage({ slug, url }: DocPageProps) {
   return (
-    <div className="flex flex-row gap-x-8 mx-[12vw] 2xl:mx-auto max-w-[1300px] mt-28">
-      <div className="w-56 hidden sm:block">
+    <div className="mx-[12vw] mt-28 flex max-w-[1300px] flex-row gap-x-8 2xl:mx-auto">
+      <div className="hidden w-56 sm:block">
         <DocNav />
       </div>
       <div className="w-full">
         <DocContent slug={slug} url={url} />
       </div>
-      <div className="w-56 ml-10 hidden lg:block">
+      <div className="ml-10 hidden w-56 lg:block">
         <DocSections slug={slug} url={url} />
       </div>
     </div>
