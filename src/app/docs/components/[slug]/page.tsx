@@ -1,3 +1,5 @@
+import BackgroundGradient from "@/components/deco/BackgroundGradient";
+import DocPage from "@/components/docs/DocPage";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -39,7 +41,8 @@ export default function Page({ params }: ContentProps) {
 
   return (
     <main>
-      <p>{slug}</p>
+      <BackgroundGradient text="components" />
+      <DocPage slug={slug} url={"/components/"} />
     </main>
   );
 }
