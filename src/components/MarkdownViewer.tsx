@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import "@/styles/markdown.css";
 import { Optional } from "@/lib/types/optional";
 import Loading from "./Loading";
 
