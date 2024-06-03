@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 interface HeaderProps {
   avatarUrl?: string;
@@ -28,7 +29,7 @@ export default function Header({
       )}
       <div className={`absolute -translate-y-1/2 flex items-center w-full px-8 ${className}`}>
         {avatarUrl ? (
-          <img className="w-20 h-20 rounded-full" src={avatarUrl} alt="avatar" />
+          <Image className="w-20 h-20 rounded-full" src={avatarUrl} alt="avatar" width={80} height={80} />
         ) : (
           <div className="w-20 h-20 rounded-full bg-slate-600"></div>
         )}

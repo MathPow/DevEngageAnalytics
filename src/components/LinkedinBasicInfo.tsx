@@ -3,6 +3,7 @@
 import { getBasicLinkedinInformation } from "@/lib/services/linkedinService";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export default function LinkedinBasicInfo() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -30,7 +31,7 @@ export default function LinkedinBasicInfo() {
         Get User Info
       </button>
       {info ? (
-        <img className="rounded-full w-24 h-24" src={info?.picture} alt="avatar" />
+        <Image className="rounded-full w-24 h-24" src={info?.picture} alt="avatar" />
       ) : (
         <div className="rounded-full w-24 h-24 bg-neutral-200 dark:bg-neutral-800 flex justify-center items-center">
           Avatar

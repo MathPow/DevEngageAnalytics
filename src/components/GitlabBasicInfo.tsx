@@ -3,6 +3,7 @@
 import { getBasicGitlabInformation } from "@/lib/services/gitlabService";
 import { GitlabUserInfo } from "@/lib/types/gitlabInfo";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export default function GitlabBasicInfo() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -30,7 +31,7 @@ export default function GitlabBasicInfo() {
         Get User Info
       </button>
       {info ? (
-        <img className="rounded-full w-24 h-24" src={info?.avatar_url} alt="avatar" />
+        <Image className="rounded-full w-24 h-24" src={info?.avatar_url} alt="avatar" />
       ) : (
         <div className="rounded-full w-24 h-24 bg-neutral-200 dark:bg-neutral-800 flex justify-center items-center">
           Avatar

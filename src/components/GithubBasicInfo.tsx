@@ -4,6 +4,7 @@ import { getBasicGithubInformation } from "@/lib/services/githubService";
 import { GithubUserInfo } from "@/lib/types/githubInfo";
 import { formatDate } from "@/lib/utils/formatUtil";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export default function GithubBasicInfo() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,7 +32,7 @@ export default function GithubBasicInfo() {
         Get User Info
       </button>
       {info ? (
-        <img className="rounded-full w-24 h-24" src={info?.avatar_url} alt="avatar" />
+        <Image className="rounded-full w-24 h-24" src={info?.avatar_url} alt="avatar" />
       ) : (
         <div className="rounded-full w-24 h-24 bg-neutral-200 dark:bg-neutral-800 flex justify-center items-center">
           Avatar

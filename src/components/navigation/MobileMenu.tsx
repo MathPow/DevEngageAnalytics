@@ -39,7 +39,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
           >
             <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
               {linkListGettingStarted.map((item, index) => (
-                <Link href={`/docs/${formatSlug(item)}`} className="flex items-center gap-x-2">
+                <Link key={index} href={`/docs/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
                 </Link>
               ))}
@@ -58,7 +58,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
           >
             <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
               {linkListComponents.map((item, index) => (
-                <Link href={`/docs/components/${formatSlug(item)}`} className="flex items-center gap-x-2">
+                <Link key={index} href={`/docs/components/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
                 </Link>
               ))}
@@ -83,7 +83,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
           >
             <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
               {linkListContribution.map((item, index) => (
-                <Link href={`/docs/contribution/${formatSlug(item)}`} className="flex items-center gap-x-2">
+                <Link key={index} href={`/docs/contribution/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
                 </Link>
               ))}

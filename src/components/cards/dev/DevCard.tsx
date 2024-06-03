@@ -3,7 +3,7 @@
 import { getBasicGithubInformation } from "@/lib/services/githubService";
 import { DevCardEnum } from "@/lib/types/devCardEnum";
 import { GithubUserInfo } from "@/lib/types/githubInfo";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import AllInOneDevCard from "./AllInOneDevCard";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { GitlabUserInfo } from "@/lib/types/gitlabInfo";
@@ -20,7 +20,7 @@ export default function DevCard({ cardType, githubUsername, gitlabUsername, link
   const [gitlabData, setGitlabData] = useState<GitlabUserInfo>();
   const [linkedinData, setLinkedinData] = useState<LinkedinUserInfo>();
 
-  function handleBasicGithubInformation() {
+  const handleBasicGithubInformation = useCallback(() => {
     getBasicGithubInformation(githubUsername)
       .then((userData) => {
         if (userData) {
@@ -30,20 +30,21 @@ export default function DevCard({ cardType, githubUsername, gitlabUsername, link
       .catch((error) => {
         console.error("Error fetching user information:", error);
       });
-  }
+  }, [githubUsername]);
 
-  const isAllDataReady: boolean = useMemo(() => {
-    // return (
-    //   githubData !== undefined &&
-    //   gitlabData !== undefined &&
-    //   linkedinData !== undefined
-    // );
-    return true;
-  }, [githubData, gitlabData, linkedinData]);
+  // const isAllDataReady: boolean = useMemo(() => {
+  //   return (
+  //     githubData !== undefined &&
+  //     gitlabData !== undefined &&
+  //     linkedinData !== undefined
+  //   );
+  // }, [githubData, gitlabData, linkedinData]);
+
+  const isAllDataReady = true;
 
   useEffect(() => {
     handleBasicGithubInformation();
-  }, []);
+  }, [handleBasicGithubInformation]);
 
   return (
     <>

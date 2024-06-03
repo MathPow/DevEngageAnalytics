@@ -15,15 +15,15 @@ export default function DocSections({ slug, url }: DocSectionsProps) {
   useEffect(() => {
     const fetchFile = async () => {
       try {
-        const module = await import(`@/../public/docs${url}${slug}/sections.ts`);
-        setSections(module.sections);
+        const sections = await import(`@/../public/docs${url}${slug}/sections.ts`);
+        setSections(sections.sections);
       } catch (error) {
         console.error("Error fetching file:", error);
       }
     };
 
     fetchFile();
-  }, [slug]);
+  }, [slug, url]);
 
   return (
     <>

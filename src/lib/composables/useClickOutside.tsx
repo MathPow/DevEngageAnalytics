@@ -12,7 +12,7 @@ const useClickOutside = <T extends HTMLElement>(ref: React.RefObject<T>, callbac
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, callback]);
+  }, [handleClickOutside]);
 };
 
 export default useClickOutside;
