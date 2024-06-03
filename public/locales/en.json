@@ -52,6 +52,16 @@
       "could_not_find_page": "Sorry, we couldn't find this page.",
       "do_not_worry": "But dont worry, you can find plenty of other things on our homepage.",
       "back_button": "Back to homepage"
+    },
+    "actions": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "subtitle": {
+      "on_this_page": "On This Page",
+      "getting_started": "Getting Started",
+      "components": "Components",
+      "contribution": "Contribution"
     }
   }
 }
