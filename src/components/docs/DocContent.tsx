@@ -2,7 +2,7 @@
 
 import MarkdownViewer from "@/components/MarkdownViewer";
 import { Button } from "@/components/ui/button";
-import { formatSlug } from "@/lib/composables/formatSlug";
+import { formatSlug, formatUrlToTitle } from "@/lib/composables/formatSlug";
 import { BASE_PATH } from "@/lib/composables/production";
 import {
   linkListComponents,
@@ -10,9 +10,18 @@ import {
   linkListGettingStarted,
   linkListPages,
 } from "@/lib/content/LinkListEnum";
-import { findNextElement, findPreviousElement } from "@/lib/utils/findIndex";
+import { findCurrentElement, findNextElement, findPreviousElement } from "@/lib/utils/findIndex";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Icon from "../Icon";
 
 interface DocContentProps {
   slug: string;
@@ -24,27 +33,42 @@ export default function DocContent({ slug, url }: DocContentProps) {
   const router = useRouter();
 
   function nextPage() {
-    if (url.includes(linkListPages[2])) {
-      router.push(`/docs${url}${formatSlug(findNextElement(linkListContribution, slug))}`);
-    } else if (url.includes(linkListPages[1])) {
-      router.push(`/docs${url}${formatSlug(findNextElement(linkListComponents, slug))}`);
-    } else {
-      router.push(`/docs${url}${formatSlug(findNextElement(linkListGettingStarted, slug))}`);
-    }
+    router.push(`/docs${url}${formatSlug(findNextElement(getLinkList(), slug))}`);
   }
 
   function previousPage() {
+    router.push(`/docs${url}${formatSlug(findPreviousElement(getLinkList(), slug))}`);
+  }
+
+  function getLinkList() {
     if (url.includes(linkListPages[2])) {
-      router.push(`/docs${url}${formatSlug(findPreviousElement(linkListContribution, slug))}`);
+      return linkListContribution;
     } else if (url.includes(linkListPages[1])) {
-      router.push(`/docs${url}${formatSlug(findPreviousElement(linkListComponents, slug))}`);
+      return linkListComponents;
     } else {
-      router.push(`/docs${url}${formatSlug(findPreviousElement(linkListGettingStarted, slug))}`);
+      return linkListGettingStarted;
     }
   }
 
   return (
     <>
+      <Breadcrumb className="mb-4">
+        <BreadcrumbList>
+          <BreadcrumbItem>Docs</BreadcrumbItem>
+          {url != "/" && (
+            <>
+              <BreadcrumbSeparator>
+                <Icon className="-ml-0.5 -mr-1" name={"chevron"} />
+              </BreadcrumbSeparator>
+              <BreadcrumbItem>{formatUrlToTitle(url)}</BreadcrumbItem>
+            </>
+          )}
+          <BreadcrumbSeparator>
+            <Icon className="-ml-0.5 -mr-1" name={"chevron"} />
+          </BreadcrumbSeparator>
+          <BreadcrumbItem className="text-white">{findCurrentElement(getLinkList(), slug)}</BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <MarkdownViewer filePath={`${BASE_PATH}docs${url}${slug}/content.md`} />
       <div className="mt-8 flex justify-between">
         <Button variant={"outline"} size={"sm"} onClick={previousPage}>
