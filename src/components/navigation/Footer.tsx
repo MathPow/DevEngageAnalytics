@@ -14,11 +14,11 @@ export default function Footer() {
         </div>
         <p className="text-sm text-_darkGrayText dark:text-_lightGrayText">
           Built by{" "}
-          <a className="underline" href="https://www.linkedin.com/in/mathys-deshaies/">
+          <a className="underline" href="https://www.linkedin.com/in/mathys-deshaies/" target="_blank">
             Mathys Deshaies
           </a>
           . The source code is available on{" "}
-          <a className="underline" href="https://github.com/MathPow/DevEngageAnalytics">
+          <a className="underline" href="https://github.com/MathPow/DevEngageAnalytics" target="_blank">
             GitHub
           </a>
         </p>
