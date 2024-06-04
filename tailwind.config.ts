@@ -23,9 +23,11 @@ const config = {
 
         _lightBg: "#ffffff",
         _lightBgGradient: "#ffc2ba",
+        _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
         _darkBgGradient: "#360606",
+        _darkSeparator: "#474747",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
