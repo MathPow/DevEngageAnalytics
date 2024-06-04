@@ -66,7 +66,9 @@ export default function DocContent({ slug, url }: DocContentProps) {
           <BreadcrumbSeparator>
             <Icon className="-ml-0.5 -mr-1" name={"chevron"} />
           </BreadcrumbSeparator>
-          <BreadcrumbItem className="text-white">{findCurrentElement(getLinkList(), slug)}</BreadcrumbItem>
+          <BreadcrumbItem className="font-semibold text-black dark:font-normal dark:text-white">
+            {findCurrentElement(getLinkList(), slug)}
+          </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
       <MarkdownViewer filePath={`${BASE_PATH}docs${url}${slug}/content.md`} />
