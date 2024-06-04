@@ -1,3 +1,4 @@
+import { BASE_PATH } from "./src/lib/composables/production";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -81,7 +82,7 @@ const config = {
         "spin-slow": "spin 10s linear infinite",
       },
       backgroundImage: {
-        joker: "url('/assets/img/joker.png')",
+        joker: `url('${BASE_PATH}assets/img/joker.png')`,
       },
     },
   },
