@@ -62,6 +62,10 @@
       "getting_started": "Getting Started",
       "components": "Components",
       "contribution": "Contribution"
+    },
+    "footer": {
+      "built_by": "Built by",
+      "the_source_code_is_available_on": "The source code is available on"
     }
   }
 }
