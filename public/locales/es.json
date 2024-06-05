@@ -66,6 +66,19 @@
     "footer": {
       "built_by": "Creado por",
       "the_source_code_is_available_on": "El código fuente está disponible en"
+    },
+    "homepage": {
+      "title": "Colección de tarjetas de perfil modernas",
+      "description": "DevSocialsStats es un proyecto de código abierto destinado a analizar las estadísticas de las redes sociales de plataformas populares y realizar un seguimiento de información valiosa sobre la actividad de los desarrolladores.",
+      "actions": {
+        "go_to_gitHub": "Ir a GitHub",
+        "get_started": "Empezar"
+      },
+      "info": {
+        "black_chip": "Utilice NPM para instalar componentes de tarjetas personalizables en su proyecto",
+        "red_chip": "Visite el playground para descargar convenientemente sus tarjetas preferidas en formato PNG",
+        "blue_chip": "Integre nuestra API para obtener tarjetas en formato HTML"
+      }
     }
   }
 }
