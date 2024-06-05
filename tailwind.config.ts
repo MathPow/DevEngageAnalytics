@@ -1,3 +1,4 @@
+import { BASE_PATH } from "./src/lib/composables/production";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -22,9 +23,11 @@ const config = {
 
         _lightBg: "#ffffff",
         _lightBgGradient: "#ffc2ba",
+        _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
         _darkBgGradient: "#360606",
+        _darkSeparator: "#474747",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -81,7 +84,7 @@ const config = {
         "spin-slow": "spin 10s linear infinite",
       },
       backgroundImage: {
-        joker: "url('/assets/img/joker.png')",
+        joker: `url('${BASE_PATH}assets/img/joker.png')`,
       },
     },
   },
