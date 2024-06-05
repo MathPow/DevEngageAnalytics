@@ -34,7 +34,7 @@ export default function Page({ params }: ContentProps) {
 
   return (
     <main>
-      <BackgroundGradient text="docs" />
+      <BackgroundGradient text="docs" isFixed />
       <DocPage slug={slug} url={"/"} />
     </main>
   );

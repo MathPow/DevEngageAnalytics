@@ -41,7 +41,7 @@ export default function Page({ params }: ContentProps) {
 
   return (
     <main>
-      <BackgroundGradient text="components" />
+      <BackgroundGradient text="components" isFixed />
       <DocPage slug={slug} url={"/components/"} />
     </main>
   );

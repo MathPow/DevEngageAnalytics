@@ -9,7 +9,7 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <main>
-      <BackgroundGradient text="playground" />
+      <BackgroundGradient text="playground" isFixed />
     </main>
   );
 }
