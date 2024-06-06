@@ -66,6 +66,19 @@
     "footer": {
       "built_by": "Construit par",
       "the_source_code_is_available_on": "Le code source est disponible sur"
+    },
+    "homepage": {
+      "title": "Collection de cartes de profil modernes",
+      "description": "DevSocialsStats est un projet open-source visant à analyser les statistiques des médias sociaux des plateformes populaires et à suivre des informations précieuses sur l'activité des développeurs.",
+      "actions": {
+        "go_to_gitHub": "Aller sur GitHub",
+        "get_started": "Commencer"
+      },
+      "info": {
+        "black_chip": "Utilisez NPM pour installer des composants de cartes personnalisables dans votre projet",
+        "red_chip": "Visitez le playground pour télécharger facilement vos cartes préférées au format PNG",
+        "blue_chip": "Intégrez notre API pour récupérer les cartes au format HTML"
+      }
     }
   }
 }

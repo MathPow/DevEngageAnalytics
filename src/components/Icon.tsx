@@ -22,6 +22,7 @@ import Menu from "@/../public/assets/icons/menu.svg";
 import Close from "@/../public/assets/icons/close.svg";
 import LightMode from "@/../public/assets/icons/light-mode.svg";
 import DarkMode from "@/../public/assets/icons/dark-mode.svg";
+import ArrowRight from "@/../public/assets/icons/arrow-right.svg";
 
 interface IconProps {
   name:
@@ -47,7 +48,8 @@ interface IconProps {
     | "menu"
     | "close"
     | "light-mode"
-    | "dark-mode";
+    | "dark-mode"
+    | "arrow-right";
   className?: string;
   size?: number;
   color?: string;
@@ -86,6 +88,7 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     close: <Close {...svgProps} />,
     "light-mode": <LightMode {...svgProps} />,
     "dark-mode": <DarkMode {...svgProps} />,
+    "arrow-right": <ArrowRight {...svgProps} />,
   };
   return Icons[name];
 };
