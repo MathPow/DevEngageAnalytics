@@ -69,7 +69,7 @@ export default function Navbar() {
       if (window.scrollY > 96) {
         setIsNavVisible(false);
       }
-      if (window.scrollY === 0) {
+      if (window.scrollY < 48) {
         setIsNavVisible(true);
       }
     };
@@ -88,6 +88,7 @@ export default function Navbar() {
       <div ref={menuContainerRef}>
         <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
+      <div className={`h-12 ${isNavVisible && "hidden"}`}></div>
       <header className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} relative z-20`} ref={ref}>
         <div
           className={`flex h-12 items-center justify-between ${
