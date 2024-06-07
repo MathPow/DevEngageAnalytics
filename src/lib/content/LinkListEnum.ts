@@ -1,9 +1,13 @@
 export enum linkListGettingStartedEnum {
   introduction = "Introduction",
   installation = "Installation",
+  github = "GitHub",
+  gitlab = "GitLab",
+  linkedin = "LinkedIn",
   darkmode = "Dark Mode",
   languages = "Languages",
   figma = "Figma",
+  roadmap = "Roadmap",
 }
 export const linkListGettingStarted: string[] = Object.values(linkListGettingStartedEnum);
 
