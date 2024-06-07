@@ -12,13 +12,13 @@ export default function LinkList({ list, url }: LinkListProps) {
 
   return (
     <>
-      {list.map((item, index) => (
+      {list.map((el, index) => (
         <Link
           key={index}
-          className={`hover:underline ${pathname.includes(formatSlug(item)) ? "font-semibold text-black dark:font-normal dark:text-white" : ""}`}
-          href={`${url}${formatSlug(item)}`}
+          className={`hover:underline ${pathname.includes(formatSlug(el)) ? "font-semibold text-black dark:font-normal dark:text-white" : ""}`}
+          href={`${url}${formatSlug(el)}`}
         >
-          {item}
+          {el}
         </Link>
       ))}
     </>
