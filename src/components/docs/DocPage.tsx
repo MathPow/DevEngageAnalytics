@@ -17,7 +17,6 @@ export default function DocPage({ slug, url }: DocPageProps) {
 
   const handleScroll = () => {
     const newScrollY = window.scrollY;
-    console.log(window.outerHeight);
     if (
       newScrollY < window.outerHeight * 0.2 - 100 &&
       docNavRef.current &&
@@ -48,7 +47,7 @@ export default function DocPage({ slug, url }: DocPageProps) {
       <div ref={docContentRef} className="w-full">
         <DocContent slug={slug} url={url} />
       </div>
-      <div className="sticky top-24 ml-10 hidden h-96 w-56 lg:block">
+      <div className="sticky top-24 hidden h-96 w-64 lg:block">
         <DocSections slug={slug} url={url} />
       </div>
     </div>
