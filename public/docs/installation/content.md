@@ -1,35 +1,55 @@
-# Installation
+<h1 id="installation">Installation</h1>
 
-<span style="color: gray;">Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.</span>
+<h4 style="color: gray;">How to install dependencies or use in other ways the product?</h4>
 
-This is **NOT** a component library. It's a collection of re-usable components that you can copy and paste into your apps.
+DevEngageAnalytics offers **four** versatile **ways** to utilize our customizable card components, ensuring you can showcase your social media statistics effectively and conveniently.
 
-**What do you mean by not a component library?**
+_Choose the option that best fits your needs_
 
-I mean you do not install it as a dependency. It is not available or distributed via npm.
+<h3 id="usageoptions">Usage Options</h3>
 
-Pick the components you need. Copy and paste the code into your project and customize to your needs. The code is yours.
+- **PNG File Download**: Perfect for users who want a quick and easy way to generate and save visual representations without any coding.
+- **API Integration**: Great for developers who need a programmatic approach to access and display card data.
+- **Sharing**: Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website.
+- **NPM Package**: Ideal for developers who want to integrate cards into their projects seamlessly.
 
-_Use this as a reference to build your own component libraries._
+<h3 id="using PNG file Download">Using PNG file Download</h3>
 
-_Use this as a reference to build your own component libraries._
+1. Visit the [playground page](https://mathpow.github.io/DevEngageAnalytics/playground).
 
-_Use this as a reference to build your own component libraries._
+2. Experiment with the settings.
 
-_Use this as a reference to build your own component libraries._
+3. Download your preferred cards as PNG files by clicking the "Download as PNG" button.
 
-_Use this as a reference to build your own component libraries._
+<h3 id="usingapiintegration">Using API Integration</h3>
 
-_Use this as a reference to build your own component libraries._
+1. Use our API to retrieve cards in HTML format.
 
-_Use this as a reference to build your own component libraries._
+bla bla bla
 
-_Use this as a reference to build your own component libraries._
+<h3 id="usingsharing">Using Sharing</h3>
 
-_Use this as a reference to build your own component libraries._
+1. Visit the [playground page](https://mathpow.github.io/DevEngageAnalytics/playground).
 
-_Use this as a reference to build your own component libraries._
+2. Experiment with the settings.
 
-_Use this as a reference to build your own component libraries._
+3. Generate a unique URL by clicking the "Generate URL" button.
 
-_Use this as a reference to build your own component libraries._
+<h3 id="usingnpmpackage">Using NPM Package</h3>
+
+Please note that currently, we only support **React**. Additionally, your project must have **Tailwind CSS** and **Framer Motion** installed.
+
+**Follow these simple steps to import our customizable card components into your project**
+
+1. Install DevEngageAnalytics as a package in your React project using NPM.
+
+   `npm install -D tailwindcss framer-motion`
+   `npm install DevEngageAnalytics`
+
+2. Customize and embed card components directly within your application.
+
+bla bla bla
+
+<h3 id="conclusion">Conclusion</h3>
+
+DevEngageAnalytics provides a flexible solution to display your social media statistics. Choose the option that best suits your needs and start showcasing your developer activity and engagement with ease. If you have any other ideas, feel free to [open an issue](https://github.com/MathPow/DevEngageAnalytics/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=).
