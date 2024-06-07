@@ -124,7 +124,7 @@
   overflow: hidden;
   background: transparent;
   border-bottom: 1px solid hsla(210, 18%, 87%, 1);
-  height: 0.25em;
+  height: 1px;
   padding: 0;
   margin: 24px 0;
   background-color: #d0d7de;
@@ -254,7 +254,14 @@
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   line-height: 10px;
   color: #1f2328;
   vertical-align: middle;
@@ -343,14 +350,28 @@
 .markdown-body tt,
 .markdown-body code,
 .markdown-body samp {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -537,6 +558,10 @@
 .markdown-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.markdown-body li {
+  list-style-type: disc;
 }
 
 .markdown-body li > p {
