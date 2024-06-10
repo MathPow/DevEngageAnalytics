@@ -1,7 +1,5 @@
 <h1 id="appstructure">App Structure</h1>
 
-<h1 id="standard">Standard</h1>
-
 <h4 style="color: gray;">Where is Everything?!</h4>
 
 We utilize React with Next.js. Our project structure follows the basic [Next.js structure](https://nextjs.org/docs/getting-started/project-structure) for pages.
