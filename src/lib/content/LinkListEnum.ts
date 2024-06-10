@@ -1,13 +1,13 @@
 export enum linkListGettingStartedEnum {
   introduction = "Introduction",
   installation = "Installation",
+  roadmap = "Roadmap",
+  figma = "Figma",
+  languages = "Languages",
+  darkmode = "Dark Mode",
   github = "GitHub",
   gitlab = "GitLab",
   linkedin = "LinkedIn",
-  darkmode = "Dark Mode",
-  languages = "Languages",
-  figma = "Figma",
-  roadmap = "Roadmap",
 }
 export const linkListGettingStarted: string[] = Object.values(linkListGettingStartedEnum);
 
@@ -21,8 +21,15 @@ export enum linkListComponentsEnum {
 export const linkListComponents: string[] = Object.values(linkListComponentsEnum);
 
 export enum linkListContributionEnum {
-  howToContribute = "How to Contribute",
-  whoWeAreLookingFor = "Who We Are Looking For",
+  primaryGoal = "Primary Goal",
+  firstPullRequest = "First Pull Request",
+  definitionOfDone = "Definition of Done",
+  appStructure = "App Structure",
+  standard = "Standard",
+  kanban = "Kanban",
+  commonlyUsedComponents = "Commonly Used Components",
+  writingDocs = "Writing Docs",
+  i18n = "I18n",
   contributors = "Contributors",
 }
 export const linkListContribution: string[] = Object.values(linkListContributionEnum);
