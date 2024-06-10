@@ -6,14 +6,35 @@ Our aim is to expand the project and manage it collaboratively for the **communi
 
 <h3 id="supportedmodes">List of Goals</h3>
 
-- [x] Open Figma
+- [x] Open the project🎉
+- [x] Open a Figma
+- [x] Create a logo
+- [x] Create README file
+- [x] Configure the project
+- [x] Integrate I18next
+- [x] Integrate themes
+- [x] Responsive website
+- [x] Deploy the website through GitHub Pages
+- [ ] Website pages
+  - [ ] Home
+  - [x] Docs
+  - [ ] Playground
+  - [x] Error 404
 - [ ] Create documentation
   - [x] Getting Started
   - [ ] Components
-  - [ ] Contribution Guidelines
-- [ ] Integrate Social Media APIs
-  - [ ] GitHub
-  - [ ] GitLab
+  - [x] Contribution
+- [ ] Integrate social media APIs
+  - [x] GitHub basic
+  - [ ] GitHub advanced
+  - [x] GitLab basic
+  - [ ] GitLab advanced
   - [ ] LinkedIn
-
-bla bla bla
+- [ ] Integrate different usage options
+  - [ ] PNG file download
+  - [ ] API integration
+  - [ ] Sharing
+  - [ ] NPM package
+- [ ] Store user preference in LocalStorage
+- [ ] Design and integrate various cards
+- [ ] Unit testing
