@@ -8,7 +8,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <div className="border-t-_lightSeparator dark:border-t-_darkSeparator border-t py-2">
+    <div className="relative z-10 border-t border-t-_lightSeparator py-2 dark:border-t-_darkSeparator">
       <div className="mx-[12vw] flex max-w-[1300px] items-center gap-x-2 2xl:mx-auto">
         <div className="flex scale-x-[-1] flex-row -space-x-5">
           <Image className="size-8" src={BlueCasinoChip} alt={"blue casino chip"} />
