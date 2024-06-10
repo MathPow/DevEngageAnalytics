@@ -39,13 +39,13 @@ export default function Tooltip({ text }: TooltipProps) {
           {text != "" && (
             <div
               ref={tooltipRef}
-              className="fixed max-w-72 rounded-md bg-black/70 p-1 px-3"
+              className="fixed w-fit max-w-64 hyphens-auto rounded-md bg-black/70 px-0 py-0.5"
               style={{
                 left: `${mousePosition.x - getWidth() / 2}px`,
                 top: `${mousePosition.y - getHeight() - 20 / 2}px`,
               }}
             >
-              <p className={`text-md text-center text-white ${isMobile && "text-lg"}`}>{text}</p>
+              <p className="select-none text-center text-xs text-white">{text}</p>
             </div>
           )}
         </div>
