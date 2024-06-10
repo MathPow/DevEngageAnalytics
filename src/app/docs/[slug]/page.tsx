@@ -9,7 +9,17 @@ interface ContentProps {
   };
 }
 
-const validSlugs = ["introduction", "installation", "darkmode", "languages", "figma"];
+const validSlugs = [
+  "introduction",
+  "installation",
+  "darkmode",
+  "languages",
+  "figma",
+  "github",
+  "gitlab",
+  "linkedin",
+  "roadmap",
+];
 
 export async function generateStaticParams() {
   return validSlugs.map((slug) => ({
