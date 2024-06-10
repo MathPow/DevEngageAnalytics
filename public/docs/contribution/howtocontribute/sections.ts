@@ -1,1 +1,0 @@
-export const sections = ["Intro"];
