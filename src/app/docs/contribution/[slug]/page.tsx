@@ -9,7 +9,18 @@ interface ContentProps {
   };
 }
 
-const validSlugs = ["howtocontribute", "whowearelookingfor", "contributors"];
+const validSlugs = [
+  "appstructure",
+  "commonlyusedcomponents",
+  "firstpullrequest",
+  "i18n",
+  "kanban",
+  "contributors",
+  "primarygoal",
+  "standard",
+  "writingdocs",
+  "definitionofdone",
+];
 
 export async function generateStaticParams() {
   return validSlugs.map((slug) => ({

@@ -608,7 +608,7 @@
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid #d0d7de;
+  @apply border border-_lightGrayText dark:border-_darkGrayText;
 }
 
 .markdown-body table td > :last-child {
@@ -790,7 +790,7 @@
   font-size: 85%;
   line-height: 1.45;
   color: #1f2328;
-  background-color: #f6f8fa;
+  background-color: #1c1e22;
   border-radius: 6px;
 }
 
@@ -1124,4 +1124,21 @@
 
 .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #d1242f;
+}
+
+.markdown-body th,
+.markdown-body td {
+  @apply bg-_lightBg dark:bg-_darkBg;
+}
+
+.markdown-body a.button {
+  @apply flex w-fit items-center gap-x-1 rounded border border-neutral-300 bg-neutral-100 px-3 py-1 text-xs text-neutral-600 hover:no-underline focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-400;
+}
+
+.markdown-body svg.icon {
+  @apply size-4;
+}
+
+.markdown-body iframe {
+  @apply my-6 h-[500px] w-full border border-black/10;
 }
