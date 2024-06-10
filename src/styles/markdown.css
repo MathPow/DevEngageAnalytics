@@ -608,7 +608,7 @@
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid #d0d7de;
+  @apply border border-_lightGrayText dark:border-_darkGrayText;
 }
 
 .markdown-body table td > :last-child {
@@ -790,7 +790,7 @@
   font-size: 85%;
   line-height: 1.45;
   color: #1f2328;
-  background-color: #f6f8fa;
+  background-color: #1c1e22;
   border-radius: 6px;
 }
 
@@ -1124,4 +1124,9 @@
 
 .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #d1242f;
+}
+
+.markdown-body th,
+.markdown-body td {
+  @apply bg-_lightBg dark:bg-_darkBg;
 }
