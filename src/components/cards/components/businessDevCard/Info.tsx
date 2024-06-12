@@ -38,6 +38,10 @@ export default function Header({
     <div className={`float-right flex gap-x-2 text-_lightGrayText dark:text-_darkGrayText ${className}`}>
       {location && <HoverInfo icon={{ name: "location" }} title={"Location"} content={location} />}
       {company && <HoverInfo icon={{ name: "company" }} title={"Company"} content={company} />}
+      {email && <HoverInfo icon={{ name: "mail" }} title={"Email"} content={email} />}
+      {blog && <HoverInfo icon={{ name: "link" }} title={"Website"} content={blog} isLink />}
+      {twitter_username && <HoverInfo icon={{ name: "twitter" }} title={"X"} content={twitter_username} isLink />}
+      {linkedin && <HoverInfo icon={{ name: "linkedin" }} title={"LinkedIn"} content={linkedin.url} isLink />}
       {html_url && (
         <HoverInfo
           icon={{ name: "github" }}
@@ -49,10 +53,6 @@ export default function Header({
           ]}
         />
       )}
-      {email && <HoverInfo icon={{ name: "mail" }} title={"Email"} content={email} />}
-      {twitter_username && <HoverInfo icon={{ name: "twitter" }} title={"X"} content={twitter_username} isLink />}
-      {blog && <HoverInfo icon={{ name: "link" }} title={"Website"} content={blog} isLink />}
-      {linkedin && <HoverInfo icon={{ name: "linkedin" }} title={"LinkedIn"} content={linkedin.url} isLink />}
     </div>
   );
 }
