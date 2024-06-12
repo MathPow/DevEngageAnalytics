@@ -1,6 +1,5 @@
 import { GithubUserAllInfo } from "@/lib/types/githubInfo";
-import { Header, Bio, Footer } from "../components/businessDevCard/index";
-import Info from "../components/businessDevCard/Info";
+import { Header, Bio, Footer, Info } from "../components/businessDevCard/index";
 
 interface BusinessDevCardProps {
   githubData: GithubUserAllInfo;
