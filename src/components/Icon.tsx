@@ -23,8 +23,20 @@ import Close from "@/../public/assets/icons/close.svg";
 import LightMode from "@/../public/assets/icons/light-mode.svg";
 import DarkMode from "@/../public/assets/icons/dark-mode.svg";
 import ArrowRight from "@/../public/assets/icons/arrow-right.svg";
+import Star from "@/../public/assets/icons/star.svg";
+import Clock from "@/../public/assets/icons/clock.svg";
+import Company from "@/../public/assets/icons/company.svg";
+import Link from "@/../public/assets/icons/link.svg";
+import Location from "@/../public/assets/icons/location.svg";
+import Mail from "@/../public/assets/icons/mail.svg";
+import Twitter from "@/../public/assets/icons/twitter.svg";
+import OpenInNew from "@/../public/assets/icons/open-in-new.svg";
+import Info from "@/../public/assets/icons/info.svg";
+import PullRequest from "@/../public/assets/icons/pull-request.svg";
+import Issue from "@/../public/assets/icons/issue.svg";
+import Commit from "@/../public/assets/icons/commit.svg";
 
-interface IconProps {
+export interface IconProps {
   name:
     | "github"
     | "gitlab"
@@ -49,7 +61,19 @@ interface IconProps {
     | "close"
     | "light-mode"
     | "dark-mode"
-    | "arrow-right";
+    | "arrow-right"
+    | "star"
+    | "clock"
+    | "company"
+    | "link"
+    | "location"
+    | "mail"
+    | "twitter"
+    | "open-in-new"
+    | "info"
+    | "pull-request"
+    | "issue"
+    | "commit";
   className?: string;
   size?: number;
   color?: string;
@@ -89,6 +113,18 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     "light-mode": <LightMode {...svgProps} />,
     "dark-mode": <DarkMode {...svgProps} />,
     "arrow-right": <ArrowRight {...svgProps} />,
+    star: <Star {...svgProps} />,
+    clock: <Clock {...svgProps} />,
+    company: <Company {...svgProps} />,
+    link: <Link {...svgProps} />,
+    location: <Location {...svgProps} />,
+    mail: <Mail {...svgProps} />,
+    twitter: <Twitter {...svgProps} />,
+    "open-in-new": <OpenInNew {...svgProps} />,
+    info: <Info {...svgProps} />,
+    "pull-request": <PullRequest {...svgProps} />,
+    commit: <Commit {...svgProps} />,
+    issue: <Issue {...svgProps} />,
   };
   return Icons[name];
 };
