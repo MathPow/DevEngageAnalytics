@@ -26,6 +26,7 @@ const config = {
         _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
+        _darkSlateBg: "#101725",
         _darkBgGradient: "#360606",
         _darkSeparator: "#474747",
 
@@ -85,6 +86,7 @@ const config = {
       },
       backgroundImage: {
         joker: `url('${BASE_PATH}assets/img/joker.png')`,
+        "blurry-gradient-bg": `url('${BASE_PATH}assets/img/blurry-gradient-bg.svg')`,
       },
     },
   },
