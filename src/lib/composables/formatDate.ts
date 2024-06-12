@@ -16,6 +16,22 @@ export function formatDateClassic(date: Date) {
   }
 }
 
+export function formatDateAbbreviation(date: Date) {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  const lang = i18next.language;
+  if (lang === "fr") {
+    return date.toLocaleDateString("fr-FR", options);
+  } else if (lang === "es") {
+    return date.toLocaleDateString("es-ES", options);
+  } else {
+    return date.toLocaleDateString("en-US", options);
+  }
+}
+
 export function formatDateRange(startDate: Date, endDate?: Date) {
   const months = [
     t("card.month_abbreviations.jan"),
