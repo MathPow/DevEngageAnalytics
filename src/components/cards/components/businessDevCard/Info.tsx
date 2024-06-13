@@ -36,10 +36,10 @@ export default function Header({
 
   return (
     <div className={`float-right flex gap-x-2 text-_lightGrayText dark:text-_darkGrayText ${className}`}>
-      {location && <HoverInfo icon={{ name: "location" }} title={"Location"} content={location} />}
-      {company && <HoverInfo icon={{ name: "company" }} title={"Company"} content={company} />}
-      {email && <HoverInfo icon={{ name: "mail" }} title={"Email"} content={email} />}
-      {blog && <HoverInfo icon={{ name: "link" }} title={"Website"} content={blog} isLink />}
+      {location && <HoverInfo icon={{ name: "location" }} title={t("card.user_info.location")} content={location} />}
+      {company && <HoverInfo icon={{ name: "company" }} title={t("card.user_info.company")} content={company} />}
+      {email && <HoverInfo icon={{ name: "mail" }} title={t("card.user_info.email")} content={email} />}
+      {blog && <HoverInfo icon={{ name: "link" }} title={t("card.user_info.website")} content={blog} isLink />}
       {twitter_username && <HoverInfo icon={{ name: "twitter" }} title={"X"} content={twitter_username} isLink />}
       {linkedin && <HoverInfo icon={{ name: "linkedin" }} title={"LinkedIn"} content={linkedin.url} isLink />}
       {html_url && (
@@ -49,7 +49,10 @@ export default function Header({
           content={html_url}
           isLink
           secondaryInfo={[
-            { icon: { name: "info" }, title: "Joined on " + formatDateAbbreviation(new Date(created_at)) },
+            {
+              icon: { name: "info" },
+              title: t("card.info.joined_date") + " " + formatDateAbbreviation(new Date(created_at)),
+            },
           ]}
         />
       )}

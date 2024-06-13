@@ -26,7 +26,9 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
               <>
                 <Icon className="text-_lightGrayText dark:text-_darkGrayText" name={"user"} size={18} />
                 <p className="ml-1 mr-1 text-black dark:text-white">{formatNumberSuffixe(followers)}</p>
-                <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">Followers</p>
+                <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
+                  {t("card.user_info.followers")}
+                </p>
               </>
             )}
           </div>
@@ -35,7 +37,9 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
               <>
                 <Icon className="text-_lightGrayText dark:text-_darkGrayText" name={"star"} size={18} />
                 <p className="ml-0.5 mr-1 text-black dark:text-white">{formatNumberSuffixe(starsEarned)}</p>
-                <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">Stars Earned</p>
+                <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
+                  {t("card.stats.stars_earned")}
+                </p>
               </>
             )}
           </div>
@@ -54,7 +58,7 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
                   <div className="mb-3 flex items-start justify-between">
                     <div className="flex gap-x-1.5 text-black/20 dark:text-white/20">
                       <Icon name={"pull-request"} size={20} />
-                      <p className="text-sm">Total Contributions</p>
+                      <p className="text-sm">{t("card.stats.total_contributions")}</p>
                     </div>
                   </div>
                   <div className="flex flex-col">
@@ -64,7 +68,7 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
                           <Icon className="text-_lightGrayText dark:text-_darkGrayText" name={"commit"} size={18} />
                           <p className="ml-1 mr-1 text-black dark:text-white">{formatNumberSuffixe(commits)}</p>
                           <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
-                            Total Commits
+                            {t("card.stats.commits")}
                           </p>
                         </>
                       )}
@@ -78,7 +82,10 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
                             size={18}
                           />
                           <p className="ml-1 mr-1 text-black dark:text-white">{formatNumberSuffixe(pullRequests)}</p>
-                          <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">Total PRs</p>
+                          <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
+                            {" "}
+                            {t("card.stats.pull_requests")}
+                          </p>
                         </>
                       )}
                     </div>
@@ -88,7 +95,7 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
                           <Icon className="text-_lightGrayText dark:text-_darkGrayText" name={"issue"} size={18} />
                           <p className="ml-1 mr-1 text-black dark:text-white">{formatNumberSuffixe(issues)}</p>
                           <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
-                            Total Issues
+                            {t("card.stats.issues")}
                           </p>
                         </>
                       )}
