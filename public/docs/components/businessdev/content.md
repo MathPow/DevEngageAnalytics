@@ -6,7 +6,7 @@
 
 <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F2VrK9qzBpIUjeDmHHkKkor%2FDevEngageAnalytics%3Fnode-id%3D277-4%26t%3DZPDOacjqJPXsxWnN-1" allowfullscreen></iframe>
 
-This component provides an overview of GitHub stats and the information provided by the user on the GitHub website. The card is used on the home page as a demo.
+This component provides an overview of GitHub stats and information provided by the user on their GitHub profile. The card is used on the home page as a demo.
 
 <h3 id="informationneeded">Information Needed</h3>
 

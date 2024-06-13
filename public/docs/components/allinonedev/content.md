@@ -6,7 +6,7 @@
 
 <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F2VrK9qzBpIUjeDmHHkKkor%2FDevEngageAnalytics%3Fnode-id%3D194-2%26t%3DOO2jzT0T6K5AW2OY-1" allowfullscreen></iframe>
 
-This component provides an in-depth look into a developer's activities.
+This component provides an in-depth look into a developer's activities across multiple platforms.
 
 <h3 id="informationneeded">Information Needed</h3>
 
