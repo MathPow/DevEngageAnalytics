@@ -28,28 +28,32 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: linkListComponentsEnum.allInOneDev,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    description: "ui.navbar.components.all_in_one_dev",
+  },
+  {
+    title: linkListComponentsEnum.businessdev,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.businessdev)}`,
+    description: "ui.navbar.components.business_dev",
   },
   {
     title: linkListComponentsEnum.gitLover,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
-    description: "For sighted users to preview content available behind a link.",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.allInOneDesigner,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.certificatesFlex,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
-    description: "Visually or semantically separates content.",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.beautifulAsymmetric,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
-    description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    description: "ui.info.coming_soon",
   },
 ];
 
@@ -119,9 +123,9 @@ export default function Navbar() {
                             href={`${BASE_PATH}`}
                           >
                             <Icon name={"github"} />
-                            <div className="mb-2 mt-4 text-lg font-medium">DevEngageAnalytics</div>
+                            <div className="mb-2 mt-4 text-lg font-medium">{t("project_name")}</div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components built with Radix UI and Tailwind CSS.
+                              {t("ui.navbar.docs.description")}
                             </p>
                           </a>
                         </div>
@@ -130,19 +134,19 @@ export default function Navbar() {
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.introduction)}`}
                         title={linkListGettingStartedEnum.introduction}
                       >
-                        Re-usable components built using Radix UI and Tailwind CSS.
+                        {t("ui.navbar.docs.introduction")}
                       </ListItem>
                       <ListItem
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.installation)}`}
                         title={linkListGettingStartedEnum.installation}
                       >
-                        How to install dependencies and structure your app.
+                        {t("ui.navbar.docs.installation")}
                       </ListItem>
                       <ListItem
-                        href={`/docs/${formatSlug(linkListGettingStartedEnum.figma)}`}
-                        title={linkListGettingStartedEnum.figma}
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.roadmap)}`}
+                        title={linkListGettingStartedEnum.roadmap}
                       >
-                        Styles for headings, paragraphs, lists...etc
+                        {t("ui.navbar.docs.roadmap")}
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
@@ -158,7 +162,7 @@ export default function Navbar() {
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
                         <ListItem key={component.title} title={component.title} href={component.href}>
-                          {component.description}
+                          {t(component.description)}
                         </ListItem>
                       ))}
                     </ul>

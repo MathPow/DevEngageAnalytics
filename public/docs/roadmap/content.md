@@ -1,6 +1,6 @@
 <h1 id="darkmode">Roadmap</h1>
 
-<h4 style="color: gray;">What are our plans?</h4>
+<h4 style="color: gray;">What are our plans of action?</h4>
 
 Our aim is to expand the project and manage it collaboratively for the **community**.
 

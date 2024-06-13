@@ -11,6 +11,7 @@ interface ContentProps {
 
 const validSlugs = [
   "allinonedev",
+  "businessdev",
   "gitlover",
   "darkmode",
   "allinonedesigner",
