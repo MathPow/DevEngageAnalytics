@@ -28,28 +28,32 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: linkListComponentsEnum.allInOneDev,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    description: "Provides an in-depth look into a developer's activities across multiple platforms.",
+  },
+  {
+    title: linkListComponentsEnum.businessdev,
+    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.businessdev)}`,
+    description: "Provides an overview of GitHub stats and information provided by the user on their GitHub profile.",
   },
   {
     title: linkListComponentsEnum.gitLover,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
-    description: "For sighted users to preview content available behind a link.",
+    description: "Coming soon...",
   },
   {
     title: linkListComponentsEnum.allInOneDesigner,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "Coming soon...",
   },
   {
     title: linkListComponentsEnum.certificatesFlex,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
-    description: "Visually or semantically separates content.",
+    description: "Coming soon...",
   },
   {
     title: linkListComponentsEnum.beautifulAsymmetric,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
-    description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    description: "Coming soon...",
   },
 ];
 
@@ -121,7 +125,7 @@ export default function Navbar() {
                             <Icon name={"github"} />
                             <div className="mb-2 mt-4 text-lg font-medium">DevEngageAnalytics</div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components built with Radix UI and Tailwind CSS.
+                              Valuable insights into developer activity and engagement.
                             </p>
                           </a>
                         </div>
@@ -130,19 +134,19 @@ export default function Navbar() {
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.introduction)}`}
                         title={linkListGettingStartedEnum.introduction}
                       >
-                        Re-usable components built using Radix UI and Tailwind CSS.
+                        What is DevEngageAnalytics?
                       </ListItem>
                       <ListItem
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.installation)}`}
                         title={linkListGettingStartedEnum.installation}
                       >
-                        How to install dependencies and structure your app.
+                        How to install dependencies or use in other ways the product?
                       </ListItem>
                       <ListItem
-                        href={`/docs/${formatSlug(linkListGettingStartedEnum.figma)}`}
-                        title={linkListGettingStartedEnum.figma}
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.roadmap)}`}
+                        title={linkListGettingStartedEnum.roadmap}
                       >
-                        Styles for headings, paragraphs, lists...etc
+                        What are our plans of action?
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
