@@ -35,6 +35,7 @@ Our aim is to expand the project and manage it collaboratively for the **communi
   - [ ] API integration
   - [ ] Sharing
   - [ ] NPM package
-- [ ] Store user preference in LocalStorage
+- [ ] Store user preference
 - [ ] Design and integrate various cards
 - [ ] Unit testing
+- [ ] Show the world this project!🎉

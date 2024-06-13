@@ -50,7 +50,7 @@ export default function GitStats({
           <p>{comments}</p>
         </div>
         <div className="flex justify-between">
-          <p>{t("card.stats.opened_issues")}</p>
+          <p>{t("card.stats.issues")}</p>
           <p>{openedIssues}</p>
         </div>
         <div className="flex justify-between">
@@ -58,7 +58,7 @@ export default function GitStats({
           <p>{pullRequests + commits + comments + openedIssues}</p>
         </div>
       </div>
-      <Separator className="bg-_darkGrayText my-2" />
+      <Separator className="my-2 bg-_darkGrayText" />
       <div className="flex flex-col -space-y-0.5">
         <div className="flex justify-between">
           <p>{t("card.stats.project_involvement")}</p>
@@ -67,17 +67,17 @@ export default function GitStats({
         {getSortedProjectInvolvement()
           .slice(0, 4)
           .map((el, index) => (
-            <div key={index} className="flex justify-between text-_lightGrayText text-sm">
-              <div className="flex gap-x-0.5 items-center">
+            <div key={index} className="flex justify-between text-sm text-_lightGrayText">
+              <div className="flex items-center gap-x-0.5">
                 {el.isRepoFromUser && <Icon name={"user"} size={14} />}
                 <p className={`truncate ${el.isRepoFromUser ? "w-36" : "w-40"}`}>{el.title}</p>
               </div>
               <p>{el.contributions}</p>
             </div>
           ))}
-        {projectInvolvement.length > 4 && <p className="text-_lightGrayText text-sm -mt-1">...</p>}
+        {projectInvolvement.length > 4 && <p className="-mt-1 text-sm text-_lightGrayText">...</p>}
       </div>
-      <Separator className="bg-_darkGrayText my-2" />
+      <Separator className="my-2 bg-_darkGrayText" />
       <div className="flex flex-col -space-y-0.5">
         <div className="flex justify-between">
           <p>{t("card.stats.total_stars_earned")}</p>
@@ -88,7 +88,7 @@ export default function GitStats({
           <p>{totalRepositories}</p>
         </div>
       </div>
-      <Separator className="bg-_darkGrayText my-2" />
+      <Separator className="my-2 bg-_darkGrayText" />
       <div className="flex flex-col -space-y-0.5">
         <div className="flex justify-between">
           <p>GitHub&apos;s</p>

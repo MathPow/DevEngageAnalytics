@@ -6,7 +6,8 @@
       "connections": "conexiones"
     },
     "info": {
-      "joined_date": "Se unió al mercado el",
+      "joined_market_date": "Se unió al mercado el",
+      "joined_date": "Se unió el",
       "days_last_year": "días del año pasado",
       "present": "Presente",
       "issued": "Entregada en"
@@ -33,11 +34,19 @@
       "pull_requests": "Pull Requests",
       "commits": "Commits",
       "comments": "Comments",
-      "opened_issues": "Opened Issues",
-      "total_contributions": "Total Contributions",
+      "issues": "Issues",
+      "total_contributions": "Contribuciones Totales",
       "project_involvement": "Project Involvement",
       "total_stars_earned": "Total Stars Earned",
+      "stars_earned": "Estrellas Ganadas",
       "total_repositiories": "Total Repositiories"
+    },
+    "user_info": {
+      "followers": "Seguidores",
+      "location": "Ubicación",
+      "company": "Empresa",
+      "email": "Correo electrónico",
+      "website": "Sitio web"
     }
   },
   "ui": {

@@ -1,6 +1,6 @@
-import { GithubUserInfo } from "@/lib/types/githubInfo";
+import { GithubUserInfoSmall } from "@/lib/types/githubInfo";
 
-export const githubUserInfoMock: GithubUserInfo = {
+export const githubUserInfoMock: GithubUserInfoSmall = {
   public_repos: 8,
   followers: 3,
   following: 4,

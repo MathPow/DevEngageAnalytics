@@ -1,4 +1,4 @@
-import { GithubUserInfo } from "@/lib/types/githubInfo";
+import { GithubUserAllInfo } from "@/lib/types/githubInfo";
 import { LinkedinUserInfo } from "@/lib/types/linkedinInfo";
 import { githubUserInfoMock } from "@/tests/mocks/GithubUserInfoMock";
 import { Header, Bio, Footer, Experience, GitStats, GitGraph } from "../components/allInOneDevCard/index";
@@ -9,7 +9,7 @@ import { GraphCube } from "@/lib/types/graphCubeType";
 import { GitlabUserInfo } from "@/lib/types/gitlabInfo";
 
 interface AllInOneDevCardProps {
-  githubData: GithubUserInfo;
+  githubData: GithubUserAllInfo;
   gitlabData: GitlabUserInfo;
   linkedinData: LinkedinUserInfo;
 }
@@ -118,7 +118,7 @@ export default function AllInOneDevCard({ githubData, gitlabData, linkedinData }
 
   return (
     <section className="flex gap-x-8 text-white">
-      <div className="h-[500px] w-[375px] bg-_bgDarkGray rounded-3xl drop-shadow-xl">
+      <div className="h-[500px] w-[375px] rounded-3xl bg-_bgDarkGray drop-shadow-xl">
         <div className="relative h-full">
           {isFirstPage ? (
             <>
@@ -133,14 +133,14 @@ export default function AllInOneDevCard({ githubData, gitlabData, linkedinData }
                 connections={72}
               />
               <Bio
-                className="mt-11 mx-8"
+                className="mx-8 mt-11"
                 name={githubUserInfoMock.name}
                 alias={githubUserInfoMock.login}
                 description={githubUserInfoMock.bio}
               />
-              <Experience className="px-8 mt-2" experience={experienceMock} certification={certificationMock} />
+              <Experience className="mt-2 px-8" experience={experienceMock} certification={certificationMock} />
               <Footer
-                className="absolute w-full px-8 bottom-3"
+                className="absolute bottom-3 w-full px-8"
                 githubUrl="https://github.com/MathPow"
                 linkedinUrl="https://www.linkedin.com/in/mathys-deshaies/"
                 togglePage={togglePage}
@@ -150,7 +150,7 @@ export default function AllInOneDevCard({ githubData, gitlabData, linkedinData }
           ) : (
             <>
               <div className="flex">
-                <GitGraph isVertical className="pl-8 pt-4 w-40" graphCubes={graphCubesMock} />
+                <GitGraph isVertical className="w-40 pl-8 pt-4" graphCubes={graphCubesMock} />
                 <GitStats
                   className="flex-1 pr-8 pt-4"
                   pullRequests={15}
@@ -165,11 +165,11 @@ export default function AllInOneDevCard({ githubData, gitlabData, linkedinData }
                 />
               </div>
               <Footer
-                className="absolute w-full px-8 bottom-3"
+                className="absolute bottom-3 w-full px-8"
                 githubUrl="https://github.com/MathPow"
                 linkedinUrl="https://www.linkedin.com/in/mathys-deshaies/"
                 togglePage={togglePage}
-                githubJoinedDate={new Date(githubData.created_at)}
+                githubJoinedDate={new Date(githubData.basicInfo.created_at)}
                 isFirstPage={isFirstPage}
               />
             </>
