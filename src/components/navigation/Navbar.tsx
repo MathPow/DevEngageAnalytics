@@ -28,32 +28,32 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: linkListComponentsEnum.allInOneDev,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
-    description: "Provides an in-depth look into a developer's activities across multiple platforms.",
+    description: "ui.navbar.components.all_in_one_dev",
   },
   {
     title: linkListComponentsEnum.businessdev,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.businessdev)}`,
-    description: "Provides an overview of GitHub stats and information provided by the user on their GitHub profile.",
+    description: "ui.navbar.components.business_dev",
   },
   {
     title: linkListComponentsEnum.gitLover,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
-    description: "Coming soon...",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.allInOneDesigner,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
-    description: "Coming soon...",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.certificatesFlex,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
-    description: "Coming soon...",
+    description: "ui.info.coming_soon",
   },
   {
     title: linkListComponentsEnum.beautifulAsymmetric,
     href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
-    description: "Coming soon...",
+    description: "ui.info.coming_soon",
   },
 ];
 
@@ -123,9 +123,9 @@ export default function Navbar() {
                             href={`${BASE_PATH}`}
                           >
                             <Icon name={"github"} />
-                            <div className="mb-2 mt-4 text-lg font-medium">DevEngageAnalytics</div>
+                            <div className="mb-2 mt-4 text-lg font-medium">{t("project_name")}</div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Valuable insights into developer activity and engagement.
+                              {t("ui.navbar.docs.description")}
                             </p>
                           </a>
                         </div>
@@ -134,19 +134,19 @@ export default function Navbar() {
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.introduction)}`}
                         title={linkListGettingStartedEnum.introduction}
                       >
-                        What is DevEngageAnalytics?
+                        {t("ui.navbar.docs.introduction")}
                       </ListItem>
                       <ListItem
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.installation)}`}
                         title={linkListGettingStartedEnum.installation}
                       >
-                        How to install dependencies or use in other ways the product?
+                        {t("ui.navbar.docs.installation")}
                       </ListItem>
                       <ListItem
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.roadmap)}`}
                         title={linkListGettingStartedEnum.roadmap}
                       >
-                        What are our plans of action?
+                        {t("ui.navbar.docs.roadmap")}
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
@@ -162,7 +162,7 @@ export default function Navbar() {
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
                         <ListItem key={component.title} title={component.title} href={component.href}>
-                          {component.description}
+                          {t(component.description)}
                         </ListItem>
                       ))}
                     </ul>
