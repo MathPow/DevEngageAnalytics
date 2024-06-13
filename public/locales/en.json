@@ -50,6 +50,9 @@
     }
   },
   "ui": {
+    "info": {
+      "coming_soon": "Coming soon"
+    },
     "pages": {
       "docs": "Docs",
       "components": "Components",
@@ -88,6 +91,19 @@
         "red_chip": "Visit the playground to conveniently download your preferred cards as PNG files",
         "blue_chip": "Integrate our API to retrieve cards in HTML format"
       }
+    },
+    "navbar": {
+      "docs": {
+        "description": "Valuable insights into developer activity and engagement.",
+        "introduction": "What is DevEngageAnalytics?",
+        "installation": "How to install dependencies or use in other ways the product?",
+        "roadmap": "What are our plans of action?"
+      },
+      "components": {
+        "all_in_one_dev": "Provides an in-depth look into a developer's activities across multiple platforms.",
+        "business_dev": "Provides an overview of GitHub stats and information provided by the user on their GitHub profile."
+      }
     }
-  }
+  },
+  "project_name": "DevEngageAnalytics"
 }

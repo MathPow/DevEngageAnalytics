@@ -49,6 +49,9 @@
     }
   },
   "ui": {
+    "info": {
+      "coming_soon": "Prochainement"
+    },
     "pages": {
       "docs": "Documentations",
       "components": "Composants",
@@ -87,6 +90,19 @@
         "red_chip": "Visitez le playground pour télécharger facilement vos cartes préférées au format PNG",
         "blue_chip": "Intégrez notre API pour récupérer les cartes au format HTML"
       }
+    },
+    "navbar": {
+      "docs": {
+        "description": "Des informations précieuses sur l'activité et l'engagement des développeurs.",
+        "introduction": "Qu'est-ce que DevEngageAnalytics?",
+        "installation": "Comment installer les dépendances ou utiliser le produit autrement?",
+        "roadmap": "Quels sont nos plans d'action?"
+      },
+      "components": {
+        "all_in_one_dev": "Fournit un aperçu approfondi des activités d'un développeur sur plusieurs plateformes.",
+        "business_dev": "Fournit un aperçu des statistiques GitHub et des informations fournies par l'utilisateur sur son profil GitHub."
+      }
     }
-  }
+  },
+  "project_name": "DevEngageAnalytics"
 }
