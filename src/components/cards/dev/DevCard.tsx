@@ -25,7 +25,14 @@ export default function DevCard({ cardType, githubUsername, gitlabUsername, link
     if (githubUsername) {
       getGithubUserAllInformation(githubUsername)
         .then(([basicInfo, socialsInfo, totalStarsEarned, commits, pullRequests, issues]) => {
-          if (basicInfo && socialsInfo && totalStarsEarned && commits && pullRequests && issues) {
+          if (
+            basicInfo &&
+            socialsInfo &&
+            totalStarsEarned !== undefined &&
+            commits !== undefined &&
+            pullRequests !== undefined &&
+            issues !== undefined
+          ) {
             setGithubData({
               basicInfo: basicInfo,
               socialsInfo: socialsInfo,
