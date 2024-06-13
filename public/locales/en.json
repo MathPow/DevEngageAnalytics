@@ -6,7 +6,8 @@
       "connections": "connections"
     },
     "info": {
-      "joined_date": "Joined the market on",
+      "joined_market_date": "Joined the market on",
+      "joined_date": "Joined on",
       "days_last_year": "days last year",
       "present": "Present",
       "issued": "Issued in"
@@ -33,11 +34,19 @@
       "pull_requests": "Pull Requests",
       "commits": "Commits",
       "comments": "Comments",
-      "opened_issues": "Opened Issues",
+      "issues": "Issues",
       "total_contributions": "Total Contributions",
       "project_involvement": "Project Involvement",
       "total_stars_earned": "Total Stars Earned",
+      "stars_earned": "Stars Earned",
       "total_repositiories": "Total Repositiories"
+    },
+    "user_info": {
+      "followers": "Followers",
+      "location": "Location",
+      "company": "Company",
+      "email": "Email",
+      "website": "Website"
     }
   },
   "ui": {
