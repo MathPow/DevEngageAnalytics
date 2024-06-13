@@ -13,6 +13,7 @@ export const linkListGettingStarted: string[] = Object.values(linkListGettingSta
 
 export enum linkListComponentsEnum {
   allInOneDev = "All in One Dev",
+  businessdev = "Business Dev",
   gitLover = "Git Lover",
   allInOneDesigner = "All in One Designer",
   certificatesFlex = "Certificates Flex",
