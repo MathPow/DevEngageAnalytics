@@ -83,7 +83,6 @@ export default function Footer({ followers, starsEarned, commits, pullRequests, 
                           />
                           <p className="ml-1 mr-1 text-black dark:text-white">{formatNumberSuffixe(pullRequests)}</p>
                           <p className="truncate text-nowrap text-_lightGrayText dark:text-_darkGrayText">
-                            {" "}
                             {t("card.stats.pull_requests")}
                           </p>
                         </>
