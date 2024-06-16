@@ -73,7 +73,7 @@ export default function Home() {
           <DevCard cardType={DevCardEnum.BusinessCard} githubUsername={demoUsername} />
           <div className="mt-4">
             <input ref={demoUsernameRef} />
-            <Button className="ml-2" size={"sm"} onClick={handleUsernameOnClick}>
+            <Button className="ml-2" variant={"color"} size={"sm"} onClick={handleUsernameOnClick}>
               Make card!
             </Button>
           </div>
