@@ -21,7 +21,7 @@ const config = {
         _darkGrayText: "#5B5B5B",
         _goldColor: "#d4af37",
 
-        _lightBg: "#ffffff",
+        _lightBg: "#fcfcfc",
         _lightBgGradient: "#ffc2ba",
         _lightSeparator: "#dbdbdb",
 
