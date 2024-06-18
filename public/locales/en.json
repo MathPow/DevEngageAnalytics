@@ -105,5 +105,12 @@
       }
     }
   },
+  "form": {
+    "labels": {
+      "githubUsername": "GitHub Username",
+      "gitlabUsername": "GitLab Username",
+      "linkedinUsername": "LinkedIn Username"
+    }
+  },
   "project_name": "DevEngageAnalytics"
 }
