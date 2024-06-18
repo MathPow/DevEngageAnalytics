@@ -52,7 +52,7 @@ export default function SelectType({ setSelectedType }: SelectTypeProps) {
     if (component) {
       return formatSlug(component.format);
     }
-    return "card";
+    return "";
   };
 
   const form = useForm<z.infer<typeof formSchema>>({

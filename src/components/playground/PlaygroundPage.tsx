@@ -15,6 +15,7 @@ export default function PlaygroundPage() {
   const [selectedType, setSelectedType] = useState<Optional<Component>>();
   const [userInfoEntered, setUserInfoEntered] = useState<any>();
   const [userInfoFetched, setUserInfoFetched] = useState<any>();
+  const componentRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     const newScrollY = window.scrollY;
@@ -50,10 +51,11 @@ export default function PlaygroundPage() {
         <PlaygroundSettings selectedType={selectedType} setUserInfoEntered={setUserInfoEntered} />
       </div>
       <div ref={docContentRef} className="w-full">
-        <PlaygroundActions setSelectedType={setSelectedType} />
+        <PlaygroundActions selectedType={selectedType} componentRef={componentRef} setSelectedType={setSelectedType} />
         <PlaygroundPreview
           type={selectedType?.type}
           format={selectedType?.format}
+          componentRef={componentRef}
           userInfoEntered={userInfoEntered}
           userInfoFetched={userInfoFetched}
           setUserInfoFetched={setUserInfoFetched}
