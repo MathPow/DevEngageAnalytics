@@ -8,9 +8,9 @@ import Link from "next/link";
 import { BASE_PATH } from "@/lib/composables/production";
 import BackgroundGradient from "@/components/deco/BackgroundGradient";
 import { useTranslation } from "react-i18next";
-import DevCard from "@/components/cards/dev/DevCard";
-import { DevCardEnum } from "@/lib/types/devCardEnum";
 import { Optional } from "@/lib/types/optional";
+import BusinessCardDev from "@/components/cards/businessCardDev/BusinessCardDev";
+import { ComponentFormatEnum } from "@/lib/types/componentFormat";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -70,7 +70,7 @@ export default function Home() {
           ></path>
         </svg>
         <div className="flex h-96 items-center gap-x-8 bg-[#D64444] pl-16">
-          <DevCard cardType={DevCardEnum.BusinessCard} githubUsername={demoUsername} />
+          <BusinessCardDev data={{ githubUsername: demoUsername }} format={ComponentFormatEnum.Card} />
           <div className="mt-4">
             <input ref={demoUsernameRef} />
             <Button className="ml-2" variant={"color"} size={"sm"} onClick={handleUsernameOnClick}>
