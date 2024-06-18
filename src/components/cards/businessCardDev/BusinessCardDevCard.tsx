@@ -5,7 +5,7 @@ interface BusinessDevCardProps {
   githubData: GithubUserAllInfo;
 }
 
-export default function BusinessDevCard({ githubData }: BusinessDevCardProps) {
+export default function BusinessCardDevCard({ githubData }: BusinessDevCardProps) {
   return (
     <section className="flex gap-x-8 text-white">
       <div

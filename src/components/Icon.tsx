@@ -35,6 +35,11 @@ import Info from "@/../public/assets/icons/info.svg";
 import PullRequest from "@/../public/assets/icons/pull-request.svg";
 import Issue from "@/../public/assets/icons/issue.svg";
 import Commit from "@/../public/assets/icons/commit.svg";
+import Code from "@/../public/assets/icons/code.svg";
+import Copy from "@/../public/assets/icons/copy.svg";
+import Download from "@/../public/assets/icons/download.svg";
+import Chevron2 from "@/../public/assets/icons/chevron2.svg";
+import Edit from "@/../public/assets/icons/edit.svg";
 
 export interface IconProps {
   name:
@@ -73,7 +78,12 @@ export interface IconProps {
     | "info"
     | "pull-request"
     | "issue"
-    | "commit";
+    | "commit"
+    | "code"
+    | "copy"
+    | "download"
+    | "chevron2"
+    | "edit";
   className?: string;
   size?: number;
   color?: string;
@@ -125,6 +135,11 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     "pull-request": <PullRequest {...svgProps} />,
     commit: <Commit {...svgProps} />,
     issue: <Issue {...svgProps} />,
+    code: <Code {...svgProps} />,
+    copy: <Copy {...svgProps} />,
+    download: <Download {...svgProps} />,
+    chevron2: <Chevron2 {...svgProps} />,
+    edit: <Edit {...svgProps} />,
   };
   return Icons[name];
 };

@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
+import { LinkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
 import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
@@ -26,33 +26,33 @@ import { BASE_PATH } from "@/lib/composables/production";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: linkListComponentsEnum.allInOneDev,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
+    title: LinkListComponentsEnum.AllInOneDev,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.AllInOneDev)}`,
     description: "ui.navbar.components.all_in_one_dev",
   },
   {
-    title: linkListComponentsEnum.businessdev,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.businessdev)}`,
+    title: LinkListComponentsEnum.BusinessCardDev,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.BusinessCardDev)}`,
     description: "ui.navbar.components.business_dev",
   },
   {
-    title: linkListComponentsEnum.gitLover,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
+    title: LinkListComponentsEnum.GitLover,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.GitLover)}`,
     description: "ui.info.coming_soon",
   },
   {
-    title: linkListComponentsEnum.allInOneDesigner,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
+    title: LinkListComponentsEnum.AllInOneDesigner,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.AllInOneDesigner)}`,
     description: "ui.info.coming_soon",
   },
   {
-    title: linkListComponentsEnum.certificatesFlex,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
+    title: LinkListComponentsEnum.CertificatesFlex,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.CertificatesFlex)}`,
     description: "ui.info.coming_soon",
   },
   {
-    title: linkListComponentsEnum.beautifulAsymmetric,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
+    title: LinkListComponentsEnum.BeautifulAsymmetric,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.BeautifulAsymmetric)}`,
     description: "ui.info.coming_soon",
   },
 ];
