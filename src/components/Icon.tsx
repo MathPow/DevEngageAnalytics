@@ -40,6 +40,9 @@ import Copy from "@/../public/assets/icons/copy.svg";
 import Download from "@/../public/assets/icons/download.svg";
 import Chevron2 from "@/../public/assets/icons/chevron2.svg";
 import Edit from "@/../public/assets/icons/edit.svg";
+import Error from "@/../public/assets/icons/error.svg";
+import Warning from "@/../public/assets/icons/warning.svg";
+import CheckCircle from "@/../public/assets/icons/check-circle.svg";
 
 export interface IconProps {
   name:
@@ -83,7 +86,10 @@ export interface IconProps {
     | "copy"
     | "download"
     | "chevron2"
-    | "edit";
+    | "edit"
+    | "error"
+    | "warning"
+    | "check-circle";
   className?: string;
   size?: number;
   color?: string;
@@ -140,6 +146,9 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     download: <Download {...svgProps} />,
     chevron2: <Chevron2 {...svgProps} />,
     edit: <Edit {...svgProps} />,
+    error: <Error {...svgProps} />,
+    warning: <Warning {...svgProps} />,
+    "check-circle": <CheckCircle {...svgProps} />,
   };
   return Icons[name];
 };
