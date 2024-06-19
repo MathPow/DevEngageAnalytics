@@ -13,9 +13,11 @@ interface CardProps {
   type: LinkListComponentsEnum;
   format: ComponentFormatEnum;
   data: any;
+  setInfo: (value: any) => void;
+  editInfo: any;
 }
 
-export default function Card({ type, format, data }: CardProps) {
+export default function Card({ type, format, data, setInfo, editInfo }: CardProps) {
   const [githubData, setGithubData] = useState<GithubUserAllInfo>();
   const [gitlabData, setGitlabData] = useState<GitlabUserInfo>();
   const [linkedinData, setLinkedinData] = useState<LinkedinUserInfo>();
@@ -29,7 +31,9 @@ export default function Card({ type, format, data }: CardProps) {
           linkedinData={linkedinData as LinkedinUserInfo}
         />
       )}
-      {type === LinkListComponentsEnum.BusinessCardDev && <BusinessCardDev data={data} format={format} />}
+      {type === LinkListComponentsEnum.BusinessCardDev && (
+        <BusinessCardDev editInfo={editInfo} setInfo={setInfo} data={data} format={format} />
+      )}
     </>
   );
 }
