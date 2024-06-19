@@ -1,26 +1,57 @@
-import { ZodSchema, optional } from "zod";
-import { defaultValues as allInOneDefaultValues, formSchema as allInOneDevFormSchema } from "../forms/allInOneDev";
+import { ZodSchema } from "zod";
 import {
-  defaultValues as businessCardDefaultValues,
-  formSchema as businessCardDevFormSchema,
-} from "../forms/businessCardDev";
+  defaultValues as allInOneEnterDefaultValues,
+  formSchema as allInOneDevEnterFormSchema,
+} from "../forms/enter/allInOneDev";
+import {
+  defaultValues as businessCardEnterDefaultValues,
+  formSchema as businessCardDevEnterFormSchema,
+} from "../forms/enter/businessCardDev";
+
+import {
+  defaultValues as allInOneEditDefaultValues,
+  formSchema as allInOneDevEditFormSchema,
+} from "../forms/edit/allInOneDev";
+import {
+  defaultValues as businessCardEditDefaultValues,
+  formSchema as businessCardDevEditFormSchema,
+  getDynamicDefaultValues as businessCardDevGetDynamicEditDefaultValues,
+} from "../forms/edit/businessCardDev";
 import { Optional } from "../types/optional";
 import { LinkListComponentsEnum } from "../content/LinkListEnum";
 
-export function getFormSchema(type: LinkListComponentsEnum): Optional<ZodSchema<any>> {
+export function getEnterFormSchema(type: LinkListComponentsEnum): Optional<ZodSchema<any>> {
   if (type === LinkListComponentsEnum.AllInOneDev) {
-    return allInOneDevFormSchema;
+    return allInOneDevEnterFormSchema;
   } else if (type === LinkListComponentsEnum.BusinessCardDev) {
-    return businessCardDevFormSchema;
+    return businessCardDevEnterFormSchema;
   }
   return undefined;
 }
 
-export function getDefaultValues(type: LinkListComponentsEnum): any {
+export function getEnterDefaultValues(type: LinkListComponentsEnum): any {
   if (type === LinkListComponentsEnum.AllInOneDev) {
-    return allInOneDefaultValues;
+    return allInOneEnterDefaultValues;
   } else if (type === LinkListComponentsEnum.BusinessCardDev) {
-    return businessCardDefaultValues;
+    return businessCardEnterDefaultValues;
+  }
+  return undefined;
+}
+
+export function getEditFormSchema(type: LinkListComponentsEnum): Optional<ZodSchema<any>> {
+  if (type === LinkListComponentsEnum.AllInOneDev) {
+    return allInOneDevEditFormSchema;
+  } else if (type === LinkListComponentsEnum.BusinessCardDev) {
+    return businessCardDevEditFormSchema;
+  }
+  return undefined;
+}
+
+export function getEditDefaultValues(type: LinkListComponentsEnum, userInfoFetched: any): any {
+  if (type === LinkListComponentsEnum.AllInOneDev) {
+    return allInOneEditDefaultValues;
+  } else if (type === LinkListComponentsEnum.BusinessCardDev) {
+    return businessCardDevGetDynamicEditDefaultValues(userInfoFetched);
   }
   return undefined;
 }
