@@ -5,63 +5,112 @@ import { Separator } from "../ui/separator";
 import EditInfo from "./EditInfo";
 import EnterInfo from "./EnterInfo";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { UseFormReturn, useForm } from "react-hook-form";
 import { ZodSchema, z } from "zod";
 import { Component } from "@/lib/types/component";
-import { getDefaultValues, getFormSchema } from "@/lib/composables/getForm";
-import { Optional } from "@/lib/types/optional";
+import {
+  getEnterDefaultValues,
+  getEnterFormSchema,
+  getEditFormSchema,
+  getEditDefaultValues,
+} from "@/lib/composables/getForm";
+import { useForm } from "react-hook-form";
+import { replaceVariables } from "@/lib/composables/mergeObjects";
 
 interface PlaygroundSettingsProps {
   selectedType?: Component;
   setUserInfoEntered: (obj: any) => void;
+  userInfoFetched: any;
+  setUserInfoFetched: (obj: any) => void;
 }
 
 const initialSchema = z.object({});
 const initialValues = {};
 
-export default function PlaygroundSettings({ selectedType, setUserInfoEntered }: PlaygroundSettingsProps) {
-  const [formSchema, setFormSchema] = useState<ZodSchema>(initialSchema);
-  const [defaultValues, setDefaultValues] = useState<any>(initialValues);
+export default function PlaygroundSettings({
+  selectedType,
+  setUserInfoEntered,
+  userInfoFetched,
+  setUserInfoFetched,
+}: PlaygroundSettingsProps) {
+  const [enterFormSchema, setEnterFormSchema] = useState<ZodSchema>(initialSchema);
+  const [enterDefaultValues, setEnterDefaultValues] = useState<any>(initialValues);
+  const [editFormSchema, setEditFormSchema] = useState<ZodSchema>(initialSchema);
+  const [editDefaultValues, setEditDefaultValues] = useState<any>(initialValues);
 
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues,
+  const formEnter = useForm({
+    resolver: zodResolver(enterFormSchema),
+    defaultValues: enterDefaultValues,
+  });
+
+  const formEdit = useForm({
+    resolver: zodResolver(editFormSchema),
+    defaultValues: editDefaultValues,
   });
 
   useEffect(() => {
     if (selectedType) {
-      const newFormSchema = getFormSchema(selectedType.type);
-      if (newFormSchema) {
-        setFormSchema(newFormSchema);
+      const newEnterFormSchema = getEnterFormSchema(selectedType.type);
+      if (newEnterFormSchema) {
+        setEnterFormSchema(newEnterFormSchema);
       }
-      const newDefaultValues = getDefaultValues(selectedType.type);
-      if (newDefaultValues) {
-        setDefaultValues(newDefaultValues);
+      const newEnterDefaultValues = getEnterDefaultValues(selectedType.type);
+      if (newEnterDefaultValues) {
+        setEnterDefaultValues(newEnterDefaultValues);
       }
+      formEnter.reset(newEnterDefaultValues);
     }
   }, [selectedType?.type]);
 
   useEffect(() => {
-    form.reset(defaultValues);
-  }, [formSchema, defaultValues]);
+    if (userInfoFetched && selectedType) {
+      const newEditFormSchema = getEditFormSchema(selectedType.type);
+      if (newEditFormSchema) {
+        setEditFormSchema(newEditFormSchema);
+      }
+      const newEditDefaultValues = getEditDefaultValues(selectedType.type, userInfoFetched);
+      if (newEditDefaultValues) {
+        setEditDefaultValues(newEditDefaultValues);
+      }
+      formEdit.reset(newEditDefaultValues);
+    }
+  }, [userInfoFetched]);
 
-  async function onSubmit({ ...values }: z.infer<any>) {
+  useEffect(() => {
+    formEnter.reset(enterDefaultValues);
+  }, [enterFormSchema, enterDefaultValues]);
+
+  async function onSubmitEnter({ ...values }: z.infer<any>) {
     setUserInfoEntered(values);
   }
 
+  async function onSubmitEdit({ ...values }: z.infer<any>) {
+    setUserInfoFetched(replaceVariables(userInfoFetched, values));
+    setUserInfoEntered(values);
+  }
+
+  useEffect(() => {}, [userInfoFetched]);
+
   return (
     <div className="flex h-full flex-col">
-      <div className="flex-grow">
-        <div className="flex items-center justify-between text-_lightGrayText dark:text-_darkGrayText">
-          <p className="text-xl font-semibold">Settings</p>
-          <Icon className="hover:cursor-pointer" name={"chevron2"} size={32} />
-        </div>
-        <Separator className="my-1" />
-        {form && <EnterInfo onSubmit={onSubmit} form={form} formSchema={formSchema} />}
-        {/* <EditInfo /> */}
+      <div className="flex items-center justify-between text-_lightGrayText dark:text-_darkGrayText">
+        <p className="text-xl font-semibold">Settings</p>
+        <Icon className="hover:cursor-pointer" name={"chevron2"} size={32} />
       </div>
-      {form && (
-        <Button className="w-full" variant={"color"} onClick={form.handleSubmit(onSubmit)}>
+      <Separator className="my-1" />
+      <div className="scrollbar flex-grow overflow-hidden hover:overflow-y-auto">
+        {formEnter && <EnterInfo onSubmit={onSubmitEnter} form={formEnter} formSchema={enterFormSchema} />}
+        {userInfoFetched && selectedType && formEdit && (
+          <EditInfo
+            onSubmit={onSubmitEdit}
+            form={formEdit}
+            formSchema={editFormSchema}
+            selectedType={selectedType}
+            userInfoFetched={userInfoFetched}
+          />
+        )}
+      </div>
+      {formEnter && (
+        <Button className="mt-4 w-full" variant={"color"} onClick={formEnter.handleSubmit(onSubmitEnter)}>
           Create Card
         </Button>
       )}

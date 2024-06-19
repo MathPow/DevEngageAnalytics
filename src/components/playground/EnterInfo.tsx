@@ -1,10 +1,7 @@
 import Icon from "../Icon";
 import { Input } from "../ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { UseFormReturn, useForm } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 import { ZodObject, ZodRawShape, ZodSchema, z } from "zod";
-
-import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useTranslation } from "react-i18next";
 
@@ -30,14 +27,14 @@ export default function EnterInfo({ onSubmit, form, formSchema }: EnterInfoProps
         <span>Enter your informations</span>
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-y-2" onSubmit={form.handleSubmit(onSubmit)}>
           {schemaKeys.map((key) => (
             <FormField
               key={key}
               control={form.control}
               name={key}
               render={({ field }: any) => (
-                <FormItem>
+                <FormItem className="-space-y-0.5">
                   <FormLabel>{t("form.labels." + key)}:</FormLabel>
                   <FormControl>
                     <Input type="text" className="h-8" placeholder={`${key}...`} {...field} />

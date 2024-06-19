@@ -18,7 +18,6 @@ import { BASE_PATH } from "@/lib/composables/production";
 import { Component } from "@/lib/types/component";
 import { getAllQueryParamsAsComponent, getComponentFromQueryParams } from "@/lib/composables/getParams";
 import { Optional } from "@/lib/types/optional";
-import { useMemo } from "react";
 
 interface SelectTypeProps {
   setSelectedType: (el: Optional<Component>) => void;

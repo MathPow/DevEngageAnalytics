@@ -1,21 +1,25 @@
-import { GithubUserAllInfo } from "@/lib/types/githubInfo";
-import { Header, Bio, Footer, Info } from "../components/businessDevCard/index";
 import { ComponentFormatEnum } from "@/lib/types/componentFormat";
 import BusinessCardDevCard from "./BusinessCardDevCard";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useGithubUserAllInformation } from "@/lib/composables/useGithubData";
 
 interface BusinessDevCardProps {
   data: any;
   format: ComponentFormatEnum;
+  setInfo: (value: any) => void;
+  editInfo: any;
 }
 
-export default function BusinessCardDev({ data, format }: BusinessDevCardProps) {
+export default function BusinessCardDev({ data, format, setInfo, editInfo }: BusinessDevCardProps) {
   const { githubData, handleBasicGithubInformation } = useGithubUserAllInformation(data.githubUsername);
 
   useEffect(() => {
-    handleBasicGithubInformation();
-  }, [handleBasicGithubInformation]);
+    handleBasicGithubInformation(editInfo);
+  }, [handleBasicGithubInformation, editInfo]);
+
+  useEffect(() => {
+    setInfo(githubData);
+  }, [githubData]);
 
   return <>{format === ComponentFormatEnum.Card && githubData && <BusinessCardDevCard githubData={githubData} />}</>;
 }

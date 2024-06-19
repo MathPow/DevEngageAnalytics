@@ -109,7 +109,17 @@
     "labels": {
       "githubUsername": "GitHub Username",
       "gitlabUsername": "GitLab Username",
-      "linkedinUsername": "LinkedIn Username"
+      "linkedinUsername": "LinkedIn Username",
+      "avatar_url": "Avatar Url",
+      "location": "Location",
+      "company": "Compagny",
+      "html_url": "GitHub Link",
+      "email": "Email",
+      "website": "Website",
+      "twitter_username": "Twitter",
+      "name": "Name",
+      "login": "Alias",
+      "bio": "Bio"
     }
   },
   "project_name": "DevEngageAnalytics"

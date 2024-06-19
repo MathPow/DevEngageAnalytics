@@ -26,7 +26,13 @@ export default function PlaygroundPreview({
     >
       {type !== undefined && format !== undefined && userInfoEntered !== undefined ? (
         <div ref={componentRef}>
-          <Card type={type} data={userInfoEntered} format={format} />
+          <Card
+            setInfo={setUserInfoFetched}
+            editInfo={userInfoFetched}
+            type={type}
+            data={userInfoEntered}
+            format={format}
+          />
         </div>
       ) : (
         <div className="flex flex-col text-_darkGrayText">
