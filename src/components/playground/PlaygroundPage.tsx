@@ -46,9 +46,14 @@ export default function PlaygroundPage() {
       <div
         ref={docNavRef}
         style={{ height: `calc(75vh + ${scrollY}px)` }}
-        className={`scrollbar top-24 w-full flex-shrink-0 overflow-hidden rounded-xl border bg-_lightBg p-4 shadow-md hover:overflow-y-auto dark:bg-_darkBg sm:w-20 lg:w-64`}
+        className={`top-24 w-full flex-shrink-0 rounded-xl border bg-_lightBg p-4 shadow-md dark:bg-_darkBg sm:w-20 lg:w-64`}
       >
-        <PlaygroundSettings selectedType={selectedType} setUserInfoEntered={setUserInfoEntered} />
+        <PlaygroundSettings
+          userInfoFetched={userInfoFetched}
+          setUserInfoFetched={setUserInfoFetched}
+          selectedType={selectedType}
+          setUserInfoEntered={setUserInfoEntered}
+        />
       </div>
       <div ref={docContentRef} className="w-full">
         <PlaygroundActions selectedType={selectedType} componentRef={componentRef} setSelectedType={setSelectedType} />
