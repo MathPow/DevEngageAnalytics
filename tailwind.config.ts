@@ -22,10 +22,12 @@ const config = {
         _goldColor: "#d4af37",
 
         _lightBg: "#fcfcfc",
+        _lightBgRed: "#D64444",
         _lightBgGradient: "#ffc2ba",
         _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
+        _darkBgRed: "#A63232",
         _darkSlateBg: "#101725",
         _darkBgGradient: "#360606",
         _darkSeparator: "#474747",
@@ -86,6 +88,8 @@ const config = {
       },
       backgroundImage: {
         joker: `url('${BASE_PATH}assets/img/joker.png')`,
+        "black-background": `url('${BASE_PATH}assets/img/black-background.png')`,
+        "white-background": `url('${BASE_PATH}assets/img/white-background.png')`,
         "blurry-gradient-bg": `url('${BASE_PATH}assets/img/blurry-gradient-bg.svg')`,
       },
     },
