@@ -43,6 +43,9 @@ import Edit from "@/../public/assets/icons/edit.svg";
 import Error from "@/../public/assets/icons/error.svg";
 import Warning from "@/../public/assets/icons/warning.svg";
 import CheckCircle from "@/../public/assets/icons/check-circle.svg";
+import DecoBoard from "@/../public/assets/icons/deco-board.svg";
+import DecoChart from "@/../public/assets/icons/deco-chart.svg";
+import DecoLightBulb from "@/../public/assets/icons/deco-light-bulb.svg";
 
 export interface IconProps {
   name:
@@ -89,7 +92,10 @@ export interface IconProps {
     | "edit"
     | "error"
     | "warning"
-    | "check-circle";
+    | "check-circle"
+    | "deco-board"
+    | "deco-chart"
+    | "deco-light-bulb";
   className?: string;
   size?: number;
   color?: string;
@@ -149,6 +155,9 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     error: <Error {...svgProps} />,
     warning: <Warning {...svgProps} />,
     "check-circle": <CheckCircle {...svgProps} />,
+    "deco-board": <DecoBoard {...svgProps} />,
+    "deco-chart": <DecoChart {...svgProps} />,
+    "deco-light-bulb": <DecoLightBulb {...svgProps} />,
   };
   return Icons[name];
 };
