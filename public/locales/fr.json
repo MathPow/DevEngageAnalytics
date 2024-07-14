@@ -38,7 +38,8 @@
       "total_contributions": "Contributions Totales",
       "project_involvement": "Project Involvement",
       "total_stars_earned": "Total Stars Earned",
-      "stars_earned": "Étoiles gagnées"
+      "stars_earned": "Étoiles gagnées",
+      "total_repositiories": "Total Repositiories"
     },
     "user_info": {
       "followers": "Abonnés",
@@ -80,15 +81,71 @@
     },
     "homepage": {
       "title": "Collection de cartes de profil modernes",
-      "description": "DevSocialsStats est un projet open-source visant à analyser les statistiques des médias sociaux des plateformes populaires et à suivre des informations précieuses sur l'activité des développeurs.",
+      "description": "DevSocialsStats est un projet open-source visant à analyser les statistiques des réseaux sociaux des plateformes populaires et à suivre les informations précieuses sur l'activité des développeurs.",
+      "subtitles": {
+        "start_your_open_source_journey_here": "Commencez votre voyage open source ici!",
+        "test_our_card_preview_with_your_information": "Testez notre aperçu de carte avec vos informations"
+      },
+      "texts": {
+        "enter_github_username": "Entrez votre nom d'utilisateur GitHub dans la boîte ci-dessous et prévisualisez à quoi pourrait ressembler votre carte Business Dev!"
+      },
       "actions": {
         "go_to_gitHub": "Aller sur GitHub",
-        "get_started": "Commencer"
+        "get_started": "Commencer",
+        "learn_more": "En savoir plus",
+        "create_card": "Créer une carte!"
+      },
+      "placeholders": {
+        "username": "Nom d'utilisateur"
       },
       "info": {
-        "black_chip": "Utilisez NPM pour installer des composants de cartes personnalisables dans votre projet",
-        "red_chip": "Visitez le playground pour télécharger facilement vos cartes préférées au format PNG",
-        "blue_chip": "Intégrez notre API pour récupérer les cartes au format HTML"
+        "black_chip": "Utilisez NPM pour installer des composants de carte personnalisables dans votre projet",
+        "red_chip": "Visitez le terrain de jeu pour télécharger facilement vos cartes préférées au format PNG",
+        "blue_chip": "Intégrez notre API pour récupérer des cartes au format HTML"
+      },
+      "info_cards": {
+        "track_statistics": {
+          "title": "Suivre les statistiques",
+          "text": "Surveillez les données des plateformes comme GitHub, GitLab, Stack Overflow et LinkedIn pour un utilisateur spécifique."
+        },
+        "collaboration_patterns": {
+          "title": "Modèles de collaboration",
+          "text": "Analysez les modèles de collaboration entre développeurs, y compris les réseaux de collaboration, les relations de co-auteurs et les contributions aux projets."
+        },
+        "info_presentation": {
+          "title": "Présentation d'informations",
+          "text": "Utilisez notre format de carte et de panneau pour afficher efficacement les informations utilisateur dans des secteurs spécifiques."
+        },
+        "enhance_your_skills": {
+          "title": "Améliorez vos compétences",
+          "text": "Contribuer à des projets open-source améliore vos compétences en codage et votre familiarité avec de nouvelles technologies. Vous acquérez une expérience pratique, résolvez des problèmes complexes et restez à jour avec les tendances du développement logiciel, aidant votre croissance en tant que développeur."
+        },
+        "build_a_professional_network": {
+          "title": "Construisez un réseau professionnel",
+          "text": "Les communautés open-source réunissent des développeurs du monde entier, offrant des connexions avec des pairs, des mentors et des employeurs potentiels. Contribuer à ces projets peut mener à des opportunités d'emploi, des collaborations et un accès à une richesse de connaissances et de ressources partagées."
+        },
+        "boost_your_portfolio": {
+          "title": "Boostez votre portfolio",
+          "text": "Contribuer à des projets open-source met en valeur vos compétences et votre dévouement, améliorant votre portfolio et vous rendant plus attrayant pour les employeurs et les clients. Une forte présence dans la communauté démontre votre engagement et peut vous valoir reconnaissance et respect de vos pairs."
+        }
+      },
+      "info_sections": {
+        "enhanced_profile_visibility": {
+          "title": "Visibilité de profil améliorée",
+          "intro": "Marre des",
+          "point1": "CV ennuyeux?",
+          "point2": "Perdre du temps à créer de nombreux profils?",
+          "point3": "Toujours chercher vos informations?",
+          "point4": "Difficultés à transmettre votre expertise aux recruteurs potentiels?",
+          "text": "DevAnalytics a ce qu'il vous faut! Avec notre terrain de jeu de cartes facile à utiliser, toutes vos informations peuvent rester condensées dans votre propre carte personnalisable!"
+        },
+        "customize_to_your_liking": {
+          "title": "Personnalisez à votre goût!",
+          "point1": "Plusieurs modèles de cartes différents",
+          "point2": "Une variété de formats",
+          "point3": "Open source!",
+          "point4": "Support pour de nombreuses plateformes différentes"
+        }
       }
     },
     "navbar": {
