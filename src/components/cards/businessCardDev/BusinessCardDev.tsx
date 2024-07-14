@@ -6,8 +6,8 @@ import { useGithubUserAllInformation } from "@/lib/composables/useGithubData";
 interface BusinessDevCardProps {
   data: any;
   format: ComponentFormatEnum;
-  setInfo: (value: any) => void;
-  editInfo: any;
+  setInfo?: (value: any) => void;
+  editInfo?: any;
 }
 
 export default function BusinessCardDev({ data, format, setInfo, editInfo }: BusinessDevCardProps) {
@@ -18,7 +18,7 @@ export default function BusinessCardDev({ data, format, setInfo, editInfo }: Bus
   }, [handleBasicGithubInformation, editInfo]);
 
   useEffect(() => {
-    setInfo(githubData);
+    if (setInfo) setInfo(githubData);
   }, [githubData]);
 
   return <>{format === ComponentFormatEnum.Card && githubData && <BusinessCardDevCard githubData={githubData} />}</>;

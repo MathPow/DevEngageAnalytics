@@ -36,7 +36,7 @@ export default function SplineViewer() {
     <>
       <Tooltip text={tooltipText} />
       <Spline
-        className="absolute left-0 right-0 top-0 z-0"
+        className="absolute left-0 right-0 top-0 z-10"
         onMouseHover={onMouseHover}
         onMouseDown={onMouseDown}
         scene="https://prod.spline.design/cEGK4BVdk2pDyxvF/scene.splinecode"
