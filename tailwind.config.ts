@@ -22,12 +22,12 @@ const config = {
         _goldColor: "#d4af37",
 
         _lightBg: "#fcfcfc",
-        _lightBgRed: "#D64444",
+        _lightBgRed: "#f27474",
         _lightBgGradient: "#ffc2ba",
         _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
-        _darkBgRed: "#A63232",
+        _darkBgRed: "#D64444",
         _darkSlateBg: "#101725",
         _darkBgGradient: "#360606",
         _darkSeparator: "#474747",
