@@ -93,7 +93,8 @@
         "go_to_gitHub": "Go to GitHub",
         "get_started": "Get Started",
         "learn_more": "Learn More",
-        "create_card": "Create Card!"
+        "create_card": "Create Card!",
+        "explore_this_card_in_playground": "Explore this card in playground"
       },
       "placeholders": {
         "username": "սsername"

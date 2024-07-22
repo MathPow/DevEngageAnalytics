@@ -93,7 +93,8 @@
         "go_to_gitHub": "Aller sur GitHub",
         "get_started": "Commencer",
         "learn_more": "En savoir plus",
-        "create_card": "Créer une carte!"
+        "create_card": "Créer une carte!",
+        "explore_this_card_in_playground": "Explorez cette carte dans le terrain de jeu"
       },
       "placeholders": {
         "username": "Nom d'utilisateur"
