@@ -82,14 +82,71 @@
     "homepage": {
       "title": "Collection of modern profile cards",
       "description": "DevSocialsStats is an open-source project aimed at analyzing social media statistics from popular platforms and tracking valuable insights into developer activity.",
+      "subtitles": {
+        "start_your_open_source_journey_here": "Start your open source journey here!",
+        "test_our_card_preview_with_your_information": "Test our card preview with your information"
+      },
+      "texts": {
+        "enter_github_username": "Enter your GitHub username in the box below and preview what your Business Dev Card could look like!"
+      },
       "actions": {
         "go_to_gitHub": "Go to GitHub",
-        "get_started": "Get Started"
+        "get_started": "Get Started",
+        "learn_more": "Learn More",
+        "create_card": "Create Card!",
+        "explore_this_card_in_playground": "Explore this card in playground"
+      },
+      "placeholders": {
+        "username": "սsername"
       },
       "info": {
         "black_chip": "Use NPM to install customizable card components in your project",
         "red_chip": "Visit the playground to conveniently download your preferred cards as PNG files",
         "blue_chip": "Integrate our API to retrieve cards in HTML format"
+      },
+      "info_cards": {
+        "track_statistics": {
+          "title": "Track Statistics",
+          "text": "Monitor data from platforms like GitHub, GitLab, Stack Overflow, and LinkedIn for a specific user."
+        },
+        "collaboration_patterns": {
+          "title": "Collaboration Patterns",
+          "text": "Analyze collaboration patterns among developers, including collaboration networks, co-authorship relationships, and project contributions."
+        },
+        "info_presentation": {
+          "title": "Info Presentation",
+          "text": "Use our card and panel format to efficiently display user information in specific sectors."
+        },
+        "enhance_your_skills": {
+          "title": "Enhance Your Skills",
+          "text": "Contributing to open-source projects enhances your coding skills and familiarity with new technologies. You gain practical experience, solve complex problems, and stay current with software development trends, aiding your growth as a developer."
+        },
+        "build_a_professional_network": {
+          "title": "Build a Professional Network",
+          "text": "Open-source communities unite global developers, offering connections with peers, mentors, and potential employers. Contributing to these projects can lead to job opportunities, collaborations, and access to a wealth of shared knowledge and resources."
+        },
+        "boost_your_portfolio": {
+          "title": "Boost Your Portfolio",
+          "text": "Contributing to open-source projects showcases your skills and dedication, enhancing your portfolio and making you more attractive to employers and clients. A strong presence in the community demonstrates your commitment and can earn you recognition and respect from peers."
+        }
+      },
+      "info_sections": {
+        "enhanced_profile_visibility": {
+          "title": "Enhanced Profile Visibility",
+          "intro": "Tired of",
+          "point1": "Boring CVs?",
+          "point2": "Wasting time building numerous profiles?",
+          "point3": "Constantly searching for your information?",
+          "point4": "Difficulties in conveying your expertise to potential recruiters?",
+          "text": "DevAnalytics has got you covered! With our easy-to-use card playground, all of your information can staycondensed in your own customizable card!"
+        },
+        "customize_to_your_liking": {
+          "title": "Customize to your liking!",
+          "point1": "Multiple different card templates",
+          "point2": "Variety of formats",
+          "point3": "Open source!",
+          "point4": "Support for many different platforms"
+        }
       }
     },
     "navbar": {
