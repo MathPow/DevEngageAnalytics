@@ -76,26 +76,22 @@ export default function Home() {
         <div className="flex items-center gap-x-8 bg-_lightBgRed pb-12 pt-20 dark:bg-_darkBgRed">
           <div className="mx-auto flex flex-col flex-wrap justify-center gap-4 px-4 pb-24 sm:px-0 lg:flex-row lg:pb-0 xl:gap-8 2xl:gap-12">
             <InfoCard
-              title={"Track Statistics"}
-              text={
-                "Monitor data from platforms like GitHub, GitLab, Stack Overflow, and LinkedIn for a specific user."
-              }
+              title={t("ui.homepage.info_cards.track_statistics.title")}
+              text={t("ui.homepage.info_cards.track_statistics.text")}
               icon={{ name: "deco-chart" }}
               bgIcon={{ name: "playing-card-heart" }}
               isTextCenter
             />
             <InfoCard
-              title={"Collaboration Patterns"}
-              text={
-                "Analyze collaboration patterns among developers, including collaboration networks, co-authorship relationships, and project contributions."
-              }
+              title={t("ui.homepage.info_cards.collaboration_patterns.title")}
+              text={t("ui.homepage.info_cards.collaboration_patterns.text")}
               icon={{ name: "deco-light-bulb" }}
               bgIcon={{ name: "playing-card-spade" }}
               isTextCenter
             />
             <InfoCard
-              title={"Info Presentation"}
-              text={"Use our card and panel format to efficiently display user information in specific sectors."}
+              title={t("ui.homepage.info_cards.info_presentation.title")}
+              text={t("ui.homepage.info_cards.info_presentation.text")}
               icon={{ name: "deco-board" }}
               bgIcon={{ name: "playing-card-diamond" }}
               isTextCenter
@@ -116,24 +112,22 @@ export default function Home() {
             </div>
             <div className="flex flex-1 flex-col gap-y-4 text-center xl:text-left">
               <h3 className="mx-auto w-3/4 bg-gradient-to-r from-rose-600 to-rose-400 bg-clip-text text-2xl font-extrabold tracking-wide text-transparent dark:from-rose-300 dark:to-rose-200 sm:w-fit xl:mx-0">
-                Test our card preview with your information
+                {t("ui.homepage.subtitles.test_our_card_preview_with_your_information")}
               </h3>
-              <p className="mx-auto w-2/3 xl:mx-0">
-                Enter your GitHub username in the box below and preview what your Business Dev Card could look like!
-              </p>
+              <p className="mx-auto w-2/3 xl:mx-0">{t("ui.homepage.texts.enter_github_username")}</p>
               <div className="mx-auto flex flex-wrap gap-x-2 xl:mx-0">
                 <Input
                   type="text"
                   className="w-64 border-2 border-rose-400"
-                  placeholder={`սsername...`}
+                  placeholder={`${t("ui.homepage.placeholders.username")}...`}
                   ref={demoUsernameRef}
                 />
                 <Button className="ml-0 sm:ml-2" variant={"color"} size={"sm"} onClick={handleUsernameOnClick}>
-                  Make card!
+                  {t("ui.homepage.actions.create_card")}
                 </Button>
               </div>
               <TransitionLink
-                title={"Explore this card in playground"}
+                title={t("ui.homepage.actions.explore_this_card_in_playground")}
                 href={`${BASE_PATH}playground?type=businessdev&format=card`}
                 classname={"mx-auto xl:mx-0"}
               />
@@ -143,74 +137,65 @@ export default function Home() {
         <div className="mt-4 flex w-screen flex-col gap-y-16">
           <InfoSection
             side={"left"}
-            title={"Enhanced Profile Visibility"}
+            title={t("ui.homepage.info_sections.enhanced_profile_visibility.title")}
             img={
               <Image src={theme === "dark" ? GraphicPlayingCardsDark : GraphicPlayingCards} alt="GraphicPlayingCards" />
             }
           >
-            <p>Tired of:</p>
+            <p>{t("ui.homepage.info_sections.enhanced_profile_visibility.intro")}:</p>
             <ul className="ml-8 list-disc">
-              <li>Boring CVs? </li>
-              <li>Wasting time building numerous profiles? </li>
-              <li>Constantly searching for your information?</li>
-              <li>Difficulties in conveying your expertise to potential recruiters?</li>
+              <li>{t("ui.homepage.info_sections.enhanced_profile_visibility.point1")}</li>
+              <li>{t("ui.homepage.info_sections.enhanced_profile_visibility.point2")}</li>
+              <li>{t("ui.homepage.info_sections.enhanced_profile_visibility.point3")}</li>
+              <li>{t("ui.homepage.info_sections.enhanced_profile_visibility.point4")}</li>
             </ul>
-            <p className="mt-6">
-              DevAnalytics has got you covered! With our easy-to-use card playground, all of your information can stay
-              condensed in your own customizable card!
-            </p>
+            <p className="mt-6">{t("ui.homepage.info_sections.enhanced_profile_visibility.point4")}</p>
           </InfoSection>
           <InfoSection
             side={"right"}
-            title={"Customize to your liking!"}
+            title={t("ui.homepage.info_sections.customize_to_your_liking.title")}
             img={<Image src={theme === "dark" ? GraphicMakeItRainDark : GraphicMakeItRain} alt="GraphicMakeItRain" />}
           >
             <ul className="ml-4 list-disc">
-              <li>Multiple different card templates</li>
-              <li>Variety of formats</li>
-              <li>Open source!</li>
-              <li>Support for many different platforms</li>
+              <li>{t("ui.homepage.info_sections.customize_to_your_liking.point1")}</li>
+              <li>{t("ui.homepage.info_sections.customize_to_your_liking.point2")}</li>
+              <li>{t("ui.homepage.info_sections.customize_to_your_liking.point3")}</li>
+              <li>{t("ui.homepage.info_sections.customize_to_your_liking.point4")}</li>
             </ul>
           </InfoSection>
         </div>
         <div className="mt-32">
           <h3 className="mx-auto mb-8 w-full bg-gradient-to-r from-rose-600 to-rose-400 bg-clip-text pb-6 text-center text-4xl font-extrabold tracking-wide text-transparent dark:from-rose-300 dark:to-rose-200 sm:w-[500px] lg:w-[700px] lg:text-5xl">
-            Start your open source journey here!
+            {t("ui.homepage.subtitles.start_your_open_source_journey_here")}
           </h3>
           <div className="flex items-center">
             <ul className="mx-auto flex flex-col flex-wrap justify-center gap-4 px-4 pb-10 sm:px-0 lg:flex-row lg:pb-0 xl:gap-8 2xl:gap-12">
               <li>
                 <InfoCard
-                  title={"Enhance Your Skills and Knowledge"}
-                  text={
-                    "Contributing to open-source projects enhances your coding skills and familiarity with new technologies. You gain practical experience, solve complex problems, and stay current with software development trends, aiding your growth as a developer."
-                  }
+                  title={t("ui.homepage.info_cards.enhance_your_skills.title")}
+                  text={t("ui.homepage.info_cards.enhance_your_skills.text")}
                   link={{
-                    title: "Learn More",
+                    title: t("ui.homepage.actions.learn_more"),
                     href: `${BASE_PATH}docs/contribution/primarygoal`,
                   }}
                 />
               </li>
               <li>
                 <InfoCard
-                  title={"Build a Strong Professional Network"}
-                  text={
-                    "Open-source communities unite global developers, offering connections with peers, mentors, and potential employers. Contributing to these projects can lead to job opportunities, collaborations, and access to a wealth of shared knowledge and resources."
-                  }
+                  title={t("ui.homepage.info_cards.build_a_professional_network.title")}
+                  text={t("ui.homepage.info_cards.build_a_professional_network.text")}
                   link={{
-                    title: "Learn More",
+                    title: t("ui.homepage.actions.learn_more"),
                     href: `${BASE_PATH}docs/contribution/contributors`,
                   }}
                 />
               </li>
               <li>
                 <InfoCard
-                  title={"Boost Your Portfolio and Visibility"}
-                  text={
-                    "Contributing to open-source projects showcases your skills and dedication, enhancing your portfolio and making you more attractive to employers and clients. A strong presence in the community demonstrates your commitment and can earn you recognition and respect from peers."
-                  }
+                  title={t("ui.homepage.info_cards.boost_your_portfolio.title")}
+                  text={t("ui.homepage.info_cards.boost_your_portfolio.text")}
                   link={{
-                    title: "Learn More",
+                    title: t("ui.homepage.actions.learn_more"),
                     href: `${BASE_PATH}docs/contribution/firstpullrequest`,
                   }}
                 />
