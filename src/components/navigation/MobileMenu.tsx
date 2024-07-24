@@ -32,9 +32,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
 
   return (
     <div
-      className={`fixed bottom-0 right-0 top-0 z-20 w-full rounded-l-xl bg-_lightBg/50 px-4 shadow-lg outline outline-1 outline-slate-200 backdrop-blur-lg dark:bg-_darkBg/50 dark:outline-slate-800 sm:w-80 ${
-        !isMenuOpen && "hidden"
-      }`}
+      className={`fixed bottom-0 right-0 top-0 z-20 w-full rounded-l-xl bg-_lightBg/50 px-4 shadow-lg outline outline-1 outline-slate-200 backdrop-blur-lg dark:bg-_darkBg/50 dark:outline-slate-800 sm:w-80 ${!isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} transition-all ease-in`}
     >
       <div className="float-right my-8">
         <Menu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
