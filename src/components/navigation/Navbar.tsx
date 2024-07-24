@@ -93,7 +93,10 @@ export default function Navbar() {
         <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
       <div className={`h-12 ${isNavVisible && "hidden"}`}></div>
-      <header className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} relative z-20`} ref={ref}>
+      <header
+        className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} ${isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} relative z-20 transition-all ease-in`}
+        ref={ref}
+      >
         <div
           className={`flex h-12 items-center justify-between ${
             isNavVisible
