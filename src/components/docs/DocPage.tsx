@@ -36,7 +36,7 @@ export default function DocPage({ slug, url }: DocPageProps) {
   }, []);
 
   return (
-    <div className="mx-[12vw] mt-[calc(20vh-150px+5vw)] flex max-w-[1300px] flex-row gap-x-16 px-16 2xl:mx-auto">
+    <div className="mt-[calc(20vh-150px+5vw)] flex max-w-[1300px] flex-row gap-x-16 px-16 lg:mx-[8vw] xl:mx-[12vw] 2xl:mx-auto">
       <div
         ref={docNavRef}
         className={`scrollbar sticky top-24 hidden w-64 overflow-hidden hover:overflow-y-auto sm:block`}
