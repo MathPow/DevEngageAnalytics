@@ -42,17 +42,21 @@ export default function SelectType({ setSelectedType }: SelectTypeProps) {
   }
 
   const typeValue = () => {
-    const component = getAllQueryParamsAsComponent(window.location.href);
-    if (component) {
-      return formatSlug(component.type);
+    if (typeof window !== "undefined") {
+      const component = getAllQueryParamsAsComponent(window.location.href);
+      if (component) {
+        return formatSlug(component.type);
+      }
     }
     return "";
   };
 
   const formatValue = () => {
-    const component = getAllQueryParamsAsComponent(window.location.href);
-    if (component) {
-      return formatSlug(component.format);
+    if (typeof window !== "undefined") {
+      const component = getAllQueryParamsAsComponent(window.location.href);
+      if (component) {
+        return formatSlug(component.format);
+      }
     }
     return "";
   };

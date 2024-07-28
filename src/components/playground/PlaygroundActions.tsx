@@ -35,12 +35,12 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
 
   const [estimatedWidths, setEstimatedWidths] = useState<(number | undefined)[]>([0, 0, 0, 0]);
   const [isHovered, setIsHovered] = useState<boolean[]>([false, false, false, false]);
-  const refs = [
+  const refs = useRef<Array<RefObject<HTMLSpanElement>>>([
     useRef<HTMLSpanElement>(null),
     useRef<HTMLSpanElement>(null),
     useRef<HTMLSpanElement>(null),
     useRef<HTMLSpanElement>(null),
-  ];
+  ]);
   const actionsRef = useRef<HTMLDivElement>(null);
   const [isMouseEventLock, setIsMouseEventLock] = useState<boolean>(false);
 
@@ -64,7 +64,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
   }, [isHovered]);
 
   useEffect(() => {
-    const newWidths = refs.map((ref) => {
+    const newWidths = refs.current.map((ref) => {
       const span = ref.current;
       if (span) {
         span.style.width = "auto";
@@ -74,7 +74,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
       }
     });
     setEstimatedWidths(newWidths);
-  }, [i18n.language]);
+  }, [i18n.language, refs.current]);
 
   function handleCopyHtml() {}
 
@@ -107,7 +107,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
   const isButtonsOnTwoLines = useMemo(() => {
     if (actionsRef.current) return actionsRef.current.offsetHeight > 70;
     return false;
-  }, [actionsRef.current?.offsetWidth]);
+  }, [actionsRef.current]);
 
   return (
     <div ref={actionsRef} className="flex flex-wrap justify-between gap-y-2">
@@ -137,7 +137,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
                     <div className="flex items-center">
                       <Icon className="w-4" {...el.icon} />
                       <span
-                        ref={refs[index]}
+                        ref={refs.current[index]}
                         className={`overflow-hidden transition-all duration-300 group-hover:ml-1`}
                         style={{
                           width: `${isHovered[index] ? estimatedWidths[index] : "0"}px`,
@@ -151,7 +151,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
                   <div className="flex items-center">
                     <Icon className="w-4" {...el.icon} />
                     <span
-                      ref={refs[index]}
+                      ref={refs.current[index]}
                       className={`overflow-hidden transition-all duration-300 group-hover:ml-1`}
                       style={{
                         width: `${isHovered[index] ? estimatedWidths[index] : "0"}px`,
