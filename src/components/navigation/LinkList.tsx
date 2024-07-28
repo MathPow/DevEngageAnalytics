@@ -15,7 +15,7 @@ export default function LinkList({ list, url }: LinkListProps) {
       {list.map((el, index) => (
         <Link
           key={index}
-          className={`hover:underline ${pathname.includes(formatSlug(el)) ? "font-semibold text-black dark:font-normal dark:text-white" : ""}`}
+          className={`hover:underline ${pathname && pathname.includes(formatSlug(el)) ? "font-semibold text-black dark:font-normal dark:text-white" : ""}`}
           href={`${url}${formatSlug(el)}`}
         >
           {el}
