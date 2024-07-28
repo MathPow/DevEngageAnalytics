@@ -160,6 +160,52 @@
         "all_in_one_dev": "Provides an in-depth look into a developer's activities across multiple platforms.",
         "business_dev": "Provides an overview of GitHub stats and information provided by the user on their GitHub profile."
       }
+    },
+    "playground": {
+      "side_nav": {
+        "title": "Settings",
+        "enter_your_informations": "Enter your informations",
+        "edit_platform_informations": "Edit platform informations",
+        "create_card": "Create Card"
+      },
+      "actions": {
+        "copy_html": {
+          "title": "Copy HTML",
+          "description": "Ideal for developers who want to integrate cards into their projects seamlessly"
+        },
+        "export_code": {
+          "title": "Export Code",
+          "description": "Great for developers who need a programmatic approach to access and display card data"
+        },
+        "host_component": {
+          "title": "Host Component",
+          "description": "Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website"
+        },
+        "download_image": {
+          "title": "Download Image",
+          "description": "Perfect for users who want a quick and easy way to generate and save visual representations without any coding",
+          "download_as": "Download as",
+          "error": {
+            "create_card_to_download_as_png": "Create a card to download as PNG",
+            "create_card_to_download_as_svg": "Create a card to download as SVG"
+          }
+        },
+        "select_component": {
+          "title": "Components",
+          "placeholder": "Select a component"
+        },
+        "select_format": {
+          "title": "Formats",
+          "placeholder": "Select a format",
+          "card": "Card",
+          "panel": "Panel",
+          "page": "Page"
+        }
+      },
+      "preview": {
+        "please_select_component_and_format": "Please select a component and a format",
+        "please_enter_necessary_informations": "Please enter the necessary informations"
+      }
     }
   },
   "form": {
