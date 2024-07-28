@@ -80,7 +80,8 @@ export default function Navbar() {
 
     handleScroll();
 
-    if (!window.location.href.includes("playground")) window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined" && !window.location.href.includes("playground"))
+      window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

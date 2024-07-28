@@ -38,7 +38,9 @@ export default function PlaygroundPage() {
   }, []);
 
   useEffect(() => {
-    setSelectedType(getAllQueryParamsAsComponent(window.location.href));
+    if (typeof window !== "undefined") {
+      setSelectedType(getAllQueryParamsAsComponent(window.location.href));
+    }
   }, []);
 
   return (

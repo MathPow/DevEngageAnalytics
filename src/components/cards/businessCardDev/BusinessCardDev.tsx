@@ -19,7 +19,7 @@ export default function BusinessCardDev({ data, format, setInfo, editInfo }: Bus
 
   useEffect(() => {
     if (setInfo) setInfo(githubData);
-  }, [githubData]);
+  }, [githubData, setInfo]);
 
   return <>{format === ComponentFormatEnum.Card && githubData && <BusinessCardDevCard githubData={githubData} />}</>;
 }

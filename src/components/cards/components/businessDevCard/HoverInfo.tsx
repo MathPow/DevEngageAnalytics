@@ -43,7 +43,7 @@ export default function HoverInfo({ icon, title, content, isLink = false, second
           <>
             <Separator className="my-2" />
             {secondaryInfo.map((el, index) => (
-              <div className="flex gap-x-1 text-_darkGrayText dark:text-_lightGrayText">
+              <div key={index} className="flex gap-x-1 text-_darkGrayText dark:text-_lightGrayText">
                 <Icon name={el.icon.name} size={20} />
                 <p className="text-sm">{el.title}</p>
               </div>
