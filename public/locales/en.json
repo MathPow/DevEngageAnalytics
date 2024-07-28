@@ -6,7 +6,8 @@
       "connections": "connections"
     },
     "info": {
-      "joined_date": "Joined the market on",
+      "joined_market_date": "Joined the market on",
+      "joined_date": "Joined on",
       "days_last_year": "days last year",
       "present": "Present",
       "issued": "Issued in"
@@ -33,14 +34,25 @@
       "pull_requests": "Pull Requests",
       "commits": "Commits",
       "comments": "Comments",
-      "opened_issues": "Opened Issues",
+      "issues": "Issues",
       "total_contributions": "Total Contributions",
       "project_involvement": "Project Involvement",
       "total_stars_earned": "Total Stars Earned",
+      "stars_earned": "Stars Earned",
       "total_repositiories": "Total Repositiories"
+    },
+    "user_info": {
+      "followers": "Followers",
+      "location": "Location",
+      "company": "Company",
+      "email": "Email",
+      "website": "Website"
     }
   },
   "ui": {
+    "info": {
+      "coming_soon": "Coming soon"
+    },
     "pages": {
       "docs": "Docs",
       "components": "Components",
@@ -62,6 +74,157 @@
       "getting_started": "Getting Started",
       "components": "Components",
       "contribution": "Contribution"
+    },
+    "footer": {
+      "built_by": "Built by",
+      "the_source_code_is_available_on": "The source code is available on"
+    },
+    "homepage": {
+      "title": "Collection of modern profile cards",
+      "description": "DevSocialsStats is an open-source project aimed at analyzing social media statistics from popular platforms and tracking valuable insights into developer activity.",
+      "subtitles": {
+        "start_your_open_source_journey_here": "Start your open source journey here!",
+        "test_our_card_preview_with_your_information": "Test our card preview with your information"
+      },
+      "texts": {
+        "enter_github_username": "Enter your GitHub username in the box below and preview what your Business Dev Card could look like!"
+      },
+      "actions": {
+        "go_to_gitHub": "Go to GitHub",
+        "get_started": "Get Started",
+        "learn_more": "Learn More",
+        "create_card": "Create Card!",
+        "explore_this_card_in_playground": "Explore this card in playground"
+      },
+      "placeholders": {
+        "username": "սsername"
+      },
+      "info": {
+        "black_chip": "Use NPM to install customizable card components in your project",
+        "red_chip": "Visit the playground to conveniently download your preferred cards as PNG files",
+        "blue_chip": "Integrate our API to retrieve cards in HTML format"
+      },
+      "info_cards": {
+        "track_statistics": {
+          "title": "Track Statistics",
+          "text": "Monitor data from platforms like GitHub, GitLab, Stack Overflow, and LinkedIn for a specific user."
+        },
+        "collaboration_patterns": {
+          "title": "Collaboration Patterns",
+          "text": "Analyze collaboration patterns among developers, including collaboration networks, co-authorship relationships, and project contributions."
+        },
+        "info_presentation": {
+          "title": "Info Presentation",
+          "text": "Use our card and panel format to efficiently display user information in specific sectors."
+        },
+        "enhance_your_skills": {
+          "title": "Enhance Your Skills",
+          "text": "Contributing to open-source projects enhances your coding skills and familiarity with new technologies. You gain practical experience, solve complex problems, and stay current with software development trends, aiding your growth as a developer."
+        },
+        "build_a_professional_network": {
+          "title": "Build a Professional Network",
+          "text": "Open-source communities unite global developers, offering connections with peers, mentors, and potential employers. Contributing to these projects can lead to job opportunities, collaborations, and access to a wealth of shared knowledge and resources."
+        },
+        "boost_your_portfolio": {
+          "title": "Boost Your Portfolio",
+          "text": "Contributing to open-source projects showcases your skills and dedication, enhancing your portfolio and making you more attractive to employers and clients. A strong presence in the community demonstrates your commitment and can earn you recognition and respect from peers."
+        }
+      },
+      "info_sections": {
+        "enhanced_profile_visibility": {
+          "title": "Enhanced Profile Visibility",
+          "intro": "Tired of",
+          "point1": "Boring CVs?",
+          "point2": "Wasting time building numerous profiles?",
+          "point3": "Constantly searching for your information?",
+          "point4": "Difficulties in conveying your expertise to potential recruiters?",
+          "text": "DevAnalytics has got you covered! With our easy-to-use card playground, all of your information can staycondensed in your own customizable card!"
+        },
+        "customize_to_your_liking": {
+          "title": "Customize to your liking!",
+          "point1": "Multiple different card templates",
+          "point2": "Variety of formats",
+          "point3": "Open source!",
+          "point4": "Support for many different platforms"
+        }
+      }
+    },
+    "navbar": {
+      "docs": {
+        "description": "Valuable insights into developer activity and engagement.",
+        "introduction": "What is DevEngageAnalytics?",
+        "installation": "How to install dependencies or use in other ways the product?",
+        "roadmap": "What are our plans of action?"
+      },
+      "components": {
+        "all_in_one_dev": "Provides an in-depth look into a developer's activities across multiple platforms.",
+        "business_dev": "Provides an overview of GitHub stats and information provided by the user on their GitHub profile."
+      }
+    },
+    "playground": {
+      "side_nav": {
+        "title": "Settings",
+        "enter_your_informations": "Enter your informations",
+        "edit_platform_informations": "Edit platform informations",
+        "create_card": "Create Card"
+      },
+      "actions": {
+        "copy_html": {
+          "title": "Copy HTML",
+          "description": "Ideal for developers who want to integrate cards into their projects seamlessly"
+        },
+        "export_code": {
+          "title": "Export Code",
+          "description": "Great for developers who need a programmatic approach to access and display card data"
+        },
+        "host_component": {
+          "title": "Host Component",
+          "description": "Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website"
+        },
+        "download_image": {
+          "title": "Download Image",
+          "description": "Perfect for users who want a quick and easy way to generate and save visual representations without any coding",
+          "download_as": "Download as",
+          "error": {
+            "create_card_to_download_as_png": "Create a card to download as PNG",
+            "create_card_to_download_as_svg": "Create a card to download as SVG"
+          }
+        },
+        "select_component": {
+          "title": "Components",
+          "placeholder": "Select a component"
+        },
+        "select_format": {
+          "title": "Formats",
+          "placeholder": "Select a format",
+          "card": "Card",
+          "panel": "Panel",
+          "page": "Page"
+        }
+      },
+      "preview": {
+        "please_select_component_and_format": "Please select a component and a format",
+        "please_enter_necessary_informations": "Please enter the necessary informations"
+      }
     }
-  }
+  },
+  "form": {
+    "labels": {
+      "githubUsername": "GitHub Username",
+      "gitlabUsername": "GitLab Username",
+      "linkedinUsername": "LinkedIn Username",
+      "avatar_url": "Avatar Url",
+      "location": "Location",
+      "company": "Compagny",
+      "html_url": "GitHub Link",
+      "email": "Email",
+      "website": "Website",
+      "twitter_username": "Twitter",
+      "name": "Name",
+      "login": "Username",
+      "bio": "Bio",
+      "blog": "Blog"
+    }
+  },
+  "project_name": "DevEngageAnalytics"
 }

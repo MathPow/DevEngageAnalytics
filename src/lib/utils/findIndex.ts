@@ -23,3 +23,11 @@ export function findPreviousElement(arr: string[], target: string): string {
 
   return arr[index - 1];
 }
+
+export function findCurrentElement(arr: string[], target: string): string {
+  const index = arr.findIndex((el) => {
+    return formatSlug(el).includes(target);
+  });
+
+  return arr[index];
+}

@@ -60,7 +60,7 @@
 
 .markdown-body b,
 .markdown-body strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .markdown-body dfn {
@@ -124,7 +124,7 @@
   overflow: hidden;
   background: transparent;
   border-bottom: 1px solid hsla(210, 18%, 87%, 1);
-  height: 0.25em;
+  height: 1px;
   padding: 0;
   margin: 24px 0;
   background-color: #d0d7de;
@@ -254,7 +254,14 @@
 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font:
+    11px ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   line-height: 10px;
   color: #1f2328;
   vertical-align: middle;
@@ -275,6 +282,14 @@
   margin-bottom: 16px;
   font-weight: 600;
   line-height: 1.25;
+}
+
+.markdown-body h1 {
+  margin-bottom: 4px;
+}
+
+.markdown-body h4 {
+  margin-top: 0px;
 }
 
 .markdown-body h2 {
@@ -343,14 +358,28 @@
 .markdown-body tt,
 .markdown-body code,
 .markdown-body samp {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    SF Mono,
+    Menlo,
+    Consolas,
+    Liberation Mono,
+    monospace;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -539,6 +568,14 @@
   margin-bottom: 0;
 }
 
+.markdown-body ol li {
+  list-style-type: decimal;
+}
+
+.markdown-body ul li {
+  list-style-type: disc;
+}
+
 .markdown-body li > p {
   margin-top: 16px;
 }
@@ -571,7 +608,7 @@
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid #d0d7de;
+  @apply border border-_lightGrayText dark:border-_darkGrayText;
 }
 
 .markdown-body table td > :last-child {
@@ -695,12 +732,20 @@
 
 .markdown-body code,
 .markdown-body tt {
-  padding: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  white-space: break-spaces;
-  background-color: rgba(175, 184, 193, 0.2);
-  border-radius: 6px;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #1c1e22;
+  color: #b4bac5;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  border: 1px solid #444;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .markdown-body code br,
@@ -745,7 +790,7 @@
   font-size: 85%;
   line-height: 1.45;
   color: #1f2328;
-  background-color: #f6f8fa;
+  background-color: #1c1e22;
   border-radius: 6px;
 }
 
@@ -1079,4 +1124,21 @@
 
 .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #d1242f;
+}
+
+.markdown-body th,
+.markdown-body td {
+  @apply bg-_lightBg dark:bg-_darkBg;
+}
+
+.markdown-body a.button {
+  @apply flex w-fit items-center gap-x-1 rounded border border-neutral-300 bg-neutral-100 px-3 py-1 text-xs text-neutral-600 hover:no-underline focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-400;
+}
+
+.markdown-body svg.icon {
+  @apply size-4;
+}
+
+.markdown-body iframe {
+  @apply my-6 h-[500px] w-full border border-black/10;
 }

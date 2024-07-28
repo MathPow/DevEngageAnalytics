@@ -1,1 +1,1 @@
-export const sections = ["Intro"];
+export const sections = ["Dark Mode", "Supported Modes"];

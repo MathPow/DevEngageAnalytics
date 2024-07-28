@@ -22,8 +22,32 @@ import Menu from "@/../public/assets/icons/menu.svg";
 import Close from "@/../public/assets/icons/close.svg";
 import LightMode from "@/../public/assets/icons/light-mode.svg";
 import DarkMode from "@/../public/assets/icons/dark-mode.svg";
+import ArrowRight from "@/../public/assets/icons/arrow-right.svg";
+import Star from "@/../public/assets/icons/star.svg";
+import Clock from "@/../public/assets/icons/clock.svg";
+import Company from "@/../public/assets/icons/company.svg";
+import Link from "@/../public/assets/icons/link.svg";
+import Location from "@/../public/assets/icons/location.svg";
+import Mail from "@/../public/assets/icons/mail.svg";
+import Twitter from "@/../public/assets/icons/twitter.svg";
+import OpenInNew from "@/../public/assets/icons/open-in-new.svg";
+import Info from "@/../public/assets/icons/info.svg";
+import PullRequest from "@/../public/assets/icons/pull-request.svg";
+import Issue from "@/../public/assets/icons/issue.svg";
+import Commit from "@/../public/assets/icons/commit.svg";
+import Code from "@/../public/assets/icons/code.svg";
+import Copy from "@/../public/assets/icons/copy.svg";
+import Download from "@/../public/assets/icons/download.svg";
+import Chevron2 from "@/../public/assets/icons/chevron2.svg";
+import Edit from "@/../public/assets/icons/edit.svg";
+import Error from "@/../public/assets/icons/error.svg";
+import Warning from "@/../public/assets/icons/warning.svg";
+import CheckCircle from "@/../public/assets/icons/check-circle.svg";
+import DecoBoard from "@/../public/assets/icons/deco-board.svg";
+import DecoChart from "@/../public/assets/icons/deco-chart.svg";
+import DecoLightBulb from "@/../public/assets/icons/deco-light-bulb.svg";
 
-interface IconProps {
+export interface IconProps {
   name:
     | "github"
     | "gitlab"
@@ -47,7 +71,31 @@ interface IconProps {
     | "menu"
     | "close"
     | "light-mode"
-    | "dark-mode";
+    | "dark-mode"
+    | "arrow-right"
+    | "star"
+    | "clock"
+    | "company"
+    | "link"
+    | "location"
+    | "mail"
+    | "twitter"
+    | "open-in-new"
+    | "info"
+    | "pull-request"
+    | "issue"
+    | "commit"
+    | "code"
+    | "copy"
+    | "download"
+    | "chevron2"
+    | "edit"
+    | "error"
+    | "warning"
+    | "check-circle"
+    | "deco-board"
+    | "deco-chart"
+    | "deco-light-bulb";
   className?: string;
   size?: number;
   color?: string;
@@ -86,6 +134,30 @@ const Icon: React.FC<IconProps> = ({ name, className = "", size = 32, color = "c
     close: <Close {...svgProps} />,
     "light-mode": <LightMode {...svgProps} />,
     "dark-mode": <DarkMode {...svgProps} />,
+    "arrow-right": <ArrowRight {...svgProps} />,
+    star: <Star {...svgProps} />,
+    clock: <Clock {...svgProps} />,
+    company: <Company {...svgProps} />,
+    link: <Link {...svgProps} />,
+    location: <Location {...svgProps} />,
+    mail: <Mail {...svgProps} />,
+    twitter: <Twitter {...svgProps} />,
+    "open-in-new": <OpenInNew {...svgProps} />,
+    info: <Info {...svgProps} />,
+    "pull-request": <PullRequest {...svgProps} />,
+    commit: <Commit {...svgProps} />,
+    issue: <Issue {...svgProps} />,
+    code: <Code {...svgProps} />,
+    copy: <Copy {...svgProps} />,
+    download: <Download {...svgProps} />,
+    chevron2: <Chevron2 {...svgProps} />,
+    edit: <Edit {...svgProps} />,
+    error: <Error {...svgProps} />,
+    warning: <Warning {...svgProps} />,
+    "check-circle": <CheckCircle {...svgProps} />,
+    "deco-board": <DecoBoard {...svgProps} />,
+    "deco-chart": <DecoChart {...svgProps} />,
+    "deco-light-bulb": <DecoLightBulb {...svgProps} />,
   };
   return Icons[name];
 };

@@ -64,10 +64,10 @@ export default function Footer({
     <div className={className}>
       {(githubJoinedDate || gitlabJoinedDate || linkedinJoinedDate) && (
         <p className="text-xs text-_lightGrayText">
-          {t("card.info.joined_date")} {getFormatedJoinedDate()}
+          {t("card.info.joined_market_date")} {getFormatedJoinedDate()}
         </p>
       )}
-      <Separator className="bg-_darkGrayText mb-2" />
+      <Separator className="mb-2 bg-_darkGrayText" />
       <div className="flex justify-between">
         <div className="flex gap-x-3">
           {githubUrl && (

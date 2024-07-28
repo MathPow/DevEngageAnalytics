@@ -6,6 +6,7 @@ import frTranslation from "@/../public/locales/fr.json";
 import enTranslation from "@/../public/locales/en.json";
 import esTranslation from "@/../public/locales/es.json";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/navigation/Footer";
 
 interface ClientWrapperProps {
   children: React.ReactNode;
@@ -25,10 +26,11 @@ i18n.use(initReactI18next).init({
 
 export default function ClientWrapper({ children }: ClientWrapperProps) {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <div className="fixed left-0 top-0 -z-20 h-full w-full bg-_lightBg dark:bg-_darkBg"></div>
       <Navbar />
-      {children}
-    </>
+      <div className="flex-grow pb-12">{children}</div>
+      <Footer />
+    </div>
   );
 }

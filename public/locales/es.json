@@ -6,7 +6,8 @@
       "connections": "conexiones"
     },
     "info": {
-      "joined_date": "Se unió al mercado el",
+      "joined_market_date": "Se unió al mercado el",
+      "joined_date": "Se unió el",
       "days_last_year": "días del año pasado",
       "present": "Presente",
       "issued": "Entregada en"
@@ -33,14 +34,25 @@
       "pull_requests": "Pull Requests",
       "commits": "Commits",
       "comments": "Comments",
-      "opened_issues": "Opened Issues",
-      "total_contributions": "Total Contributions",
+      "issues": "Issues",
+      "total_contributions": "Contribuciones Totales",
       "project_involvement": "Project Involvement",
       "total_stars_earned": "Total Stars Earned",
+      "stars_earned": "Estrellas Ganadas",
       "total_repositiories": "Total Repositiories"
+    },
+    "user_info": {
+      "followers": "Seguidores",
+      "location": "Ubicación",
+      "company": "Empresa",
+      "email": "Correo electrónico",
+      "website": "Sitio web"
     }
   },
   "ui": {
+    "info": {
+      "coming_soon": "Próximamente"
+    },
     "pages": {
       "docs": "Documentación",
       "components": "Componentes",
@@ -62,6 +74,157 @@
       "getting_started": "Empezando",
       "components": "Componentes",
       "contribution": "Contribución"
+    },
+    "footer": {
+      "built_by": "Creado por",
+      "the_source_code_is_available_on": "El código fuente está disponible en"
+    },
+    "homepage": {
+      "title": "Colección de tarjetas de perfil modernas",
+      "description": "DevSocialsStats es un proyecto de código abierto dirigido a analizar estadísticas de redes sociales de plataformas populares y a rastrear información valiosa sobre la actividad de los desarrolladores.",
+      "subtitles": {
+        "start_your_open_source_journey_here": "¡Empieza tu viaje de código abierto aquí!",
+        "test_our_card_preview_with_your_information": "Prueba nuestra vista previa de tarjetas con tu información"
+      },
+      "texts": {
+        "enter_github_username": "¡Ingresa tu nombre de usuario de GitHub en el cuadro a continuación y obtén una vista previa de cómo podría verse tu tarjeta de negocio Dev!"
+      },
+      "actions": {
+        "go_to_gitHub": "Ir a GitHub",
+        "get_started": "Empezar",
+        "learn_more": "Aprende Más",
+        "create_card": "¡Crear Tarjeta!",
+        "explore_this_card_in_playground": "Explora esta tarjeta en el patio de juegos"
+      },
+      "placeholders": {
+        "username": "usuario"
+      },
+      "info": {
+        "black_chip": "Usa NPM para instalar componentes de tarjetas personalizables en tu proyecto",
+        "red_chip": "Visita el área de pruebas para descargar cómodamente tus tarjetas preferidas como archivos PNG",
+        "blue_chip": "Integra nuestra API para recuperar tarjetas en formato HTML"
+      },
+      "info_cards": {
+        "track_statistics": {
+          "title": "Rastrea Estadísticas",
+          "text": "Monitorea datos de plataformas como GitHub, GitLab, Stack Overflow y LinkedIn para un usuario específico."
+        },
+        "collaboration_patterns": {
+          "title": "Patrones de Colaboración",
+          "text": "Analiza patrones de colaboración entre desarrolladores, incluyendo redes de colaboración, relaciones de coautoría y contribuciones a proyectos."
+        },
+        "info_presentation": {
+          "title": "Presentación de Información",
+          "text": "Usa nuestro formato de tarjeta y panel para mostrar eficientemente la información del usuario en sectores específicos."
+        },
+        "enhance_your_skills": {
+          "title": "Mejora Tus Habilidades",
+          "text": "Contribuir a proyectos de código abierto mejora tus habilidades de codificación y familiaridad con nuevas tecnologías. Obtienes experiencia práctica, resuelves problemas complejos y te mantienes al día con las tendencias de desarrollo de software, ayudando a tu crecimiento como desarrollador."
+        },
+        "build_a_professional_network": {
+          "title": "Construye una Red Profesional",
+          "text": "Las comunidades de código abierto unen a desarrolladores de todo el mundo, ofreciendo conexiones con compañeros, mentores y posibles empleadores. Contribuir a estos proyectos puede llevar a oportunidades laborales, colaboraciones y acceso a una gran cantidad de conocimiento y recursos compartidos."
+        },
+        "boost_your_portfolio": {
+          "title": "Impulsa Tu Portafolio",
+          "text": "Contribuir a proyectos de código abierto muestra tus habilidades y dedicación, mejorando tu portafolio y haciéndote más atractivo para empleadores y clientes. Una presencia sólida en la comunidad demuestra tu compromiso y puede ganarte reconocimiento y respeto de tus compañeros."
+        }
+      },
+      "info_sections": {
+        "enhanced_profile_visibility": {
+          "title": "Mayor Visibilidad de Perfil",
+          "intro": "¿Cansado de",
+          "point1": "CVs aburridos?",
+          "point2": "¿Perder tiempo creando numerosos perfiles?",
+          "point3": "¿Buscar constantemente tu información?",
+          "point4": "¿Dificultades para transmitir tu experiencia a posibles reclutadores?",
+          "text": "¡DevAnalytics tiene la solución! Con nuestro fácil de usar área de pruebas de tarjetas, ¡toda tu información puede estar condensada en tu propia tarjeta personalizable!"
+        },
+        "customize_to_your_liking": {
+          "title": "¡Personaliza a tu gusto!",
+          "point1": "Múltiples plantillas de tarjetas diferentes",
+          "point2": "Variedad de formatos",
+          "point3": "¡Código abierto!",
+          "point4": "Soporte para muchas plataformas diferentes"
+        }
+      }
+    },
+    "navbar": {
+      "docs": {
+        "description": "Valiosos conocimientos sobre la actividad y el compromiso del desarrollador.",
+        "introduction": "¿Qué es DevEngageAnalytics?",
+        "installation": "¿Cómo instalar las dependencias o utilizar el producto de otras maneras?",
+        "roadmap": "¿Cuáles son nuestros planes de acción?"
+      },
+      "components": {
+        "all_in_one_dev": "Ofrece una visión detallada de las actividades de un desarrollador en varias plataformas.",
+        "business_dev": "Ofrece una visión general de las estadísticas de GitHub y la información proporcionada por el usuario en su perfil de GitHub."
+      }
+    },
+    "playground": {
+      "side_nav": {
+        "title": "Configuraciones",
+        "enter_your_informations": "Ingrese su información",
+        "edit_platform_informations": "Editar información de la plataforma",
+        "create_card": "Crear tarjeta"
+      },
+      "actions": {
+        "copy_html": {
+          "title": "Copiar HTML",
+          "description": "Ideal para desarrolladores que quieren integrar tarjetas en sus proyectos sin problemas"
+        },
+        "export_code": {
+          "title": "Exportar código",
+          "description": "Ideal para desarrolladores que necesitan un enfoque programático para acceder y mostrar datos de tarjetas"
+        },
+        "host_component": {
+          "title": "Alojar componente",
+          "description": "Ideal para aquellos que quieren mostrar sus estadísticas en portafolios, currículos o perfiles de redes sociales sin integrarlos directamente en un sitio web"
+        },
+        "download_image": {
+          "title": "Descargar imagen",
+          "description": "Perfecto para usuarios que quieren una forma rápida y fácil de generar y guardar representaciones visuales sin necesidad de codificación",
+          "download_as": "Descargar como",
+          "error": {
+            "create_card_to_download_as_png": "Cree una tarjeta para descargar como PNG",
+            "create_card_to_download_as_svg": "Cree una tarjeta para descargar como SVG"
+          }
+        },
+        "select_component": {
+          "title": "Componentes",
+          "placeholder": "Seleccione un componente"
+        },
+        "select_format": {
+          "title": "Formatos",
+          "placeholder": "Seleccione un formato",
+          "card": "Tarjeta",
+          "panel": "Panel",
+          "page": "Página"
+        }
+      },
+      "preview": {
+        "please_select_component_and_format": "Por favor seleccione un componente y un formato",
+        "please_enter_necessary_informations": "Por favor ingrese la información necesaria"
+      }
     }
-  }
+  },
+  "form": {
+    "labels": {
+      "githubUsername": "Nombre de usuario de GitHub",
+      "gitlabUsername": "Nombre de usuario de GitLab",
+      "linkedinUsername": "Nombre de usuario de LinkedIn",
+      "avatar_url": "URL del avatar",
+      "location": "Ubicación",
+      "company": "Compañía",
+      "html_url": "Enlace de GitHub",
+      "email": "Correo electrónico",
+      "website": "Sitio web",
+      "twitter_username": "Twitter",
+      "name": "Nombre",
+      "login": "Nombre de usuario",
+      "bio": "Biografía",
+      "blog": "Blog"
+    }
+  },
+  "project_name": "DevEngageAnalytics"
 }

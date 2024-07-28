@@ -1,3 +1,4 @@
+import { BASE_PATH } from "./src/lib/composables/production";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -20,11 +21,16 @@ const config = {
         _darkGrayText: "#5B5B5B",
         _goldColor: "#d4af37",
 
-        _lightBg: "#ffffff",
+        _lightBg: "#fcfcfc",
+        _lightBgRed: "#f27474",
         _lightBgGradient: "#ffc2ba",
+        _lightSeparator: "#dbdbdb",
 
         _darkBg: "#101013",
+        _darkBgRed: "#D64444",
+        _darkSlateBg: "#101725",
         _darkBgGradient: "#360606",
+        _darkSeparator: "#474747",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -81,7 +87,10 @@ const config = {
         "spin-slow": "spin 10s linear infinite",
       },
       backgroundImage: {
-        joker: "url('/assets/img/joker.png')",
+        joker: `url('${BASE_PATH}assets/img/joker.png')`,
+        "black-background": `url('${BASE_PATH}assets/img/black-background.png')`,
+        "white-background": `url('${BASE_PATH}assets/img/white-background.png')`,
+        "blurry-gradient-bg": `url('${BASE_PATH}assets/img/blurry-gradient-bg.svg')`,
       },
     },
   },

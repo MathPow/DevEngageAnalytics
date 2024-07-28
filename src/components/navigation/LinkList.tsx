@@ -1,5 +1,6 @@
 import { formatSlug } from "@/lib/composables/formatSlug";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface LinkListProps {
   list: string[];
@@ -7,11 +8,17 @@ interface LinkListProps {
 }
 
 export default function LinkList({ list, url }: LinkListProps) {
+  const pathname = usePathname();
+
   return (
     <>
-      {list.map((item, index) => (
-        <Link key={index} className="hover:underline" href={url + formatSlug(item)}>
-          {item}
+      {list.map((el, index) => (
+        <Link
+          key={index}
+          className={`hover:underline ${pathname.includes(formatSlug(el)) ? "font-semibold text-black dark:font-normal dark:text-white" : ""}`}
+          href={`${url}${formatSlug(el)}`}
+        >
+          {el}
         </Link>
       ))}
     </>

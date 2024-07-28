@@ -1,4 +1,5 @@
 import BackgroundGradient from "@/components/deco/BackgroundGradient";
+import PlaygroundPage from "@/components/playground/PlaygroundPage";
 
 export async function generateMetadata() {
   return {
@@ -9,7 +10,8 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <main>
-      <BackgroundGradient text="playground" />
+      <BackgroundGradient text="playground" isFixed isDoted />
+      <PlaygroundPage />
     </main>
   );
 }

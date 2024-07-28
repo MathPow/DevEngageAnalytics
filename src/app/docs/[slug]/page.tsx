@@ -9,7 +9,17 @@ interface ContentProps {
   };
 }
 
-const validSlugs = ["introduction", "installation", "darkmode", "languages", "figma"];
+const validSlugs = [
+  "introduction",
+  "installation",
+  "darkmode",
+  "languages",
+  "figma",
+  "github",
+  "gitlab",
+  "linkedin",
+  "roadmap",
+];
 
 export async function generateStaticParams() {
   return validSlugs.map((slug) => ({
@@ -34,7 +44,7 @@ export default function Page({ params }: ContentProps) {
 
   return (
     <main>
-      <BackgroundGradient text="docs" />
+      <BackgroundGradient text="docs" isFixed />
       <DocPage slug={slug} url={"/"} />
     </main>
   );

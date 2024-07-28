@@ -9,16 +9,16 @@ export default function DocNav() {
 
   return (
     <>
-      <h2 className="font-bold mb-3">{t("ui.subtitle.getting_started")}</h2>
-      <span className="text-sm text-_darkGrayText dark:text-_lightGrayText flex flex-col gap-y-3">
+      <h2 className="mb-3 font-bold">{t("ui.subtitle.getting_started")}</h2>
+      <span className="flex flex-col gap-y-3 text-sm text-_darkGrayText dark:text-_lightGrayText">
         <LinkList list={linkListGettingStarted} url={"/docs/"} />
       </span>
-      <h2 className="font-bold mt-4 mb-3">{t("ui.subtitle.components")}</h2>
-      <span className="text-sm text-_darkGrayText dark:text-_lightGrayText flex flex-col gap-y-3">
+      <h2 className="mb-3 mt-4 font-bold">{t("ui.subtitle.components")}</h2>
+      <span className="flex flex-col gap-y-3 text-sm text-_darkGrayText dark:text-_lightGrayText">
         <LinkList list={linkListComponents} url={"/docs/components/"} />
       </span>
-      <h2 className="font-bold mt-4 mb-3">{t("ui.subtitle.contribution")}</h2>
-      <span className="text-sm text-_darkGrayText dark:text-_lightGrayText flex flex-col gap-y-3">
+      <h2 className="mb-3 mt-4 font-bold">{t("ui.subtitle.contribution")}</h2>
+      <span className="flex flex-col gap-y-3 text-sm text-_darkGrayText dark:text-_lightGrayText">
         <LinkList list={linkListContribution} url={"/docs/contribution/"} />
       </span>
     </>

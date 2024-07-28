@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { linkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
+import { LinkListComponentsEnum, linkListGettingStartedEnum } from "@/lib/content/LinkListEnum";
 import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
@@ -26,30 +26,34 @@ import { BASE_PATH } from "@/lib/composables/production";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: linkListComponentsEnum.allInOneDev,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDev)}`,
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    title: LinkListComponentsEnum.AllInOneDev,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.AllInOneDev)}`,
+    description: "ui.navbar.components.all_in_one_dev",
   },
   {
-    title: linkListComponentsEnum.gitLover,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.gitLover)}`,
-    description: "For sighted users to preview content available behind a link.",
+    title: LinkListComponentsEnum.BusinessCardDev,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.BusinessCardDev)}`,
+    description: "ui.navbar.components.business_dev",
   },
   {
-    title: linkListComponentsEnum.allInOneDesigner,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.allInOneDesigner)}`,
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: LinkListComponentsEnum.GitLover,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.GitLover)}`,
+    description: "ui.info.coming_soon",
   },
   {
-    title: linkListComponentsEnum.certificatesFlex,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.certificatesFlex)}`,
-    description: "Visually or semantically separates content.",
+    title: LinkListComponentsEnum.AllInOneDesigner,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.AllInOneDesigner)}`,
+    description: "ui.info.coming_soon",
   },
   {
-    title: linkListComponentsEnum.beautifulAsymmetric,
-    href: `${BASE_PATH}docs/components/${formatSlug(linkListComponentsEnum.beautifulAsymmetric)}`,
-    description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    title: LinkListComponentsEnum.CertificatesFlex,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.CertificatesFlex)}`,
+    description: "ui.info.coming_soon",
+  },
+  {
+    title: LinkListComponentsEnum.BeautifulAsymmetric,
+    href: `${BASE_PATH}docs/components/${formatSlug(LinkListComponentsEnum.BeautifulAsymmetric)}`,
+    description: "ui.info.coming_soon",
   },
 ];
 
@@ -69,14 +73,14 @@ export default function Navbar() {
       if (window.scrollY > 96) {
         setIsNavVisible(false);
       }
-      if (window.scrollY === 0) {
+      if (window.scrollY < 48) {
         setIsNavVisible(true);
       }
     };
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    if (!window.location.href.includes("playground")) window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -88,7 +92,11 @@ export default function Navbar() {
       <div ref={menuContainerRef}>
         <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
-      <header className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"}`} ref={ref}>
+      <div className={`h-12 ${isNavVisible && "hidden"}`}></div>
+      <header
+        className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} ${isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} relative z-20 transition-opacity ease-in`}
+        ref={ref}
+      >
         <div
           className={`flex h-12 items-center justify-between ${
             isNavVisible
@@ -118,9 +126,9 @@ export default function Navbar() {
                             href={`${BASE_PATH}`}
                           >
                             <Icon name={"github"} />
-                            <div className="mb-2 mt-4 text-lg font-medium">DevEngageAnalytics</div>
+                            <div className="mb-2 mt-4 text-lg font-medium">{t("project_name")}</div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components built with Radix UI and Tailwind CSS.
+                              {t("ui.navbar.docs.description")}
                             </p>
                           </a>
                         </div>
@@ -129,19 +137,19 @@ export default function Navbar() {
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.introduction)}`}
                         title={linkListGettingStartedEnum.introduction}
                       >
-                        Re-usable components built using Radix UI and Tailwind CSS.
+                        {t("ui.navbar.docs.introduction")}
                       </ListItem>
                       <ListItem
                         href={`/docs/${formatSlug(linkListGettingStartedEnum.installation)}`}
                         title={linkListGettingStartedEnum.installation}
                       >
-                        How to install dependencies and structure your app.
+                        {t("ui.navbar.docs.installation")}
                       </ListItem>
                       <ListItem
-                        href={`/docs/${formatSlug(linkListGettingStartedEnum.figma)}`}
-                        title={linkListGettingStartedEnum.figma}
+                        href={`/docs/${formatSlug(linkListGettingStartedEnum.roadmap)}`}
+                        title={linkListGettingStartedEnum.roadmap}
                       >
-                        Styles for headings, paragraphs, lists...etc
+                        {t("ui.navbar.docs.roadmap")}
                       </ListItem>
                     </ul>
                   </NavigationMenuContent>
@@ -157,7 +165,7 @@ export default function Navbar() {
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {components.map((component) => (
                         <ListItem key={component.title} title={component.title} href={component.href}>
-                          {component.description}
+                          {t(component.description)}
                         </ListItem>
                       ))}
                     </ul>

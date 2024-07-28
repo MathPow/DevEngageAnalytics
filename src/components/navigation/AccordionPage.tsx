@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Icon from "../Icon";
+import { isMobile } from "react-device-detect";
 
 interface AccordionProps {
   headerContent: React.ReactNode;
@@ -14,13 +15,23 @@ export default function AccordionPage({ headerContent, children, isMenuOpen }: A
   const [contentHeight, setContentHeight] = useState<number>(0);
 
   function handleMouseLeave() {
-    if (!isOpenByOnClick) {
+    if (!isOpenByOnClick && !isMobile) {
       setIsOpen(false);
     }
   }
 
   function handleOnClick() {
-    setIsOpenByOnClick(!isOpenByOnClick);
+    if (isMobile) {
+      setIsOpen(!isOpen);
+    } else {
+      setIsOpenByOnClick(!isOpenByOnClick);
+    }
+  }
+
+  function handleMouseEnter() {
+    if (!isMobile) {
+      setIsOpen(true);
+    }
   }
 
   useEffect(() => {
@@ -37,14 +48,14 @@ export default function AccordionPage({ headerContent, children, isMenuOpen }: A
   }, [isMenuOpen]);
 
   return (
-    <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={handleMouseLeave}>
+    <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="flex items-center justify-between hover:cursor-pointer" onClick={handleOnClick}>
         {headerContent}
         <Icon name={"chevron"} className={`size-4 transition-all ${isOpen ? "-rotate-90" : "rotate-90"}`} />
       </div>
       <div
         ref={childrenRef}
-        className="transition-all overflow-hidden"
+        className="overflow-hidden transition-all"
         style={{ maxHeight: isOpen ? contentHeight : 0 }}
       >
         {children}

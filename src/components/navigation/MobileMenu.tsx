@@ -8,6 +8,7 @@ import { linkListComponents, linkListContribution, linkListGettingStarted } from
 import { formatSlug } from "@/lib/composables/formatSlug";
 import Menu from "./Menu";
 import { Separator } from "../ui/separator";
+import { useEffect } from "react";
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -17,17 +18,27 @@ interface MobileMenuProps {
 export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    function handleResize() {
+      const isSmallScreen = window.innerWidth < 1024;
+      if (!isSmallScreen && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <div
-      className={`z-20 fixed w-full sm:w-80 px-4 bottom-0 top-0 right-0 rounded-l-xl outline outline-1 outline-slate-200 dark:outline-slate-800 bg-_lightBg/50 dark:bg-_darkBg/50 backdrop-blur-lg shadow-lg ${
-        !isMenuOpen && "hidden"
-      }`}
+      className={`fixed bottom-0 right-0 top-0 z-20 w-full rounded-l-xl bg-_lightBg/50 px-4 shadow-lg outline outline-1 outline-slate-200 backdrop-blur-lg dark:bg-_darkBg/50 dark:outline-slate-800 sm:w-80 ${!isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} transition-all ease-in`}
     >
-      <div className="my-8 float-right">
+      <div className="float-right my-8">
         <Menu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
       </div>
-      <ul className="flex flex-col gap-y-6 mt-24 text-lg">
-        <li className="px-3 mx-[10vw] sm:mx-0">
+      <ul className="mt-24 flex flex-col gap-y-6 text-lg">
+        <li className="mx-[10vw] px-3 sm:mx-0">
           <AccordionPage
             isMenuOpen={isMenuOpen}
             headerContent={
@@ -37,7 +48,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
               </Link>
             }
           >
-            <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
+            <div className="flex flex-col gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText sm:ml-8">
               {linkListGettingStarted.map((item, index) => (
                 <Link key={index} href={`/docs/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
@@ -46,7 +57,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
             </div>
           </AccordionPage>
         </li>
-        <li className="px-3 mx-[10vw] sm:mx-0">
+        <li className="mx-[10vw] px-3 sm:mx-0">
           <AccordionPage
             isMenuOpen={isMenuOpen}
             headerContent={
@@ -56,7 +67,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
               </Link>
             }
           >
-            <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
+            <div className="flex flex-col gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText sm:ml-8">
               {linkListComponents.map((item, index) => (
                 <Link key={index} href={`/docs/components/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
@@ -65,13 +76,13 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
             </div>
           </AccordionPage>
         </li>
-        <li className="flex items-center px-3">
+        <li className="mx-[10vw] flex items-center px-3 sm:mx-0">
           <Link href="/playground" className="flex items-center gap-x-1">
             <Icon className="size-4" name={"playing-card-spade"} />
             {t("ui.pages.playground")}
           </Link>
         </li>
-        <li className="px-3 mx-[10vw] sm:mx-0">
+        <li className="mx-[10vw] px-3 sm:mx-0">
           <AccordionPage
             isMenuOpen={isMenuOpen}
             headerContent={
@@ -81,7 +92,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
               </Link>
             }
           >
-            <div className="flex flex-col sm:ml-8 gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText">
+            <div className="flex flex-col gap-y-2 pt-2 text-sm text-_darkGrayText dark:text-_lightGrayText sm:ml-8">
               {linkListContribution.map((item, index) => (
                 <Link key={index} href={`/docs/contribution/${formatSlug(item)}`} className="flex items-center gap-x-2">
                   {item}
@@ -91,7 +102,7 @@ export default function MobileMenu({ isMenuOpen, setIsMenuOpen }: MobileMenuProp
           </AccordionPage>
         </li>
       </ul>
-      <div id="absolute" className="absolute bottom-4 right-4 left-4">
+      <div id="absolute" className="absolute bottom-4 left-4 right-4">
         <Separator className="mb-3" />
         <div className="flex items-center justify-between gap-x-2">
           <div className="flex items-center">
