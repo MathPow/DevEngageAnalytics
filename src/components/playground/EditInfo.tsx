@@ -30,7 +30,7 @@ export default function EditInfo({ onSubmit, form, formSchema }: EditInfoProps) 
       <Separator className="my-2" />
       <p className="mb-1 mt-2 flex items-center gap-x-1 text-_lightGrayText dark:text-_darkGrayText">
         <Icon name={"edit"} size={20} />
-        <span>Edit platform informations</span>
+        <span>{t("ui.playground.side_nav.edit_platform_informations")}</span>
       </p>
       <Form {...form}>
         <form className="mb-1 flex flex-col gap-y-2" onSubmit={form.handleSubmit(onSubmit)}>

@@ -15,6 +15,7 @@ import {
 } from "@/lib/composables/getForm";
 import { useForm } from "react-hook-form";
 import { replaceVariables } from "@/lib/composables/mergeObjects";
+import { useTranslation } from "react-i18next";
 
 interface PlaygroundSettingsProps {
   selectedType?: Component;
@@ -32,6 +33,8 @@ export default function PlaygroundSettings({
   userInfoFetched,
   setUserInfoFetched,
 }: PlaygroundSettingsProps) {
+  const { t } = useTranslation();
+
   const [enterFormSchema, setEnterFormSchema] = useState<ZodSchema>(initialSchema);
   const [enterDefaultValues, setEnterDefaultValues] = useState<any>(initialValues);
   const [editFormSchema, setEditFormSchema] = useState<ZodSchema>(initialSchema);
@@ -93,7 +96,7 @@ export default function PlaygroundSettings({
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center justify-between text-_lightGrayText dark:text-_darkGrayText">
-        <p className="text-xl font-semibold">Settings</p>
+        <p className="text-xl font-semibold">{t("ui.playground.side_nav.title")}</p>
         <Icon className="hover:cursor-pointer" name={"chevron2"} size={32} />
       </div>
       <Separator className="my-1" />
@@ -111,7 +114,7 @@ export default function PlaygroundSettings({
       </div>
       {formEnter && (
         <Button className="mt-4 w-full" variant={"color"} onClick={formEnter.handleSubmit(onSubmitEnter)}>
-          Create Card
+          {t("ui.playground.side_nav.create_card")}
         </Button>
       )}
     </div>
