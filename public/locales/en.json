@@ -222,7 +222,8 @@
       "twitter_username": "Twitter",
       "name": "Name",
       "login": "Username",
-      "bio": "Bio"
+      "bio": "Bio",
+      "blog": "Blog"
     }
   },
   "project_name": "DevEngageAnalytics"
