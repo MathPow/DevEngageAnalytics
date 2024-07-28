@@ -38,7 +38,7 @@ export default function PlaygroundPreview({
           />
         </div>
       ) : (
-        <div className="flex flex-col text-_darkGrayText">
+        <div className="flex flex-col text-_lightGrayText dark:text-_darkGrayText">
           <p className="text-center font-semibold uppercase">
             {type === undefined || format === undefined
               ? t("ui.playground.preview.please_select_component_and_format")
