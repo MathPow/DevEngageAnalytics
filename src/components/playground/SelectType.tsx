@@ -38,7 +38,7 @@ export default function SelectType({ setSelectedType }: SelectTypeProps) {
 
   async function onSubmit({ ...values }: z.infer<typeof formSchema>) {
     setSelectedType(getComponentFromQueryParams(values.type, values.format));
-    router.push(`${BASE_PATH}playground?type=${values.type}&format=${values.format}`);
+    router.push(`playground?type=${values.type}&format=${values.format}`);
   }
 
   const typeValue = () => {
