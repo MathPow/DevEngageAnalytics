@@ -24,7 +24,7 @@ export default function EnterInfo({ onSubmit, form, formSchema }: EnterInfoProps
     <>
       <p className="mb-1 mt-2 flex items-center gap-x-1 text-_lightGrayText dark:text-_darkGrayText">
         <Icon name={"info"} size={20} />
-        <span>Enter your informations</span>
+        <span>{t("ui.playground.side_nav.enter_your_informations")}</span>
       </p>
       <Form {...form}>
         <form className="flex flex-col gap-y-2" onSubmit={form.handleSubmit(onSubmit)}>

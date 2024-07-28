@@ -94,7 +94,7 @@ export default function Navbar() {
       </div>
       <div className={`h-12 ${isNavVisible && "hidden"}`}></div>
       <header
-        className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} ${isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} relative z-20 transition-all ease-in`}
+        className={`${isNavVisible ? "p-4 py-6" : "sticky top-4"} ${isMenuOpen ? "pointer-events-none opacity-0" : "opacity-100 delay-200"} relative z-20 transition-opacity ease-in`}
         ref={ref}
       >
         <div

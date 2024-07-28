@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "../ui/separator";
+import { useTranslation } from "react-i18next";
 
 interface ActionButton {
   icon: IconProps;
@@ -30,6 +31,8 @@ interface PlaygroundActionsProps {
 }
 
 export default function PlaygroundActions({ setSelectedType, componentRef, selectedType }: PlaygroundActionsProps) {
+  const { t, i18n } = useTranslation();
+
   const [estimatedWidths, setEstimatedWidths] = useState<(number | undefined)[]>([0, 0, 0, 0]);
   const [isHovered, setIsHovered] = useState<boolean[]>([false, false, false, false]);
   const refs = [
@@ -71,35 +74,33 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
       }
     });
     setEstimatedWidths(newWidths);
-  }, []);
+  }, [i18n.language]);
 
   function handleCopyHtml() {}
 
   const actionButtons: ActionButton[] = [
     {
       icon: { name: "copy" },
-      title: "Copy HTML",
-      description: "Ideal for developers who want to integrate cards into their projects seamlessly",
+      title: t("ui.playground.actions.copy_html.title"),
+      description: t("ui.playground.actions.copy_html.description"),
       function: handleCopyHtml,
     },
     {
       icon: { name: "open-in-new" },
-      title: "Export Code",
-      description: "Great for developers who need a programmatic approach to access and display card data",
+      title: t("ui.playground.actions.export_code.title"),
+      description: t("ui.playground.actions.export_code.description"),
       function: handleCopyHtml,
     },
     {
       icon: { name: "code" },
-      title: "Host Component",
-      description:
-        "Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website",
+      title: t("ui.playground.actions.host_component.title"),
+      description: t("ui.playground.actions.host_component.description"),
       function: handleCopyHtml,
     },
     {
       icon: { name: "download" },
-      title: "Download Image",
-      description:
-        "Perfect for users who want a quick and easy way to generate and save visual representations without any coding",
+      title: t("ui.playground.actions.download_image.title"),
+      description: t("ui.playground.actions.download_image.description"),
     },
   ];
 
@@ -178,13 +179,13 @@ interface DropdownMenuDownloadImageProps {
   selectedType?: Component;
   setIsMouseEventLock: (value: boolean) => void;
 }
-
 function DropdownMenuDownloadImage({
   children,
   componentRef,
   selectedType,
   setIsMouseEventLock,
 }: DropdownMenuDownloadImageProps) {
+  const { t } = useTranslation();
   function handleDownloadPng() {
     if (componentRef.current !== null && selectedType) {
       toPng(componentRef.current, { cacheBust: true })
@@ -198,7 +199,7 @@ function DropdownMenuDownloadImage({
           console.log(err);
         });
     } else {
-      toastError("Create a card to download as PNG");
+      toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_png"));
     }
   }
 
@@ -215,7 +216,7 @@ function DropdownMenuDownloadImage({
           console.log(err);
         });
     } else {
-      toastError("Create a card to download as SVG");
+      toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_png"));
     }
   }
 
@@ -223,7 +224,7 @@ function DropdownMenuDownloadImage({
     <DropdownMenu onOpenChange={(value) => setIsMouseEventLock(value)}>
       <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Download As</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("ui.playground.actions.download_image.download_as")}</DropdownMenuLabel>
         <Separator />
         <DropdownMenuItem className="hover:cursor-pointer" onSelect={handleDownloadPng}>
           PNG

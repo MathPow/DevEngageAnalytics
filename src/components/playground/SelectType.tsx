@@ -18,12 +18,15 @@ import { BASE_PATH } from "@/lib/composables/production";
 import { Component } from "@/lib/types/component";
 import { getAllQueryParamsAsComponent, getComponentFromQueryParams } from "@/lib/composables/getParams";
 import { Optional } from "@/lib/types/optional";
+import { useTranslation } from "react-i18next";
 
 interface SelectTypeProps {
   setSelectedType: (el: Optional<Component>) => void;
 }
 
 export default function SelectType({ setSelectedType }: SelectTypeProps) {
+  const { t } = useTranslation();
+
   const router = useRouter();
 
   const formSchema = z.object({
@@ -79,11 +82,11 @@ export default function SelectType({ setSelectedType }: SelectTypeProps) {
                   defaultValue={field.value}
                 >
                   <SelectTrigger className="h-9 w-44">
-                    <SelectValue placeholder="Select a component" />
+                    <SelectValue placeholder={t("ui.playground.actions.select_component.placeholder")} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Components</SelectLabel>
+                      <SelectLabel>{t("ui.playground.actions.select_component.title")}</SelectLabel>
                       {linkListComponents.map((el, index) => (
                         <SelectItem key={index} value={formatSlug(el)}>
                           {el}
@@ -110,17 +113,17 @@ export default function SelectType({ setSelectedType }: SelectTypeProps) {
                   defaultValue={field.value}
                 >
                   <SelectTrigger className="h-9 w-44">
-                    <SelectValue placeholder="Select a format" />
+                    <SelectValue placeholder={t("ui.playground.actions.select_format.placeholder")} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Formats</SelectLabel>
-                      <SelectItem value="card">Card</SelectItem>
+                      <SelectLabel>{t("ui.playground.actions.select_format.title")}</SelectLabel>
+                      <SelectItem value="card">{t("ui.playground.actions.select_format.card")}</SelectItem>
                       <SelectItem value="panel" disabled>
-                        Panel
+                        {t("ui.playground.actions.select_format.panel")}
                       </SelectItem>
                       <SelectItem value="page" disabled>
-                        Page
+                        {t("ui.playground.actions.select_format.page")}
                       </SelectItem>
                     </SelectGroup>
                   </SelectContent>

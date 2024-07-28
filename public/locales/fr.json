@@ -160,6 +160,70 @@
         "all_in_one_dev": "Fournit un aperçu approfondi des activités d'un développeur sur plusieurs plateformes.",
         "business_dev": "Fournit un aperçu des statistiques GitHub et des informations fournies par l'utilisateur sur son profil GitHub."
       }
+    },
+    "playground": {
+      "side_nav": {
+        "title": "Paramètres",
+        "enter_your_informations": "Entrez vos informations",
+        "edit_platform_informations": "Modifier les informations",
+        "create_card": "Créer une carte"
+      },
+      "actions": {
+        "copy_html": {
+          "title": "Copier le HTML",
+          "description": "Idéal pour les développeurs qui souhaitent intégrer des cartes dans leurs projets en toute simplicité"
+        },
+        "export_code": {
+          "title": "Exporter le code",
+          "description": "Parfait pour les développeurs qui ont besoin d'une approche programmatique pour accéder aux données des cartes et les afficher"
+        },
+        "host_component": {
+          "title": "Héberger le composant",
+          "description": "Idéal pour ceux qui souhaitent afficher leurs statistiques dans des portfolios, des CV ou des profils sur les réseaux sociaux sans les intégrer directement dans un site web"
+        },
+        "download_image": {
+          "title": "Télécharger l'image",
+          "description": "Parfait pour les utilisateurs qui veulent une solution rapide et facile pour générer et sauvegarder des représentations visuelles sans aucun codage",
+          "download_as": "Télécharger sous",
+          "error": {
+            "create_card_to_download_as_png": "Créez une carte pour télécharger au format PNG",
+            "create_card_to_download_as_svg": "Créez une carte pour télécharger au format SVG"
+          }
+        },
+        "select_component": {
+          "title": "Composants",
+          "placeholder": "Sélectionnez un composant"
+        },
+        "select_format": {
+          "title": "Formats",
+          "placeholder": "Sélectionnez un format",
+          "card": "Carte",
+          "panel": "Panneau",
+          "page": "Page"
+        }
+      },
+      "preview": {
+        "please_select_component_and_format": "Veuillez sélectionner un composant et un format",
+        "please_enter_necessary_informations": "Veuillez entrer les informations nécessaires"
+      }
+    }
+  },
+  "form": {
+    "labels": {
+      "githubUsername": "Nom d'utilisateur GitHub",
+      "gitlabUsername": "Nom d'utilisateur GitLab",
+      "linkedinUsername": "Nom d'utilisateur LinkedIn",
+      "avatar_url": "URL de l'avatar",
+      "location": "Localisation",
+      "company": "Entreprise",
+      "html_url": "Lien GitHub",
+      "email": "Email",
+      "website": "Site Web",
+      "twitter_username": "Twitter",
+      "name": "Nom",
+      "login": "Nom d'utilisateur",
+      "bio": "Bio",
+      "blog": "Blog"
     }
   },
   "project_name": "DevEngageAnalytics"
