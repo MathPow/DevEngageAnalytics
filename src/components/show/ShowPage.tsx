@@ -24,16 +24,16 @@ export default function ShowPage() {
   }, []);
 
   return (
-    <div className="gradient-mesh relative h-screen w-screen backdrop-blur-sm">
-      <div className="absolute right-[1rem] top-[1rem]">
-        <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
-          <Icon
-            className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
-            name={"download"}
-          />
-        </DropdownMenuDownloadImage>
-      </div>
-      <div className="glass-effect absolute left-1/2 top-1/2 h-[90vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-3xl border-2 border-white/20 bg-white/25 drop-shadow-2xl backdrop-blur-md dark:border-black/20 dark:bg-black/25">
+    <div className="gradient-mesh w-screenbackdrop-blur-md relative h-screen">
+      <div className="glass-effect absolute left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 bg-white/10 dark:bg-black/20">
+        <div className="absolute right-[1rem] top-[1rem]">
+          <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
+            <Icon
+              className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
+              name={"download"}
+            />
+          </DropdownMenuDownloadImage>
+        </div>
         {selectedType !== undefined && userInfoEntered && (
           <div ref={componentRef} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <Card
@@ -45,12 +45,12 @@ export default function ShowPage() {
             />
           </div>
         )}
-        {userInfoFetched === undefined && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Loading />
-          </div>
-        )}
       </div>
+      {userInfoFetched === undefined && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Loading />
+        </div>
+      )}
     </div>
   );
 }
