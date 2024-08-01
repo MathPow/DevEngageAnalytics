@@ -5,10 +5,9 @@ import { Component } from "@/lib/types/component";
 import { Optional } from "@/lib/types/optional";
 import { useEffect, useRef, useState } from "react";
 import Card from "../cards/card";
-import DropdownMenuDownloadImage from "../DropdownMenuDownloadImage";
 import Icon from "../Icon";
-import { Button } from "../ui/button";
 import Loading from "../Loading";
+import DropdownMenuDownloadImage from "../DropdownMenuDownloadImage";
 
 export default function ShowPage() {
   const [selectedType, setSelectedType] = useState<Optional<Component>>();
@@ -35,14 +34,16 @@ export default function ShowPage() {
           </DropdownMenuDownloadImage>
         </div>
         {selectedType !== undefined && userInfoEntered && (
-          <div ref={componentRef} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Card
-              setInfo={setUserInfoFetched}
-              editInfo={userInfoFetched}
-              type={selectedType.type}
-              data={userInfoEntered}
-              format={selectedType.format}
-            />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span ref={componentRef}>
+              <Card
+                setInfo={setUserInfoFetched}
+                editInfo={userInfoFetched}
+                type={selectedType.type}
+                data={userInfoEntered}
+                format={selectedType.format}
+              />
+            </span>
           </div>
         )}
       </div>

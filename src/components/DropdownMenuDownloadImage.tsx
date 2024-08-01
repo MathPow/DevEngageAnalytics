@@ -37,7 +37,7 @@ export default function DropdownMenuDownloadImage({
           link.click();
         })
         .catch((err) => {
-          console.log(err);
+          toastError(err);
         });
     } else {
       toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_png"));
@@ -54,7 +54,7 @@ export default function DropdownMenuDownloadImage({
           link.click();
         })
         .catch((err) => {
-          console.log(err);
+          toastError(err);
         });
     } else {
       toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_svg"));
@@ -63,7 +63,7 @@ export default function DropdownMenuDownloadImage({
 
   return (
     <DropdownMenu onOpenChange={(value) => setIsMouseEventLock && setIsMouseEventLock(value)}>
-      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
+      <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>{t("ui.playground.actions.download_image.download_as")}</DropdownMenuLabel>
         <Separator />
