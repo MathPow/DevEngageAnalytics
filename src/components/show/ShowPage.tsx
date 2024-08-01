@@ -28,7 +28,7 @@ export default function ShowPage() {
       <div className="absolute right-[1rem] top-[1rem]">
         <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
           <Icon
-            className="size-[2.2rem] opacity-60 transition-opacity duration-300 ease-in hover:cursor-pointer dark:opacity-20 dark:hover:opacity-60"
+            className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
             name={"download"}
           />
         </DropdownMenuDownloadImage>
