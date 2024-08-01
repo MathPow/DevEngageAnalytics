@@ -91,3 +91,25 @@
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgb(84, 84, 84, 0.5);
 }
+
+.gradient-mesh {
+  background: radial-gradient(circle at 30% 30%, rgba(150, 143, 245, 0.5), transparent),
+    radial-gradient(circle at 56% 10%, rgba(67, 69, 216, 0.5), transparent),
+    radial-gradient(circle at 50% 50%, rgba(17, 73, 110, 0.5), transparent);
+}
+
+.glass-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 7px 7px;
+  pointer-events: none;
+}
+
+.dark .glass-effect::before {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+}
