@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { getGithubUserAllInformation } from "../services/githubService";
 import { GithubUserAllInfo } from "../types/githubInfo";
+import { toastError } from "./useToast";
 
 export function useGithubUserAllInformation(githubUsername: string) {
   const [githubData, setGithubData] = useState<GithubUserAllInfo>();
@@ -28,7 +29,7 @@ export function useGithubUserAllInformation(githubUsername: string) {
             }
           })
           .catch((error) => {
-            console.error("Error fetching user information:", error);
+            toastError("Error fetching user information: " + error);
           });
       }
     },
