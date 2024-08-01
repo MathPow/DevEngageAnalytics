@@ -35,7 +35,7 @@ export default function ShowPage() {
         </div>
         {selectedType !== undefined && userInfoEntered && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <span ref={componentRef}>
+            <div ref={componentRef}>
               <Card
                 setInfo={setUserInfoFetched}
                 editInfo={userInfoFetched}
@@ -43,7 +43,7 @@ export default function ShowPage() {
                 data={userInfoEntered}
                 format={selectedType.format}
               />
-            </span>
+            </div>
           </div>
         )}
       </div>
