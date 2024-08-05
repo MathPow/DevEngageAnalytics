@@ -11,7 +11,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Separator } from "./ui/separator";
+import { Separator } from "@/components/ui/separator";
 
 interface DropdownMenuDownloadImageProps {
   children: React.ReactNode;
