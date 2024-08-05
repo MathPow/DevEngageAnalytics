@@ -36,6 +36,7 @@
     "lucide-react": "^0.376.0",
     "next": "^14.2.4",
     "next-themes": "^0.3.0",
+    "qrcode": "^1.5.3",
     "react": "^18",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
@@ -43,7 +44,6 @@
     "react-i18next": "^14.1.1",
     "react-lottie": "^1.2.4",
     "react-markdown": "^9.0.1",
-    "react-qr-code": "^2.0.15",
     "react-router-dom": "^6.23.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
@@ -55,6 +55,7 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
+    "@types/qrcode": "^1.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-lottie": "^1.2.10",
