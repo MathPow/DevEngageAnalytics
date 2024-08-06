@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import Card from "../cards/card";
 import Icon from "../Icon";
 import Loading from "../Loading";
-import DropdownMenuDownloadImage from "../DropdownMenuDownloadImage";
+import DropdownMenuDownloadImage from "../playground/actions/downloadImage/DropdownMenuDownloadImage";
 
 export default function ShowPage() {
   const [selectedType, setSelectedType] = useState<Optional<Component>>();

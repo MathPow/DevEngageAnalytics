@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { ShowColorsEnum, showColors } from "@/lib/types/showColorsEnum";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
 
 interface HostComponentFormProps {
   form: UseFormReturn<
@@ -22,18 +23,27 @@ interface HostComponentFormProps {
 }
 
 export default function HostComponentForm({ form, onSubmit }: HostComponentFormProps) {
+  const { t } = useTranslation();
+
   return (
     <Form {...form}>
       <form className="mb-1 flex flex-col gap-y-4" onSubmit={form.handleSubmit(onSubmit)}>
         <div className="flex items-center">
-          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">Page title</FormLabel>
+          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">
+            {t("form.labels.page_title")}
+          </FormLabel>
           <FormField
             control={form.control}
             name={"pageTitle"}
             render={({ field }: any) => (
               <FormItem className="w-2/3 space-y-0.5">
                 <FormControl>
-                  <Input {...field} type="text" className="h-[34px] w-full" placeholder="Your name..." />
+                  <Input
+                    {...field}
+                    type="text"
+                    className="h-[34px] w-full"
+                    placeholder={t("form.placeholders.your_name") + "..."}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -42,7 +52,7 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
         </div>
         <div className="flex items-center">
           <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">
-            Background color
+            {t("form.labels.background_color")}
           </FormLabel>
           <FormField
             control={form.control}
@@ -52,7 +62,7 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
                 <FormControl>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <SelectTrigger className="h-[34px] w-full">
-                      <SelectValue placeholder="Select a color" />
+                      <SelectValue placeholder={t("form.placeholders.select_a_color")} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
@@ -60,7 +70,7 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
                           <SelectItem key={color} value={color}>
                             <div className="flex items-center gap-x-1">
                               <span className="size-2.5 rounded-full border" style={{ background: color }}></span>
-                              <span>{color}</span>
+                              <span>{t(`form.options.${color}`)}</span>
                             </div>
                           </SelectItem>
                         ))}
@@ -74,7 +84,9 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
           />
         </div>
         <div className="flex items-center">
-          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">Theme</FormLabel>
+          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">
+            {t("form.labels.theme")}
+          </FormLabel>
           <FormField
             control={form.control}
             name={"theme"}
@@ -83,13 +95,13 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
                 <FormControl>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <SelectTrigger className="h-[34px] w-full">
-                      <SelectValue placeholder="Select a theme" />
+                      <SelectValue placeholder={t("form.placeholders.select_a_theme")} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
                         {themes.map((theme: ThemesEnum) => (
                           <SelectItem key={theme} value={theme}>
-                            {theme}
+                            {t(`form.options.${theme}`)}
                           </SelectItem>
                         ))}
                       </SelectGroup>
@@ -102,7 +114,9 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
           />
         </div>
         <div className="flex items-center">
-          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">Language</FormLabel>
+          <FormLabel className="w-1/3 text-base text-_darkGrayText dark:text-_lightGrayText">
+            {t("form.labels.language")}
+          </FormLabel>
           <FormField
             control={form.control}
             name={"language"}
@@ -111,13 +125,13 @@ export default function HostComponentForm({ form, onSubmit }: HostComponentFormP
                 <FormControl>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <SelectTrigger className="h-[34px] w-full">
-                      <SelectValue placeholder="Select a language" />
+                      <SelectValue placeholder={t("form.placeholders.select_a_language")} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
                         {languages.map((language: LanguagesEnum) => (
                           <SelectItem key={language} value={language}>
-                            {language}
+                            {t(`form.options.${language}`)}
                           </SelectItem>
                         ))}
                       </SelectGroup>
