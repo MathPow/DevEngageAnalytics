@@ -50,27 +50,27 @@ export default function DialogHostComponent({
   const [generatedUrl, setGeneratedUrl] = useState("");
   const [generatedQRCode, setGeneratedQRCode] = useState("");
 
-  const PAGE_TITLE_LENGTH = t("SIGN_UP_USERNAME_LENGTH", {
+  const PAGE_TITLE_LENGTH = t("ui.playground.actions.host_component.error.page_title_length", {
     minLength: MIN_PAGE_TITLE_LENGTH,
     maxLength: MAX_PAGE_TITLE_LENGTH,
   });
 
   const formSchema = z.object({
     pageTitle: z
-      .string({ required_error: "error" })
+      .string({ required_error: t("ui.playground.actions.host_component.error.page_title_generic") })
       .min(MIN_PAGE_TITLE_LENGTH, { message: PAGE_TITLE_LENGTH })
       .max(MAX_PAGE_TITLE_LENGTH, { message: PAGE_TITLE_LENGTH })
       .refine((str) => !str.includes(" "), {
-        message: "The page title can't have space in it",
+        message: t("ui.playground.actions.host_component.error.page_title_space"),
       }),
     color: z.nativeEnum(ShowColorsEnum, {
-      message: "Background color is required",
+      message: t("ui.playground.actions.host_component.error.color_required"),
     }),
     theme: z.nativeEnum(ThemesEnum, {
-      message: "Theme is required",
+      message: t("ui.playground.actions.host_component.error.theme_required"),
     }),
     language: z.nativeEnum(LanguagesEnum, {
-      message: "Language is required",
+      message: t("ui.playground.actions.host_component.error.language_required"),
     }),
   });
 
@@ -127,7 +127,7 @@ export default function DialogHostComponent({
       setGeneratedUrl(url);
       QRCode.toDataURL(url).then(setGeneratedQRCode);
     } else {
-      toastError("You need to select your card and the informations");
+      toastError(t("ui.playground.actions.host_component.error.select_card_and_provide_info"));
     }
   }
 
@@ -135,10 +135,10 @@ export default function DialogHostComponent({
     navigator.clipboard
       .writeText(generatedUrl)
       .then(() => {
-        toastSuccess("Text copied to clipboard");
+        toastSuccess(t("ui.playground.actions.host_component.success.copied_to_clipboard"));
       })
       .catch((err) => {
-        toastError("Failed to copy text: " + generatedUrl);
+        toastError(t("ui.playground.actions.host_component.error.failed_to_copy_text") + ": " + generatedUrl);
       });
   }
 
@@ -159,8 +159,8 @@ export default function DialogHostComponent({
       <DialogTrigger>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader className="mb-3">
-          <DialogTitle>Customize your page</DialogTitle>
-          <DialogDescription>Set what your page should look like.</DialogDescription>
+          <DialogTitle>{t("ui.playground.actions.host_component.customize_your_page")}</DialogTitle>
+          <DialogDescription>{t("ui.playground.actions.host_component.set_page_look")}</DialogDescription>
         </DialogHeader>
         {!isLinkGenerated ? (
           <HostComponentForm form={form} onSubmit={onSubmit} />
@@ -179,9 +179,17 @@ export default function DialogHostComponent({
           <DialogClose asChild>
             <div className="flex w-full justify-end gap-x-2">
               <Button type="button" variant="outline" onClick={resetForm}>
-                Close
+                {t("general.close")}
               </Button>
-              {!isLinkGenerated && <Button onClick={form.handleSubmit(onSubmit)}>Create url</Button>}
+              {!isLinkGenerated ? (
+                <Button onClick={form.handleSubmit(onSubmit)}>
+                  {t("ui.playground.actions.host_component.create_url")}
+                </Button>
+              ) : (
+                <Button onClick={() => window.open(generatedUrl, "_blank")}>
+                  {t("ui.playground.actions.host_component.view_URL")}
+                </Button>
+              )}
             </div>
           </DialogClose>
         </DialogFooter>
