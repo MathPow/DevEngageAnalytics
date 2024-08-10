@@ -16,8 +16,10 @@ import { ColorsList, darkColorsLists, isColorInList, lightColorsLists } from "@/
 import { ThemesEnum } from "@/lib/types/themesEnum";
 import { useTheme } from "next-themes";
 import { showQueriesType } from "@/lib/types/showQueriesType";
+import { useTranslation } from "react-i18next";
 
 export default function ShowPage() {
+  const { i18n } = useTranslation();
   const { setTheme } = useTheme();
 
   const [selectedType, setSelectedType] = useState<Optional<Component>>();
@@ -38,6 +40,9 @@ export default function ShowPage() {
 
       if (modifiers?.theme) {
         setTheme(modifiers.theme);
+      }
+      if (modifiers?.language) {
+        i18n.changeLanguage(modifiers.language);
       }
     }
   }, [showModifiers]);
