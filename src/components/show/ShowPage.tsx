@@ -12,10 +12,10 @@ import Card from "../cards/card";
 import Icon from "../Icon";
 import Loading from "../Loading";
 import DropdownMenuDownloadImage from "../playground/actions/downloadImage/DropdownMenuDownloadImage";
-import { ShowType } from "@/lib/types/showType";
 import { ColorsList, darkColorsLists, isColorInList, lightColorsLists } from "@/lib/constants/colorsLists";
 import { ThemesEnum } from "@/lib/types/themesEnum";
 import { useTheme } from "next-themes";
+import { showQueriesType } from "@/lib/types/showQueriesType";
 
 export default function ShowPage() {
   const { setTheme } = useTheme();
@@ -23,7 +23,7 @@ export default function ShowPage() {
   const [selectedType, setSelectedType] = useState<Optional<Component>>();
   const [userInfoFetched, setUserInfoFetched] = useState<any>();
   const [userInfoEntered, setUserInfoEntered] = useState<any>();
-  const [showModifiers, setShowModifiers] = useState<ShowType>();
+  const [showModifiers, setShowModifiers] = useState<showQueriesType>();
   const componentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
