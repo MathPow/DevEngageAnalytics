@@ -17,6 +17,7 @@ import { ThemesEnum } from "@/lib/types/themesEnum";
 import { useTheme } from "next-themes";
 import { showQueriesType } from "@/lib/types/showQueriesType";
 import { useTranslation } from "react-i18next";
+import LoadingWithRetry from "../LoadingWithRetry";
 
 export default function ShowPage() {
   const { i18n } = useTranslation();
@@ -101,11 +102,7 @@ export default function ShowPage() {
             </div>
           )}
         </div>
-        {userInfoFetched === undefined && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Loading />
-          </div>
-        )}
+        {userInfoFetched === undefined && <LoadingWithRetry useEffectVar={userInfoFetched} />}
       </div>
     </div>
   );
