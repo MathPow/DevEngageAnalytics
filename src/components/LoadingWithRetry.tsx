@@ -2,12 +2,15 @@ import "@/styles/loading.css";
 import Loading from "./Loading";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 interface LoadingWithRetryProps {
   useEffectVar: any;
 }
 
 export default function LoadingWithRetry({ useEffectVar }: LoadingWithRetryProps) {
+  const { t } = useTranslation();
+
   const [isRetryShowned, setIsRetryShowned] = useState(false);
 
   useEffect(() => {
@@ -27,7 +30,7 @@ export default function LoadingWithRetry({ useEffectVar }: LoadingWithRetryProps
       <Loading />
       {isRetryShowned && (
         <Button className="h-8 px-0" size={"sm"} onClick={reloadPage}>
-          Retry
+          {t("general.retry")}
         </Button>
       )}
     </div>

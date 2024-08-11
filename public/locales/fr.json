@@ -269,7 +269,8 @@
     }
   },
   "general": {
-    "close": "Fermer"
+    "close": "Fermer",
+    "retry": "Réessayer"
   },
   "project_name": "DevEngageAnalytics"
 }
