@@ -46,7 +46,7 @@ export default function ShowPage() {
         i18n.changeLanguage(modifiers.language);
       }
     }
-  }, [showModifiers]);
+  }, []);
 
   const gradientMeshStyle = useMemo(() => {
     let color: string = "white";
@@ -81,12 +81,14 @@ export default function ShowPage() {
       <div className={`relative h-screen w-screen ${glassEffectClass}`} style={gradientMeshStyle}>
         <div className="glass-effect absolute left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 bg-white/10 dark:bg-black/20">
           <div className="absolute right-[1rem] top-[1rem]">
-            <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
-              <Icon
-                className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
-                name={"download"}
-              />
-            </DropdownMenuDownloadImage>
+            {userInfoFetched !== undefined && (
+              <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
+                <Icon
+                  className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
+                  name={"download"}
+                />
+              </DropdownMenuDownloadImage>
+            )}
           </div>
           {selectedType !== undefined && userInfoEntered && (
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
