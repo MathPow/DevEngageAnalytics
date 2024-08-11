@@ -87,7 +87,6 @@ export default function DialogHostComponent({
   const { setValue } = form;
 
   function getCurrentTheme(): ThemesEnum | string {
-    console.log(theme);
     if (theme === ThemesEnum.Dark) {
       return ThemesEnum.Dark;
     } else if (theme === ThemesEnum.Light) {

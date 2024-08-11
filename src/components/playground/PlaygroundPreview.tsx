@@ -3,6 +3,8 @@ import { LinkListComponentsEnum } from "@/lib/content/LinkListEnum";
 import Card from "../cards/card";
 import { Ref } from "react";
 import { useTranslation } from "react-i18next";
+import Loading from "../Loading";
+import LoadingWithRetry from "../LoadingWithRetry";
 
 interface PlaygroundPreviewProps {
   type?: LinkListComponentsEnum;
@@ -25,7 +27,7 @@ export default function PlaygroundPreview({
 
   return (
     <div
-      className={`mt-4 flex w-full justify-center rounded-xl border px-4 py-10 shadow-md backdrop-blur-[2.5px] ${(type === undefined || format === undefined || userInfoEntered === undefined) && "h-96 items-center"}`}
+      className={`mt-4 flex w-full justify-center rounded-xl border px-4 py-10 shadow-md backdrop-blur-[2.5px] ${(type === undefined || format === undefined || userInfoEntered === undefined) && "h-96 items-center"} ${userInfoFetched === undefined && "py-36"}`}
     >
       {type !== undefined && format !== undefined && userInfoEntered !== undefined ? (
         <div ref={componentRef}>
@@ -36,6 +38,7 @@ export default function PlaygroundPreview({
             data={userInfoEntered}
             format={format}
           />
+          {userInfoFetched === undefined && <LoadingWithRetry useEffectVar={userInfoFetched} />}
         </div>
       ) : (
         <div className="flex flex-col text-_lightGrayText dark:text-_darkGrayText">
