@@ -81,7 +81,7 @@
     },
     "homepage": {
       "title": "Colección de tarjetas de perfil modernas",
-      "description": "DevSocialsStats es un proyecto de código abierto dirigido a analizar estadísticas de redes sociales de plataformas populares y a rastrear información valiosa sobre la actividad de los desarrolladores.",
+      "description": "DevEngageAnalytics es un proyecto de código abierto dirigido a analizar estadísticas de redes sociales de plataformas populares y a rastrear información valiosa sobre la actividad de los desarrolladores.",
       "subtitles": {
         "start_your_open_source_journey_here": "¡Empieza tu viaje de código abierto aquí!",
         "test_our_card_preview_with_your_information": "Prueba nuestra vista previa de tarjetas con tu información"
@@ -179,15 +179,32 @@
         },
         "host_component": {
           "title": "Alojar componente",
-          "description": "Ideal para aquellos que quieren mostrar sus estadísticas en portafolios, currículos o perfiles de redes sociales sin integrarlos directamente en un sitio web"
+          "description": "Ideal para aquellos que quieren mostrar sus estadísticas en portafolios, currículos o perfiles de redes sociales sin integrarlos directamente en un sitio web",
+          "customize_your_page": "Personaliza tu página",
+          "set_page_look": "Configura cómo debería verse tu página.",
+          "create_url": "Crear URL",
+          "view_URL": "Ver URL",
+          "error": {
+            "page_title_length": "El título de la página debe tener entre {{minLength}} y {{maxLength}} caracteres.",
+            "page_title_generic": "El valor ingresado para el título de la página es inválido.",
+            "page_title_space": "El título de la página no puede tener espacios.",
+            "color_required": "El campo del color de fondo es obligatorio.",
+            "theme_required": "El campo del tema es obligatorio.",
+            "language_required": "El campo del idioma es obligatorio.",
+            "select_card_and_provide_info": "Necesitas seleccionar una tarjeta y proporcionar tu información.",
+            "failed_to_copy_text": "Error al copiar el texto"
+          },
+          "success": {
+            "copied_to_clipboard": "Texto copiado al portapapeles"
+          }
         },
         "download_image": {
           "title": "Descargar imagen",
           "description": "Perfecto para usuarios que quieren una forma rápida y fácil de generar y guardar representaciones visuales sin necesidad de codificación",
           "download_as": "Descargar como",
           "error": {
-            "create_card_to_download_as_png": "Cree una tarjeta para descargar como PNG",
-            "create_card_to_download_as_svg": "Cree una tarjeta para descargar como SVG"
+            "create_card_to_download_as_png": "Cree una tarjeta para descargar como PNG.",
+            "create_card_to_download_as_svg": "Cree una tarjeta para descargar como SVG."
           }
         },
         "select_component": {
@@ -223,8 +240,37 @@
       "name": "Nombre",
       "login": "Nombre de usuario",
       "bio": "Biografía",
-      "blog": "Blog"
+      "blog": "Blog",
+      "page_title": "Título de la página",
+      "background_color": "Color de fondo",
+      "theme": "Tema",
+      "language": "Idioma"
+    },
+    "placeholders": {
+      "your_name": "Tu nombre",
+      "select_a_color": "Selecciona un color",
+      "select_a_theme": "Selecciona un tema",
+      "select_a_language": "Selecciona un idioma"
+    },
+    "options": {
+      "dark": "Oscuro",
+      "light": "Claro",
+      "fr": "Francés",
+      "en": "Inglés",
+      "es": "Español",
+      "blue": "Azul",
+      "green": "Verde",
+      "red": "Rojo",
+      "orange": "Naranja",
+      "pink": "Rosa",
+      "purple": "Púrpura",
+      "white": "Blanco",
+      "gray": "Gris"
     }
+  },
+  "general": {
+    "close": "Cerrar",
+    "retry": "Reintentar"
   },
   "project_name": "DevEngageAnalytics"
 }

@@ -1,21 +1,12 @@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { toPng, toSvg } from "html-to-image";
 import Icon, { IconProps } from "../Icon";
-import { RefObject, useEffect, useMemo, useRef, useState } from "react";
+import { RefObject, forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
 import SelectType from "./SelectType";
 import { Component } from "@/lib/types/component";
 import { Optional } from "@/lib/types/optional";
-import { formatSlug } from "@/lib/composables/formatSlug";
-import { toastError } from "@/lib/composables/useToast";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "../ui/separator";
 import { useTranslation } from "react-i18next";
+import DialogHostComponent from "./actions/hostComponent/DialogHostComponent";
+import DropdownMenuDownloadImage from "./actions/downloadImage/DropdownMenuDownloadImage";
 
 interface ActionButton {
   icon: IconProps;
@@ -28,9 +19,15 @@ interface PlaygroundActionsProps {
   setSelectedType: (el: Optional<Component>) => void;
   componentRef: RefObject<HTMLDivElement>;
   selectedType?: Component;
+  userInfoEntered?: any;
 }
 
-export default function PlaygroundActions({ setSelectedType, componentRef, selectedType }: PlaygroundActionsProps) {
+export default function PlaygroundActions({
+  setSelectedType,
+  componentRef,
+  selectedType,
+  userInfoEntered,
+}: PlaygroundActionsProps) {
   const { t, i18n } = useTranslation();
 
   const [estimatedWidths, setEstimatedWidths] = useState<(number | undefined)[]>([0, 0, 0, 0]);
@@ -95,7 +92,6 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
       icon: { name: "code" },
       title: t("ui.playground.actions.host_component.title"),
       description: t("ui.playground.actions.host_component.description"),
-      function: handleCopyHtml,
     },
     {
       icon: { name: "download" },
@@ -119,7 +115,7 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
           <TooltipProvider key={index}>
             <Tooltip>
               <TooltipTrigger
-                className={`group flex h-9 items-center justify-center whitespace-nowrap rounded-md px-3 text-sm font-medium shadow-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${
+                className={`group flex h-9 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium shadow-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                   index === actionButtons.length - 1
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "border border-input bg-_lightBg hover:bg-accent hover:text-accent-foreground dark:bg-_darkBg dark:hover:bg-accent dark:hover:text-accent-foreground"
@@ -128,38 +124,41 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                {index === actionButtons.length - 1 ? (
+                {index === 2 && (
+                  <DialogHostComponent
+                    userInfoEntered={userInfoEntered}
+                    setIsMouseEventLock={setIsMouseEventLock}
+                    selectedType={selectedType}
+                  >
+                    <PlaygroundActionButton
+                      actionButton={el}
+                      ref={refs.current[index]}
+                      estimatedWidth={estimatedWidths[index]}
+                      isHovered={isHovered[index]}
+                    />
+                  </DialogHostComponent>
+                )}
+                {index === 3 && (
                   <DropdownMenuDownloadImage
                     setIsMouseEventLock={setIsMouseEventLock}
                     componentRef={componentRef}
                     selectedType={selectedType}
                   >
-                    <div className="flex items-center">
-                      <Icon className="w-4" {...el.icon} />
-                      <span
-                        ref={refs.current[index]}
-                        className={`overflow-hidden transition-all duration-300 group-hover:ml-1`}
-                        style={{
-                          width: `${isHovered[index] ? estimatedWidths[index] : "0"}px`,
-                        }}
-                      >
-                        {el.title}
-                      </span>
-                    </div>
-                  </DropdownMenuDownloadImage>
-                ) : (
-                  <div className="flex items-center">
-                    <Icon className="w-4" {...el.icon} />
-                    <span
+                    <PlaygroundActionButton
+                      actionButton={el}
                       ref={refs.current[index]}
-                      className={`overflow-hidden transition-all duration-300 group-hover:ml-1`}
-                      style={{
-                        width: `${isHovered[index] ? estimatedWidths[index] : "0"}px`,
-                      }}
-                    >
-                      {el.title}
-                    </span>
-                  </div>
+                      estimatedWidth={estimatedWidths[index]}
+                      isHovered={isHovered[index]}
+                    />
+                  </DropdownMenuDownloadImage>
+                )}
+                {(index === 0 || index === 1) && (
+                  <PlaygroundActionButton
+                    actionButton={el}
+                    ref={refs.current[index]}
+                    estimatedWidth={estimatedWidths[index]}
+                    isHovered={isHovered[index]}
+                  />
                 )}
               </TooltipTrigger>
               <TooltipContent className="max-w-72 text-center">
@@ -173,66 +172,27 @@ export default function PlaygroundActions({ setSelectedType, componentRef, selec
   );
 }
 
-interface DropdownMenuDownloadImageProps {
-  children: React.ReactNode;
-  componentRef: RefObject<HTMLDivElement>;
-  selectedType?: Component;
-  setIsMouseEventLock: (value: boolean) => void;
+interface PlaygroundActionButtonProps {
+  actionButton: ActionButton;
+  estimatedWidth: Optional<number>;
+  isHovered: boolean;
 }
-function DropdownMenuDownloadImage({
-  children,
-  componentRef,
-  selectedType,
-  setIsMouseEventLock,
-}: DropdownMenuDownloadImageProps) {
-  const { t } = useTranslation();
-  function handleDownloadPng() {
-    if (componentRef.current !== null && selectedType) {
-      toPng(componentRef.current, { cacheBust: true })
-        .then((dataUrl) => {
-          const link = document.createElement("a");
-          link.download = formatSlug(selectedType.type) + ".png";
-          link.href = dataUrl;
-          link.click();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_png"));
-    }
-  }
 
-  function handleDownloadSvg() {
-    if (componentRef.current !== null && selectedType) {
-      toSvg(componentRef.current, { cacheBust: true })
-        .then((dataUrl) => {
-          const link = document.createElement("a");
-          link.download = formatSlug(selectedType.type) + ".svg";
-          link.href = dataUrl;
-          link.click();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } else {
-      toastError(t("ui.playground.actions.download_image.error.create_card_to_download_as_png"));
-    }
-  }
-
-  return (
-    <DropdownMenu onOpenChange={(value) => setIsMouseEventLock(value)}>
-      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>{t("ui.playground.actions.download_image.download_as")}</DropdownMenuLabel>
-        <Separator />
-        <DropdownMenuItem className="hover:cursor-pointer" onSelect={handleDownloadPng}>
-          PNG
-        </DropdownMenuItem>
-        <DropdownMenuItem className="hover:cursor-pointer" onSelect={handleDownloadSvg}>
-          SVG
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-}
+const PlaygroundActionButton = forwardRef<HTMLSpanElement, PlaygroundActionButtonProps>(
+  ({ actionButton, estimatedWidth, isHovered }, ref) => {
+    return (
+      <div className="mx-3 flex items-center">
+        <Icon className="w-4" {...actionButton.icon} />
+        <span
+          ref={ref}
+          className={`overflow-hidden transition-all duration-300 group-hover:ml-1`}
+          style={{
+            width: `${isHovered ? estimatedWidth : "0"}px`,
+          }}
+        >
+          {actionButton.title}
+        </span>
+      </div>
+    );
+  },
+);

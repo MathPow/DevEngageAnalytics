@@ -81,7 +81,7 @@
     },
     "homepage": {
       "title": "Collection of modern profile cards",
-      "description": "DevSocialsStats is an open-source project aimed at analyzing social media statistics from popular platforms and tracking valuable insights into developer activity.",
+      "description": "DevEngageAnalytics is an open-source project aimed at analyzing social media statistics from popular platforms and tracking valuable insights into developer activity.",
       "subtitles": {
         "start_your_open_source_journey_here": "Start your open source journey here!",
         "test_our_card_preview_with_your_information": "Test our card preview with your information"
@@ -179,15 +179,32 @@
         },
         "host_component": {
           "title": "Host Component",
-          "description": "Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website"
+          "description": "Ideal for those who want to showcase their statistics in portfolios, resumes, or social media profiles without embedding them directly into a website",
+          "customize_your_page": "Customize your page",
+          "set_page_look": "Set what your page should look like.",
+          "create_url": "Create url",
+          "view_URL": "View URL",
+          "error": {
+            "page_title_length": "Page title must be between {{minLength}} to {{maxLength}} characters.",
+            "page_title_generic": "Page title entered value is invalid.",
+            "page_title_space": "The page title can't have space in it.",
+            "color_required": "The background color field is required.",
+            "theme_required": "The theme field is required.",
+            "language_required": "The language field is required.",
+            "select_card_and_provide_info": "You need to select a card and provide your informations.",
+            "failed_to_copy_text": "Failed to copy text"
+          },
+          "success": {
+            "copied_to_clipboard": "Text copied to clipboard"
+          }
         },
         "download_image": {
           "title": "Download Image",
           "description": "Perfect for users who want a quick and easy way to generate and save visual representations without any coding",
           "download_as": "Download as",
           "error": {
-            "create_card_to_download_as_png": "Create a card to download as PNG",
-            "create_card_to_download_as_svg": "Create a card to download as SVG"
+            "create_card_to_download_as_png": "Create a card to download as PNG.",
+            "create_card_to_download_as_svg": "Create a card to download as SVG."
           }
         },
         "select_component": {
@@ -223,8 +240,37 @@
       "name": "Name",
       "login": "Username",
       "bio": "Bio",
-      "blog": "Blog"
+      "blog": "Blog",
+      "page_title": "Page title",
+      "background_color": "Background color",
+      "theme": "Theme",
+      "language": "Language"
+    },
+    "placeholders": {
+      "your_name": "Your name",
+      "select_a_color": "Select a color",
+      "select_a_theme": "Select a theme",
+      "select_a_language": "Select a language"
+    },
+    "options": {
+      "dark": "Dark",
+      "light": "Light",
+      "fr": "French",
+      "en": "English",
+      "es": "Spanish",
+      "blue": "Blue",
+      "green": "Green",
+      "red": "Red",
+      "orange": "Orange",
+      "pink": "Pink",
+      "purple": "Purple",
+      "white": "White",
+      "gray": "Gray"
     }
+  },
+  "general": {
+    "close": "Close",
+    "retry": "Retry"
   },
   "project_name": "DevEngageAnalytics"
 }

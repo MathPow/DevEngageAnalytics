@@ -58,7 +58,12 @@ export default function PlaygroundPage() {
         />
       </div>
       <div ref={docContentRef} className="w-full">
-        <PlaygroundActions selectedType={selectedType} componentRef={componentRef} setSelectedType={setSelectedType} />
+        <PlaygroundActions
+          userInfoEntered={userInfoEntered}
+          selectedType={selectedType}
+          componentRef={componentRef}
+          setSelectedType={setSelectedType}
+        />
         <PlaygroundPreview
           type={selectedType?.type}
           format={selectedType?.format}

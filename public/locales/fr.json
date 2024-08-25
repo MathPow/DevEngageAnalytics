@@ -81,7 +81,7 @@
     },
     "homepage": {
       "title": "Collection de cartes de profil modernes",
-      "description": "DevSocialsStats est un projet open-source visant à analyser les statistiques des réseaux sociaux des plateformes populaires et à suivre les informations précieuses sur l'activité des développeurs.",
+      "description": "DevEngageAnalytics est un projet open-source visant à analyser les statistiques des réseaux sociaux des plateformes populaires et à suivre les informations précieuses sur l'activité des développeurs.",
       "subtitles": {
         "start_your_open_source_journey_here": "Commencez votre voyage open source ici!",
         "test_our_card_preview_with_your_information": "Testez notre aperçu de carte avec vos informations"
@@ -179,15 +179,32 @@
         },
         "host_component": {
           "title": "Héberger le composant",
-          "description": "Idéal pour ceux qui souhaitent afficher leurs statistiques dans des portfolios, des CV ou des profils sur les réseaux sociaux sans les intégrer directement dans un site web"
+          "description": "Idéal pour ceux qui souhaitent afficher leurs statistiques dans des portfolios, des CV ou des profils sur les réseaux sociaux sans les intégrer directement dans un site web",
+          "customize_your_page": "Personnalisez votre page",
+          "set_page_look": "Définissez l'apparence de votre page.",
+          "create_url": "Créer un lien",
+          "view_URL": "Voir le lien",
+          "error": {
+            "page_title_length": "Le titre de la page doit comporter entre {{minLength}} et {{maxLength}} caractères.",
+            "page_title_generic": "Le titre de la page entré est invalide.",
+            "page_title_space": "Le titre de la page ne peut pas contenir d'espaces.",
+            "color_required": "Le champ de la couleur de fond est requis.",
+            "theme_required": "Le champ du thème est requis.",
+            "language_required": "Le champ de la langue est requis.",
+            "select_card_and_provide_info": "Vous devez sélectionner une carte et fournir vos informations.",
+            "failed_to_copy_text": "Échec de la copie du texte"
+          },
+          "success": {
+            "copied_to_clipboard": "Texte copié dans le presse-papiers"
+          }
         },
         "download_image": {
           "title": "Télécharger l'image",
           "description": "Parfait pour les utilisateurs qui veulent une solution rapide et facile pour générer et sauvegarder des représentations visuelles sans aucun codage",
           "download_as": "Télécharger sous",
           "error": {
-            "create_card_to_download_as_png": "Créez une carte pour télécharger au format PNG",
-            "create_card_to_download_as_svg": "Créez une carte pour télécharger au format SVG"
+            "create_card_to_download_as_png": "Créez une carte pour télécharger au format PNG.",
+            "create_card_to_download_as_svg": "Créez une carte pour télécharger au format SVG."
           }
         },
         "select_component": {
@@ -223,8 +240,37 @@
       "name": "Nom",
       "login": "Nom d'utilisateur",
       "bio": "Bio",
-      "blog": "Blog"
+      "blog": "Blog",
+      "page_title": "Titre de la page",
+      "background_color": "Couleur de fond",
+      "theme": "Thème",
+      "language": "Langue"
+    },
+    "placeholders": {
+      "your_name": "Votre nom",
+      "select_a_color": "Sélectionnez une couleur",
+      "select_a_theme": "Sélectionnez un thème",
+      "select_a_language": "Sélectionnez une langue"
+    },
+    "options": {
+      "dark": "Sombre",
+      "light": "Clair",
+      "fr": "Français",
+      "en": "Anglais",
+      "es": "Espagnol",
+      "blue": "Bleu",
+      "green": "Vert",
+      "red": "Rouge",
+      "orange": "Orange",
+      "pink": "Rose",
+      "purple": "Violet",
+      "white": "Blanc",
+      "gray": "Gris"
     }
+  },
+  "general": {
+    "close": "Fermer",
+    "retry": "Réessayer"
   },
   "project_name": "DevEngageAnalytics"
 }
