@@ -84,7 +84,7 @@ export default function ShowPage() {
             {userInfoFetched !== undefined && (
               <DropdownMenuDownloadImage componentRef={componentRef} selectedType={selectedType}>
                 <Icon
-                  className="size-[2.2rem] opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:opacity-80"
+                  className="size-[2.2rem] rounded-md opacity-25 transition-opacity duration-300 ease-in hover:cursor-pointer hover:bg-black/15 hover:opacity-70 dark:hover:bg-white/20 dark:hover:opacity-80"
                   name={"download"}
                 />
               </DropdownMenuDownloadImage>
