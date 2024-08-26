@@ -5,6 +5,10 @@ type Props = {
   params: { id: string };
 };
 
+export async function generateStaticParams() {
+  return "DevEngageAnalytics";
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
 
