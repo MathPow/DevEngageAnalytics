@@ -23,6 +23,7 @@ import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
 import { BASE_PATH } from "@/lib/composables/production";
+import { isPageScollNavless } from "@/lib/constants/navlessPages";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -80,7 +81,7 @@ export default function Navbar() {
 
     handleScroll();
 
-    if (typeof window !== "undefined" && !window.location.href.includes("playground"))
+    if (typeof window !== "undefined" && !isPageScollNavless(window.location.href))
       window.addEventListener("scroll", handleScroll);
 
     return () => {
