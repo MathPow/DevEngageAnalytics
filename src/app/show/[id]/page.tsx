@@ -5,6 +5,14 @@ type Props = {
   params: { id: string };
 };
 
+export async function generateStaticParams() {
+  const ids = ["DevEngageAnalytics"];
+
+  return ids.map((id) => ({
+    id,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
 
@@ -13,9 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
-  const { id } = params;
-  console.log(id);
+export default async function Page() {
   return (
     <main>
       <ShowPage />

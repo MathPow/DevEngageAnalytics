@@ -196,3 +196,5 @@ const PlaygroundActionButton = forwardRef<HTMLSpanElement, PlaygroundActionButto
     );
   },
 );
+
+PlaygroundActionButton.displayName = "PlaygroundActionButton";

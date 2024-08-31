@@ -77,6 +77,13 @@ export default function Home() {
     };
   }, []);
 
+  function getWindowWidth(): number {
+    if (typeof window !== "undefined") {
+      return window.innerWidth;
+    }
+    return 0;
+  }
+
   return (
     <main>
       <BackgroundGradient />
@@ -241,8 +248,8 @@ export default function Home() {
         <div className="mt-28 flex w-screen flex-col gap-y-16">
           <motion.div
             ref={infoSection1Ref}
-            initial={{ x: -window.innerWidth }}
-            animate={{ x: hasBeenInView.infoSection1 ? 0 : -window.innerWidth }}
+            initial={{ x: -getWindowWidth() }}
+            animate={{ x: hasBeenInView.infoSection1 ? 0 : -getWindowWidth() }}
             transition={{ duration: 1, delay: 0.2 }}
           >
             <InfoSection
@@ -267,8 +274,8 @@ export default function Home() {
           </motion.div>
           <motion.div
             ref={infoSection2Ref}
-            initial={{ x: window.innerWidth - 100 }}
-            animate={{ x: hasBeenInView.infoSection2 ? 0 : window.innerWidth - 100 }}
+            initial={{ x: getWindowWidth() - 100 }}
+            animate={{ x: hasBeenInView.infoSection2 ? 0 : getWindowWidth() - 100 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
             <InfoSection
