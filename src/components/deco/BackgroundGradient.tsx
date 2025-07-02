@@ -21,3 +21,4 @@ export default function BackgroundGradient({ text = "", isFixed = false, isDoted
 }
 
 // test 1
+// test 2
