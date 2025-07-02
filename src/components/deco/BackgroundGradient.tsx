@@ -19,3 +19,5 @@ export default function BackgroundGradient({ text = "", isFixed = false, isDoted
     </div>
   );
 }
+
+// test 1

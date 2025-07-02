@@ -23,6 +23,7 @@ import { formatSlug } from "@/lib/composables/formatSlug";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
 import { BASE_PATH } from "@/lib/composables/production";
+import { isPageScollNavless } from "@/lib/constants/navlessPages";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -80,7 +81,7 @@ export default function Navbar() {
 
     handleScroll();
 
-    if (typeof window !== "undefined" && !window.location.href.includes("playground"))
+    if (typeof window !== "undefined" && !isPageScollNavless(window.location.href))
       window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -102,7 +103,7 @@ export default function Navbar() {
           className={`flex h-12 items-center justify-between ${
             isNavVisible
               ? "container mx-auto"
-              : "mx-[6vw] max-w-[1400px] rounded-full bg-white/50 p-2 px-4 pr-5 outline outline-1 outline-slate-100 drop-shadow-sm backdrop-blur-md dark:bg-_darkBg/50 dark:outline-slate-900 2xl:mx-auto"
+              : "mx-[6vw] max-w-[1400px] rounded-full bg-white/50 p-2 px-4 pr-5 outline outline-2 outline-slate-100/50 drop-shadow-sm backdrop-blur-md dark:bg-_darkBg/50 dark:outline-slate-900/50 2xl:mx-auto"
           }`}
         >
           <div className="flex">
@@ -196,7 +197,7 @@ export default function Navbar() {
               <LanguageSwitcher />
               <ThemeSwitcher />
             </div>
-            <Separator className="-ml-2 h-8" orientation="vertical" />
+            <Separator className="-ml-2 h-8 bg-_darkGrayText/15 dark:bg-_lightGrayText/15" orientation="vertical" />
             <div className="flex gap-x-2">
               <Icon
                 className="hover:cursor-pointer"
